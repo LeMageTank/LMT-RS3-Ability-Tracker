@@ -211,11 +211,11 @@ class ProfileCreator:
 
     def delete_mousebind(self):
         if(len(self.mousebind_list.curselection()) > 0):
-            #try:
-            abil = self.profile_data['mouse_activated'][self.mousebind_list.curselection()[0]]
-            os.remove(self.clickable_region_path.format(self.profile_selection.get(),abil._name, str(abil._x1)+ '-' + str(abil._y1)))
-            #except:
-            #    ""
+            try:
+                abil = self.profile_data['mouse_activated'][self.mousebind_list.curselection()[0]]
+                os.remove(self.clickable_region_path.format(self.profile_selection.get(),abil._name, str(abil._x1)+ '-' + str(abil._y1)))
+            except:
+                ""
             del self.profile_data['mouse_activated'][self.mousebind_list.curselection()[0]]
             self.update_mousebinds()
 
@@ -248,11 +248,11 @@ class ProfileCreator:
         ability = self.profile_data['mouse_activated'][self.mousebind_list.curselection()[0]]
         try:
             if(ability.image is None):
-                ability.image = Image.open(self.clickable_region_path.format(self.profile_selection.get(),abil._name, str(abil.x1)+ '-' + str(abil.y1)))
+                ability.image = tkinter.PhotoImage(file=self.clickable_region_path.format(self.profile_selection.get(),ability._name, str(ability._x1)+ '-' + str(ability._y1)))
             self.mouse_ability_image = ability.image
             self.mouse_ability_image_label.configure(image=self.mouse_ability_image)
         except:
-            ability.image = ImageTk.PhotoImage(Image.open('app\\icons\\' + ability._name + '.png'))
+            ability.image = tkinter.PhotoImage(file='app\\icons\\{}.png'.format(ability._name))
             self.mouse_ability_image = ability.image
             self.mouse_ability_image_label.configure(image=self.mouse_ability_image)
 

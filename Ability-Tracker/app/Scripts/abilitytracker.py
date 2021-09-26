@@ -54,7 +54,7 @@ class AbilityTracker:
                             output_queue.append(ability.name)
                 except:
                     output_queue.append(activator._name)
-            if(activation_time - self._last_ability >= 0.6):
+            if(activation_time - self._last_ability >= 1.8):
                 while(len(ability_buffer) > 0):
                     ability = ability_buffer.pop(-1)
                     if(ability.activate(activation_time)):
@@ -157,6 +157,7 @@ class AbilityTrackerUI:
         self._tracker_queue = tracker_queue
         self._ability_queue = []
         self._root.title("LMT's Ability Tracker")
+        self._root.attributes('-topmost', True)
         self._root.iconphoto(False,ImageTk.PhotoImage(file='app\\data\\app icons\\icon.png'))
         self._root.geometry("{}x{}".format(((self._icon_shape[0]+1) * self._padding[0]) +
                                            self._icon_shape[0]*self._max_icons,
