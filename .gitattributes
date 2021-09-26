@@ -3,3 +3,5 @@
 * text eol=crlf
 *.* text eol=crlf
 
+*.png binary
+*.ico binary
