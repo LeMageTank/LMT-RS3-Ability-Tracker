@@ -77,6 +77,7 @@ class AbilityTracker:
                 output_queue = []
 
     def update_weapon_profile(self, profile_name):
+        print("Loading profile:", profile_name)
         self._clicked_abilities = self._input_profiles[profile_name]['mouse_ability_tree'] 
         self._pressed_abilities = self._input_profiles[profile_name]['keypress_ability_tree']
 
@@ -112,7 +113,7 @@ class AbilityTracker:
                 profile_data['keypress_activated'][i] = KeypressAbility(profile_data['keypress_activated'][i])
             for i in range(len(profile_data['mouse_activated'])):
                 profile_data['mouse_activated'][i] = ClickableAbility(profile_data['mouse_activated'][i])
-            profile_data['keypress_ability_tree'] = AbilitySearchTree(profile_data['keypress_activated'])
+            profile_data['keypress_ability_tree'] = AbilitySearchTable(profile_data['keypress_activated'])
             profile_data['mouse_ability_tree'] = AbilitySearchTree(profile_data['mouse_activated'])
             input_profiles[profile['activator_weapons']] = profile_data
         return input_profiles
@@ -129,15 +130,17 @@ class AbilityTracker:
         else:
             abil = None
             try:
+                key = chr(key.vk).lower()
                 if(self._modifier_key is None):
-                    abil = self._pressed_abilities.search((chr(key.vk).lower(), None))
+                    abil = self._pressed_abilities.search((key, None))
                 else:
-                    abil = self._pressed_abilities.search((chr(key.vk).lower(), self._modifier_key.name))
+                    abil = self._pressed_abilities.search((key, KeypressAbility.modifier_key_map[self._modifier_key.name]))
             except:
+                key = str(key).lower().split('.')[1]
                 if(self._modifier_key is None):
-                    abil = self._pressed_abilities.search((str(key), None))
+                    abil = self._pressed_abilities.search((key, None))
                 else:
-                    abil = self._pressed_abilities.search((str(key), self._modifier_key.name))
+                    abil = self._pressed_abilities.search((key, KeypressAbility.modifier_key_map[self._modifier_key.name]))
             if(abil):
                 self._ability_queue.append(abil)
             
@@ -189,7 +192,7 @@ class AbilityTrackerUI:
             widget.destroy()
         while(len(self._ability_queue) > self._max_icons):
             self._ability_queue.pop(0)
-        for i in range(len(self._ability_queue)):
+        for i in range(len(self._ability_queue)-1, -1, -1):
             try:
                 image_widget = tkinter.Label(self._root, image=self._icon_map[self._ability_queue[i]], background='black')
                 image_widget.pack(side='right', fill='none', pady=self._padding[1], padx=self._padding[0])

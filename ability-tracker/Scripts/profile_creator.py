@@ -41,11 +41,11 @@ class MouseBindSelector:
         ability_selection = tkinter.ttk.Combobox(root)
         ability_selection['values'] = tuple(self.abilities)
         ability_selection.pack()
-        msbnd = tkinter.Button(root, text='Add', command=lambda : self.add_msbnd(ability_selection.get(), x, y, root, screenshot))
+        msbnd = tkinter.Button(root, text='Add', command=lambda : self.add_mousebind(ability_selection.get(), x, y, root, screenshot))
         msbnd.pack()
         root.mainloop()
 
-    def add_msbnd(self, abil, x, y, root, screenshot):
+    def add_mousebind(self, abil, x, y, root, screenshot):
         self.q.put((abil, x, y, screenshot))
         root.destroy()
         
@@ -96,6 +96,11 @@ class ProfileCreator:
                                                   text="Save",
                                                   command=self.save_profile)
         self.profile_save_button.grid(row=1, column=1, sticky=tkinter.EW, pady=2)
+
+        self.profile_generate_button = tkinter.Button(self.profile_container,
+                                                      text="generate",
+                                                      command=self.generate_profile)
+        self.profile_generate_button.grid(row=1, column=2, sticky=tkinter.EW, pady=2)
         
 
         #### Mousebind Section ####
@@ -132,8 +137,8 @@ class ProfileCreator:
         self.keybind_label.grid(row=0, column=0, sticky=tkinter.EW, pady=2)
 
         self.keybind_list = tkinter.Listbox(self.keybind_container)
-        self.keybind_list.grid(row=3, column=0, sticky=tkinter.EW, pady=2,
-                                 columnspan=2, rowspan=5)
+        self.keybind_list.grid(row=2, column=0, sticky=tkinter.EW, pady=2,
+                                 columnspan=3, rowspan=5)
 
 
         self.keybind_add = tkinter.Button(self.keybind_container,
@@ -155,7 +160,7 @@ class ProfileCreator:
         self.keybind_delete = tkinter.Button(self.keybind_container,
                                                        text="Delete",
                                                        command=self.delete_keybind)
-        self.keybind_delete.grid(row=3, column=2, sticky=tkinter.NSEW, pady=2)
+        self.keybind_delete.grid(row=2, column=3, sticky=tkinter.NSEW, pady=2)
         
 
         # Load default profile
@@ -194,6 +199,10 @@ class ProfileCreator:
         f.close()
 
         self.load_profile()
+
+    def generate_profile(self):
+        self.profile_data = {'keypress_activated':[], 'mouse_activated':[]}
+        self.save_profile()
 
     def start_mouse_listener(self):
         mouse = MouseBindSelector(self.mouse_queue, self.abilities)

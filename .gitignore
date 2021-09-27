@@ -1,3 +1,8 @@
-
-Ability-Tracker/app/data/saved profile clickables/*
-!Ability-Tracker/app/data/saved profile clickables/.gitkeep
+logs.txt
+ability-tracker/data/saved profile clickables/*
+!ability-tracker/data/saved profile clickables/.gitkeep
+ability-tracker/Scripts/__pycache__/ability.cpython-39.pyc
+ability-tracker/Scripts/__pycache__/abilitytracker.cpython-39.pyc
+ability-tracker/data/saved profiles/2h_magic.json
+ability-tracker/data/saved profiles/2h_melee.json
+ability-tracker/data/saved profiles/dw_melee.json

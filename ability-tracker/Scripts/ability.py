@@ -95,7 +95,8 @@ class ClickableAbility(AbilityReference):
 class KeypressAbility(AbilityReference):
     modifier_keys = [keyboard.Key.alt, keyboard.Key.alt_r, keyboard.Key.alt_l, keyboard.Key.alt_gr, keyboard.Key.shift,
                      keyboard.Key.shift_r, keyboard.Key.shift_l, keyboard.Key.ctrl, keyboard.Key.ctrl_r, keyboard.Key.ctrl_l]
-    
+    modifier_key_map = {'shift':'shift', 'shift_r':'shift', 'alt_l':'alt', 'alt_gr':'alt', 'alt':'alt', 'ctrl':'ctrl',
+                        'ctrl_l':'ctrl', 'ctrl_r':'ctrl'}
     def __init__(self, deserializeable):
         super().__init__(deserializeable['ability'])
         self._key = deserializeable['key'].lower()
@@ -111,24 +112,24 @@ class KeypressAbility(AbilityReference):
         return self._modifier == modifier
 
     def key(self):
-        return (self._key, self._modifier)
+        if(self._modifier is None):
+            return self._key
+        else:
+            return self._key + self._modifier
         
     def lt(self, other):
         if(isinstance(other, KeypressAbility)):
             other = other.key()
         elif(not isinstance(other, tuple)):
             raise Exception("Invalid key: {}".format(other))
-        if(self._key < other[0]):
+        else:
+            if(other[1] is None):
+                other = other[0]
+            else:
+                other = "".join(other)
+        if(self.key() < other):
             return True
         else:
-            if(self._key == other[0]):
-                if(self._modifier != other[1]):
-                    if(self._modifier is None):
-                        return False
-                    elif(other[1] is None):
-                        return True
-                    else:
-                        return self._modifier < other[1]
             return False
 
     def eq(self, other):
@@ -136,13 +137,19 @@ class KeypressAbility(AbilityReference):
             other = other.key()
         elif(not isinstance(other, tuple)):
             raise Exception("Invalid key: {}".format(other))
-        if(self._key == other[0]):
-            if(self._modifier == other[1]):
-                return True
-        return False
+        else:
+            if(other[1] is None):
+                other = other[0]
+            else:
+                other = "".join(other)
+        print(self.key(), other)
+        return(self.key() == other)
 
     def to_dict(self):
         return {'ability':self._name, 'key':self._key, 'modifier':self._modifier}
+
+    def __hash__(self):
+        return self.key().__hash__()
 
     def __str__(self):
         return "{} : ({} + {})".format(self._name, self._key, self._modifier)
@@ -153,6 +160,39 @@ class TreeNode:
         self.right = right
         self.left = left
 
+class AbilitySearchTable:
+    def __init__(self, ability_list):
+        self.map = {}
+        self.build_table(ability_list)
+
+    def build_table(self, ability_list):
+        for ability in ability_list:
+            self.map[ability.__hash__()] = ability
+                  
+    def search(self, key):
+        if(key[1] is None):
+            key = key[0]
+        else:
+            key = "".join(key)
+        try:
+            return self.map[key.__hash__()]
+        except:
+            return None
+
+class AbilitySearchList:
+    def __init__(self, ability_list):
+        self.ability_list = ability_list
+        
+    def search(self, key):
+        if(key[1] is None):
+            key = key[0]
+        else:
+            key = "".join(key)
+        for i in range(len(self.ability_list)):
+            if(self.ability_list[i].key() == key):
+                return self.ability_list[i]
+        return None
+    
 class AbilitySearchTree:
     def __init__(self, ability_list):
         self.root = None
