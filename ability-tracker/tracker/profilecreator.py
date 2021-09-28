@@ -1,4 +1,3 @@
-from ahk import AHK
 from pynput import mouse, keyboard
 import pyautogui
 import tkinter
@@ -8,7 +7,7 @@ import multiprocessing
 import json
 import time
 import numpy as np
-from ability import *
+from action import *
 
 
 class MouseBindSelector:
@@ -179,9 +178,9 @@ class ProfileCreator:
         f.close()
 
         for i in range(len(self.profile_data['keypress_activated'])):
-                self.profile_data['keypress_activated'][i] = KeypressAbility(self.profile_data['keypress_activated'][i])
+                self.profile_data['keypress_activated'][i] = KeybindAction(self.profile_data['keypress_activated'][i])
         for i in range(len(self.profile_data['mouse_activated'])):
-                self.profile_data['mouse_activated'][i] = ClickableAbility(self.profile_data['mouse_activated'][i])
+                self.profile_data['mouse_activated'][i] = MousebindAction(self.profile_data['mouse_activated'][i])
 
         self.update_mousebinds()
         self.update_keybinds()
@@ -210,7 +209,7 @@ class ProfileCreator:
         mouse_process.start()
 
     def add_mousebind(self, binding):
-        abil = ClickableAbility({'ability':binding[0], 'x':binding[1]-15, 'y': binding[2]-15,
+        abil = MousebindAction({'ability':binding[0], 'x':binding[1]-15, 'y': binding[2]-15,
                     'w':binding[1]+15, 'h':binding[2]+15})
         image = Image.fromarray(binding[3])
         image.save(self.clickable_region_path.format(self.profile_selection.get(),abil._name, str(abil._x1)+ '-' + str(abil._y1)))
@@ -239,7 +238,7 @@ class ProfileCreator:
         if(modifier == ''):
             modifier = None
         ability = self.keybind_ability_selection.get()
-        self.profile_data['keypress_activated'].insert(0, KeypressAbility({
+        self.profile_data['keypress_activated'].insert(0, KeybindAction({
             'ability':ability, 'key':key, 'modifier':modifier}))
         self.update_keybinds()
 
