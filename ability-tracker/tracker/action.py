@@ -61,9 +61,6 @@ class MousebindAction:
                 self.x1, self.y2,
                 self.x1, self.y1]
 
-    def label(self):
-        return self._name
-
     def to_dict(self):
         ability = {}
         ability['ability'] = self.action
