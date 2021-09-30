@@ -1,506 +1,1151 @@
 [
 	{
-		"ability":"Slice",
+		"action":"Slice",
 		"type":"basic",
 		"cooldown":3.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":1, "damage":[30.0,120.0]}]
 	},
 	{
-		"ability":"Lesser Smash",
+		"action":"Lesser Smash",
 		"type":"basic",
 		"cooldown":10.2,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[20.0,120.0]}]
 	},
 	{
-		"ability":"Lesser Havoc",
+		"action":"Lesser Havoc",
 		"type":"basic",
 		"cooldown":10.2,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[20.0,120.0]}]
 	},
 	{
-		"ability":"Lesser Sever",
+		"action":"Lesser Sever",
 		"type":"basic", 
 		"cooldown":15.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[28.8,120.0]}]
 	},
 	{
-		"ability":"Backhand",
+		"action":"Backhand",
 		"type":"basic",
 		"cooldown":15.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":1, "damage":[20.0,100.0]}]
 	},
 	{
-		"ability":"Slaughter",
+		"action":"Slaughter",
 		"type":"threshold",
 		"cooldown":30.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"bleed",
+		"hits":[{"tick":1, "damage":[20.0,50.0]},
+			{"tick":3, "damage":[20.0,50.0]},
+			{"tick":5, "damage":[20.0,50.0]},
+			{"tick":7, "damage":[20.0,50.0]},
+			{"tick":9, "damage":[20.0,50.0]}]
 	},
 	{
-		"ability":"Overpower",
+		"action":"Overpower",
 		"type":"utlimate",
 		"cooldown":30.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":2, "damage":[250.0,350.0]}]
 	},
 	{
-		"ability":"Havoc",
+		"action":"Havoc",
 		"type":"basic",
 		"cooldown":10.2,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":1, "damage":[31.4,157.0]}]
 	},
 	{
-		"ability":"Forceful Backhand",
+		"action":"Forceful Backhand",
 		"type":"threshold",
 		"cooldown":3.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":1, "damage":[40.0,200.0]}]
 	},
 	{
-		"ability":"Smash",
+		"action":"Smash",
 		"type":"basic",
 		"cooldown":10.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":1, "damage":[31.4,157.0]}]
 	},
 	{
-		"ability":"Barge",
+		"action":"Barge",
 		"type":"basic",
 		"cooldown":20.4,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":1, "damage":[25.0,125.0]}]
 	},
 	{
-		"ability":"Greater Barge",
+		"action":"Greater Barge",
 		"type":"basic",
 		"cooldown":20.4,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":1, "damage":[45.0,225.0]}]
 	},
 	{
-		"ability":"Greater Flurry",
+		"action":"Greater Flurry",
 		"type":"threshold",
 		"cooldown":20.4,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"channeled",
+		"hits":[{"tick":1, "damage":[31.25,157.0]},
+			{"tick":3, "damage":[31.25,157.0]},
+			{"tick":5, "damage":[31.25,157.0]},
+			{"tick":7, "damage":[31.25,157.0]}]
 	},
 	{
-		"ability":"Flurry",
+		"action":"Flurry",
 		"type":"threshold",
 		"cooldown":20.4,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"channeled",
+		"hits":[{"tick":1, "damage":[18.75,94.0]},
+			{"tick":3, "damage":[18.75,94.0]},
+			{"tick":5, "damage":[18.75,94.0]},
+			{"tick":7, "damage":[18.75,94.0]}]
 	},
 	{
-		"ability":"Sever",
+		"action":"Sever",
 		"type":"basic",
 		"cooldown":15.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[37.6,188.0]}]
 	},
 	{
-		"ability":"Hurricane",
+		"action":"Hurricane",
 		"type":"threshold",
 		"cooldown":20.4,
-		"incurs_gcd":true
+		"incurs_gcd":true,,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[66.0,219.0]},
+			{"tick":, "damage":[84.0,161.0]}]
 	},
 	{
-		"ability":"Bladed Dive",
+		"action":"Bladed Dive",
 		"type":"basic",
 		"cooldown":20.4,
-		"incurs_gcd":false
+		"incurs_gcd":false,
+		"ability-type":"movement",
+		"hits":[]
 	},
 	{
-		"ability":"Massacre",
+		"action":"Massacre",
 		"type":"ultimate",
 		"cooldown":60.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"bleed",
+		"hits":[{"tick":0, "damage":[37.0,188.0]},
+			{"tick":2, "damage":[62.0,62.0]},
+			{"tick":4, "damage":[62.0,62.0]},
+			{"tick":6, "damage":[62.0,62.0]},
+			{"tick":8, "damage":[62.0,62.0]},
+			{"tick":10, "damage":[62.0,62.0]}]
 	},
 	{
-		"ability":"Blood Tendrils",
+		"action":"Blood Tendrils",
 		"type":"threshold",
 		"cooldown":25.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"bleed",
+		"hits":[{"tick":1, "damage":[36.0,180.0]},
+			{"tick":3, "damage":[18.0,90.0]},
+			{"tick":5, "damage":[18.0,90.0]},
+			{"tick":7, "damage":[18.0,90.0]},
+			{"tick":7, "damage":[18.0,90.0]}]
 	},
 	{
-		"ability":"Meteor Strike",
+		"action":"Meteor Strike",
 		"type":"ultimate",
 		"cooldown":60.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[250.0,350.0]}]
 	},
 	{
-		"ability":"Balanced Strike",
+		"action":"Balanced Strike",
 		"type":"Ultimate",
 		"cooldown":120.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[]
 	},
 	{
-		"ability":"Lesser Dismember",
+		"action":"Lesser Dismember",
 		"type":"basic",
 		"cooldown":15.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"bleed",
+		"hits":[{"tick":1, "damage":[20.0,28.0]},
+			{"tick":3, "damage":[20.0,28.0]},
+			{"tick":5, "damage":[20.0,28.0]},
+			{"tick":7, "damage":[20.0,28.0]},
+			{"tick":7, "damage":[20.0,28.0]}]
 	},
 	{
-		"ability":"Stomp",
+		"action":"Stomp",
 		"type":"threshold",
 		"cooldown":15.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[40.0,200.0]}]
 	},
 	{
-		"ability":"Kick",
+		"action":"Kick",
 		"type":"basic",
 		"cooldown":15.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[20.0,100.0]}]
 	},
 	{
-		"ability":"Punish",
+		"action":"Punish",
 		"type":"basic",
 		"cooldown":3.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[18.0,94.0]}]
 	},
 	{
-		"ability":"Dismember",
+		"action":"Dismember",
 		"type":"basic",
 		"cooldown":15.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":1, "damage":[20.0,37.0]},
+			{"tick":3, "damage":[20.0,37.0]},
+			{"tick":5, "damage":[20.0,37.0]},
+			{"tick":7, "damage":[20.0,37.0]},
+			{"tick":7, "damage":[20.0,37.0]}]
 	},
 	{
-		"ability":"Greater Fury",
+		"action":"Greater Fury",
 		"type":"basic",
 		"cooldown":5.4,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[31.0,157.0]}]
 	},
 	{
-		"ability":"Fury",
+		"action":"Fury",
 		"type":"basic",
 		"cooldown":5.4,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"channeled",
+		"hits":[{"tick":0, "damage":[16.0,82.0]},
+			{"tick":2, "damage":[16.0,82.0]},
+			{"tick":4, "damage":[16.0,82.0]}]
 	},
 	{
-		"ability":"Destroy",
+		"action":"Destroy",
 		"type":"Threshold",
 		"cooldown":20.4,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"channeled",
+		"hits":[{"tick":1, "damage":[37.6,188.0]},
+			{"tick":3, "damage":[37.6,188.0]},
+			{"tick":5, "damage":[37.6,188.0]},
+			{"tick":7, "damage":[37.6,188.0]}]
 	},
 	{
-		"ability":"Quake",
+		"action":"Quake",
 		"type":"theshold",
 		"cooldown":20.4,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[43.0,219.0]}]
 	},
 	{
-		"ability":"Berserk",
+		"action":"Berserk",
 		"type":"ultimate",
 		"cooldown":60.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"non-damage",
+		"hits":[]
 	},
 	{
-		"ability":"Cleave",
+		"action":"Cleave",
 		"type":"basic",
 		"cooldown":7.2,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[37.6,188.0]}]
 	},
 	{
-		"ability":"Assault",
+		"action":"Assault",
 		"type":"theshold",
 		"cooldown":30.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"channeled",
+		"hits":[{"tick":1, "damage":[43.8,219.0]},
+			{"tick":4, "damage":[43.8,219.0]},
+			{"tick":7, "damage":[43.8,219.0]},
+			{"tick":10, "damage":[43.8,219.0]}]
 	},
 	{
-		"ability":"Decimate",
+		"action":"Decimate",
 		"type":"basic",
 		"cooldown":7.2,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[37.6,188.0]}]
 	},
 	{
-		"ability":"Pulverise",
+		"action":"Pulverise",
 		"type":"ultimate",
 		"cooldown":60.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[250.0,350.0]}]
 	},
 	{
-		"ability":"Frenzy",
+		"action":"Frenzy",
 		"type":"ultimate",
 		"cooldown":60.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":1, "damage":[80.0,180.0]},
+			{"tick":3, "damage":[90.0,200.0]},
+			{"tick":5, "damage":[100.0,220.0]},
+			{"tick":7, "damage":[110.0,240.0]}]
 	},
 	{
-		"ability":"Devotion",
+		"action":"Devotion",
 		"type":"threshold",
 		"cooldown":60.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"non-damage",
+		"hits":[]
 	},
 	{
-		"ability":"Anticipation",
+		"action":"Anticipation",
 		"type":"basic",
 		"cooldown":24.6,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"non-damage",
+		"hits":[]
 	},
 	{
-		"ability":"Bash",
+		"action":"Bash",
 		"type":"basic",
 		"cooldown":15.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[20.0,100.0]}]
 	},
 	{
-		"ability":"Revenge",
+		"action":"Revenge",
 		"type":"threshold",
 		"cooldown":45.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"non-damage",
+		"hits":[]
 	},
 	{
-		"ability":"Immortality",
+		"action":"Immortality",
 		"type":"ultimate",
 		"cooldown":120.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"non-damage",
+		"hits":[]
 	},
 	{
-		"ability":"Freedom",
+		"action":"Freedom",
 		"type":"basic",
 		"cooldown":30.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"non-damage",
+		"hits":[]
 	},
 	{
-		"ability":"Reflect",
+		"action":"Reflect",
 		"type":"threshold",
 		"cooldown":30.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"non-damage",
+		"hits":[]
 	},
 	{
-		"ability":"Resonance",
+		"action":"Resonance",
 		"type":"basic",
 		"cooldown":30.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"non-damage",
+		"hits":[]
 	},
 	{
-		"ability":"Divert",
+		"action":"Divert",
 		"type":"basic",
 		"cooldown":30.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"non-damage",
+		"hits":[]
 	},
 	{
-		"ability":"Debilitate",
+		"action":"Debilitate",
 		"type":"threshold",
 		"cooldown":30.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[20.0,100.0]}]
 	},
 	{
-		"ability":"Preparation",
+		"action":"Preparation",
 		"type":"basic",
 		"cooldown":20.4,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"non-damage",
+		"hits":[]
 	},
 	{
-		"ability":"Barricade",
+		"action":"Barricade",
 		"type":"ultimate",
 		"cooldown":60.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"non-damage",
+		"hits":[]
 	},
 	{
-		"ability":"Natural Instinct",
+		"action":"Natural Instinct",
 		"type":"ultimate",
 		"cooldown":120.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"non-damage",
+		"hits":[]
 	},
 	{
-		"ability":"Special Attack",
+		"action":"Special Attack",
 		"type":"special",
 		"cooldown":0.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"special",
+		"hits":[]
 	},
 	{
-		"ability":"Regenerate",
+		"action":"Regenerate",
 		"type":"basic",
 		"cooldown":0.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"non-damage",
+		"hits":[]
 	},
 	{
-		"ability":"Sacrifice",
+		"action":"Sacrifice",
 		"type":"basic",
 		"cooldown":30.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[20.0,100.0]}]
 	},
 	{
-		"ability":"Essence of Finality",
+		"action":"Essence of Finality",
 		"type":"special",
 		"cooldown":0.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"special",
+		"hits":[]
 	},
 	{
-		"ability":"Storm Shards",
+		"action":"Storm Shards",
 		"type":"basic",
 		"cooldown":30.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"non-damage",
+		"hits":[]
 	},
 	{
-		"ability":"Shatter",
+		"action":"Shatter",
 		"type":"threshold",
 		"cooldown":120.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"non-damage",
+		"hits":[]
 	},
 	{
-		"ability":"Reprisal",
+		"action":"Reprisal",
 		"type":"threshold",
 		"cooldown":60.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"non-damage",
+		"hits":[]
 	},
 	{
-		"ability":"Onslaught",
+		"action":"Onslaught",
 		"type":"ultimate",
 		"cooldown":120.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"channeled",
+		"hits":[{"tick":0, "damage":[49.5,150.0]},
+			{"tick":0, "damage":[60.3,183.0]},
+			{"tick":0, "damage":[71.2,216.0]},
+			{"tick":0, "damage":[82.1,249.0]},
+			{"tick":0, "damage":[93.0,282.0]},
+			{"tick":0, "damage":[103.9,315.0]},
+			{"tick":0, "damage":[114.8,348.0]},
+			{"tick":0, "damage":[125.7,381.0]},
+			{"tick":0, "damage":[136.6,414.0]},
+			{"tick":0, "damage":[147.5,447.0]},
+			{"tick":0, "damage":[158.4,480.0]},
+			{"tick":0, "damage":[169.2,513.0]},
+			{"tick":0, "damage":[180.1,546.0]},
+			{"tick":0, "damage":[191.0,579.0]},
+			{"tick":0, "damage":[201.9,612.0]},
+			{"tick":0, "damage":[212.8,645.0]},
+			{"tick":0, "damage":[223.7,678.0]},
+			{"tick":0, "damage":[234.6,711.0]},
+			{"tick":0, "damage":[245.5,744.0]},
+			{"tick":0, "damage":[256.4,777.0]},
+			{"tick":0, "damage":[267.3,810.0]},
+			{"tick":0, "damage":[278.1,843.0]},
+			{"tick":0, "damage":[289.0,876.0]},
+			{"tick":0, "damage":[299.9,909.0]},
+			{"tick":0, "damage":[310.8,942.0]},
+			{"tick":0, "damage":[321.7,975.0]}]
 	},
 	{
-		"ability":"Ice Asylum",
+		"action":"Ice Asylum",
 		"type":"ultimate",
 		"cooldown":300.0,
-		"incurs_gcd":true
+		"incurs_gcd":true,
+		"ability-type":"non-damage",
+		"hits":[]
 	},
 	{
-		"ability":"Eat Food",
+		"action":"Eat Food",
 		"type":"consumable",
 		"cooldown":1.2,
-		"incurs_gcd":false
+		"incurs_gcd":false,
+		"ability-type":"non-damage",
+		"hits":[]
 	},
 	{
-		"ability":"Limitless",
+		"action":"Snipe",
+		"type":"basic",
+		"cooldown":10.2,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[125.0,219.0]}]
+	},
+	{
+		"action":"Needle Strike",
+		"type":"basic",
+		"cooldown":5.4,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[31.4,157.0]}]
+	},
+	{
+		"action":"Piercing Shot",
+		"type":"basic",
+		"cooldown":3.0,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[18.0,94.0]}]
+	},
+	{
+		"action":"Binding Shot",
+		"type":"basic",
+		"cooldown":15.0,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[20.0,100.0]}]
+	},
+	{
+		"action":"Dazing Shot",
+		"type":"basic",
+		"cooldown":5.2,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[31.0,157.0]}]
+	},
+	{
+		"action":"Fragmentation Shot",
+		"type":"basic",
+		"cooldown":15.0,
+		"incurs_gcd":true,
+		"ability-type":"bleed",
+		"hits":[{"tick":1, "damage":[20.0,37.0]},
+			{"tick":3, "damage":[20.0,37.0]},
+			{"tick":5, "damage":[20.0,37.0]},
+			{"tick":7, "damage":[20.0,37.0]},
+			{"tick":9, "damage":[20.0,37.0]}]
+	},
+	{
+		"action":"Snap Shot",
+		"type":"threshold",
+		"cooldown":20.4,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[100.0,120.0]},
+			{"tick":1, "damage":[100.0,210.0]}]
+	},
+	{
+		"action":"Deadshot",
+		"type":"ultimate",
+		"cooldown":30.0,
+		"incurs_gcd":true,
+		"ability-type":"bleed",
+		"hits":[{"tick":0, "damage":[37.0,188.0]},
+			{"tick":2, "damage":[62.0,62.0]},
+			{"tick":4, "damage":[62.0,62.0]},
+			{"tick":6, "damage":[62.0,62.0]},
+			{"tick":8, "damage":[62.0,62.0]},
+			{"tick":10, "damage":[62.0,62.0]}]
+	},
+	{
+		"action":"Tight Bindings",
+		"type":"threshold",
+		"cooldown":15.0,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[40.0,200.0]}]
+	},
+	{
+		"action":"Greater Dazing Shot",
+		"type":"basic",
+		"cooldown":5.4,
+		"incurs_gcd":true,
+		"ability-type":"bleed",
+		"hits":[{"tick":0, "damage":[31.0,157.0]}]
+	},
+	{
+		"action":"Demoralize",
+		"type":"basic",
+		"cooldown":15.0,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[20.0,100.0]}]
+	},
+	{
+		"action":"Rout",
+		"type":"threshold",
+		"cooldown":15.0,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[40.0,200.0]}]
+	},
+	{
+		"action":"Escape",
+		"type":"basic",
+		"cooldown":20.4,
+		"incurs_gcd":true,
+		"ability-type":"movement",
+		"hits":[]
+	},
+	{
+		"action":"Rapid Fire",
+		"type":"threshold",
+		"cooldown":20.4,
+		"incurs_gcd":true,
+		"ability-type":"channeled",
+		"hits":[{"tick":0, "damage":[18.75,94.0]},
+			{"tick":1, "damage":[18.75,94.0]},
+			{"tick":2, "damage":[18.75,94.0]},
+			{"tick":3, "damage":[18.75,94.0]},
+			{"tick":4, "damage":[18.75,94.0]},
+			{"tick":5, "damage":[18.75,94.0]},
+			{"tick":6, "damage":[18.75,94.0]},
+			{"tick":7, "damage":[18.75,94.0]}]
+	},
+	{
+		"action":"Greater Ricochet",
+		"type":"basic",
+		"cooldown":10.2,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[20.0,100.0]},
+			{"tick":1, "damage":[10.0,50.0]},
+			{"tick":1, "damage":[10.0,50.0]}]
+	},
+	{
+		"action":"Ricochet",
+		"type":"basic",
+		"cooldown":10.2,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[20.0,100.0]}]
+	},
+	{
+		"action":"Bombardment",
+		"type":"threshold",
+		"cooldown":30.0,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[43.0,219.0]}]
+	},
+	{
+		"action":"Salt the Wound",
+		"type":"threshold",
+		"cooldown":15.0,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[37.0,188.0]}]
+	},
+	{
+		"action":"Incendiary Shot",
+		"type":"ultimate",
+		"cooldown":60.0,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":0, "damage":[250.0,350.0]}]
+	},
+	{
+		"action":"Corruption Shot",
+		"type":"basic",
+		"cooldown":15.0,
+		"incurs_gcd":true,
+		"ability-type":"bleed",
+		"hits":[{"tick":1, "damage":[33.0,100.0]},
+			{"tick":3, "damage":[33.0,100.0]},
+			{"tick":5, "damage":[33.0,100.0]},
+			{"tick":7, "damage":[33.0,100.0]},
+			{"tick":9, "damage":[33.0,100.0]}]
+	},
+	{
+		"action":"Shadow Tendrils",
+		"type":"threshold",
+		"cooldown":45.0,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":1, "damage":[66.0,500.0]}]
+	},
+	{
+		"action":"Unload",
+		"type":"ultimate",
+		"cooldown":60.0,
+		"incurs_gcd":true,
+		"ability-type":"channeled",
+		"hits":[{"tick":1, "damage":[95.0,210.0]},
+			{"tick":3, "damage":[95.0,210.0]},
+			{"tick":5, "damage":[95.0,210.0]},
+			{"tick":7, "damage":[95.0,210.0]}]
+	},
+	{
+		"action":"Deaths Swiftness",
+		"type":"ultimate",
+		"cooldown":60.0,
+		"incurs_gcd":true,
+		"ability-type":"non-damage",
+		"hits":[]
+	},
+	{
+		"action":"Wrack,
+		"type":"basic",
+		"cooldown":3.0,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":1, "damage":[18.0,94.0]}]
+	},
+	{
+		"action":"Asphyxiate",
+		"type":"threshold",
+		"cooldown":20.4,
+		"incurs_gcd":true,
+		"ability-type":"channeled",
+		"hits":[{"tick":1, "damage":[37.5,188.0]},
+			{"tick":3, "damage":[37.5,188.0]},
+			{"tick":5, "damage":[37.5,188.0]},
+			{"tick":7, "damage":[37.5,188.0]}]
+	},
+	{
+		"action":"Wrack and Ruin",
+		"type":"basic",
+		"cooldown":3.0,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":1, "damage":[60.0,300.0]}]
+	},
+	{
+		"action":"Concentrated Blast",
+		"type":"basic",
+		"cooldown":5.4,
+		"incurs_gcd":true,
+		"ability-type":"channeled",
+		"hits":[{"tick":0, "damage":[16.0,82.0]},
+			{"tick":2, "damage":[16.0,82.0]},
+			{"tick":4, "damage":[16.0,82.0]}]
+	},
+	{
+		"action":"Impact",
+		"type":"basic",
+		"cooldown":15.0,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":1, "damage":[20.0,100.0]}]
+	},
+	{
+		"action":"Sonic Wave",
+		"type":"basic",
+		"cooldown":5.4,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":1, "damage":[31.0,157.0]}]
+	},
+	{
+		"action":"Dragon Breath",
+		"type":"basic",
+		"cooldown":10.2,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":1, "damage":[37.0,188.0]}]
+	},
+	{
+		"action":"Combust",
+		"type":"basic",
+		"cooldown":15.0,
+		"incurs_gcd":true,
+		"ability-type":"bleed",
+		"hits":[{"tick":1, "damage":[20.0,37.0]},
+			{"tick":3, "damage":[20.0,37.0]},
+			{"tick":5, "damage":[20.0,37.0]},
+			{"tick":7, "damage":[20.0,37.0]},
+			{"tick":9, "damage":[20.0,37.0]}]
+	},
+	{
+		"action":"Omnipower",
+		"type":"ultimate",
+		"cooldown":30.0,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":1, "damage":[200.0,400.0]}]
+	},
+	{
+		"action":"Deep Impact",
+		"type":"threshold",
+		"cooldown":15.0,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":1, "damage":[40.0,200.0]}]
+	},
+	{
+		"action":"Shock",
+		"type":"basic",
+		"cooldown":15.0,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":1, "damage":[20.0,100.0]}]
+	},
+	{
+		"action":"Greater Concentrated Blast",
+		"type":"basic",
+		"cooldown":5.4,
+		"incurs_gcd":true,
+		"ability-type":"channeled",
+		"hits":[{"tick":0, "damage":[17.6,89.0]},
+			{"tick":1, "damage":[17.6,89.0]},
+			{"tick":2, "damage":[17.6,89.0]}]
+	},
+	{
+		"action":"Horror",
+		"type":"threshold",
+		"cooldown":15.0,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":1, "damage":[40.0,200.0]}]
+	},
+	{
+		"action":"Surge",
+		"type":"basic",
+		"cooldown":20.4,
+		"incurs_gcd":true,
+		"ability-type":"movement",
+		"hits":[]
+	},
+	{
+		"action":"Detonate",
+		"type":"threshold",
+		"cooldown":30.0,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":4, "damage":[100.0,350.0]}]
+	},
+	{
+		"action":"Greater Chain",
+		"type":"basic",
+		"cooldown":10.2,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":1, "damage":[20.0,100.0]}]
+	},
+	{
+		"action":"Chain",
+		"type":"basic",
+		"cooldown":10.2,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":1, "damage":[20.0,100.0]}]
+	},
+	{
+		"action":"Wild Magic",
+		"type":"threshold",
+		"cooldown":20.4,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":1, "damage":[50.0,165.0]},
+			{"tick":2, "damage":[50.0,215.0]}]
+	},
+	{
+		"action":"Metamorphosis",
+		"type":"ultimate",
+		"cooldown":60.0,
+		"incurs_gcd":true,
+		"ability-type":"non-damage",
+		"hits":[]
+	},
+	{
+		"action":"Corruption Blast",
+		"type":"basic",
+		"cooldown":15.0,
+		"incurs_gcd":true,
+		"ability-type":"bleed",
+		"hits":[{"tick":1, "damage":[33.0,100.0]},
+			{"tick":3, "damage":[33.0,100.0]},
+			{"tick":5, "damage":[33.0,100.0]},
+			{"tick":7, "damage":[33.0,100.0]},
+			{"tick":9, "damage":[33.0,100.0]}]
+	},
+	{
+		"action":"Smoke Tendrils",
+		"type":"threshold",
+		"cooldown":45.0,
+		"incurs_gcd":true,
+		"ability-type":"channeled",
+		"hits":[{"tick":1, "damage":[28.75,143.75]},
+			{"tick":3, "damage":[28.75,143.75]},
+			{"tick":5, "damage":[28.75,143.75]},
+			{"tick":7, "damage":[28.75,143.75]}]
+	},
+	{
+		"action":"Tsunami",
+		"type":"ultimate",
+		"cooldown":60.0,
+		"incurs_gcd":true,
+		"ability-type":"standard",
+		"hits":[{"tick":1, "damage":[200.0,300.0]}]
+	},
+	{
+		"action":"Sunshine",
+		"type":"ultimate",
+		"cooldown":60.0,
+		"incurs_gcd":true,
+		"ability-type":"non-damage",
+		"hits":[]
+	},
+	{
+		"action":"Limitless",
 		"type":"special",
 		"cooldown":90.0,
-		"incurs_gcd":false
+		"incurs_gcd":false,
+		"ability-type":"non-damage",
+		"hits":[]
 	},
 	{
-		"ability":"Masterwork Spear of Annihilation",
+		"action":"Masterwork Spear of Annihilation",
 		"type":"weapon",
 		"cooldown":0.0,
-		"incurs_gcd":false
+		"incurs_gcd":false,
+		"ability-type":null,
+		"hits":[]
 	},
 	{
-		"ability":"Drygore Mace",
+		"action":"Drygore Mace",
 		"type":"weapon",
 		"cooldown":0.0,
-		"incurs_gcd":false
+		"incurs_gcd":false,
+		"ability-type":null,
+		"hits":[]
 	},
 	{
-		"ability":"Zaros Godsword",
+		"action":"Zaros Godsword",
 		"type":"weapon",
 		"cooldown":0.0,
-		"incurs_gcd":false
+		"incurs_gcd":false,
+		"ability-type":null,
+		"hits":[]
 	},
 	{
-		"ability":"Noxious Scythe",
+		"action":"Noxious Scythe",
 		"type":"weapon",
 		"cooldown":0.0,
-		"incurs_gcd":false
+		"incurs_gcd":false,
+		"ability-type":null,
+		"hits":[]
 	},
 	{
-		"ability":"Statiuss Warhammer",
+		"action":"Statiuss Warhammer",
 		"type":"weapon",
 		"cooldown":0.0,
-		"incurs_gcd":false
+		"incurs_gcd":false,
+		"ability-type":null,
+		"hits":[]
 	},
 	{
-		"ability":"Drygore Rapier",
+		"action":"Drygore Rapier",
 		"type":"weapon",
 		"cooldown":0.0,
-		"incurs_gcd":false
+		"incurs_gcd":false,
+		"ability-type":null,
+		"hits":[]
 	},
 	{
-		"ability":"Drygore Longsword",
+		"action":"Drygore Longsword",
 		"type":"weapon",
 		"cooldown":0.0,
-		"incurs_gcd":false
+		"incurs_gcd":false,
+		"ability-type":null,
+		"hits":[]
 	},
 	{
-		"ability":"Dark Shard of Leng",
+		"action":"Dark Shard of Leng",
 		"type":"weapon",
 		"cooldown":0.0,
-		"incurs_gcd":false
+		"incurs_gcd":false,
+		"ability-type":null,
+		"hits":[]
 	},
 	{
-		"ability":"Khopesh of Tumeken",
+		"action":"Khopesh of Tumeken",
 		"type":"weapon",
 		"cooldown":0.0,
-		"incurs_gcd":false
+		"incurs_gcd":false,
+		"ability-type":null,
+		"hits":[]
 	},
 	{
-		"ability":"Blightbound Crossbow",
+		"action":"Blightbound Crossbow",
 		"type":"weapon",
 		"cooldown":0.0,
-		"incurs_gcd":false
+		"incurs_gcd":false,
+		"ability-type":null,
+		"hits":[]
 	},
 	{
-		"ability":"Ascension Crossbow",
+		"action":"Ascension Crossbow",
 		"type":"weapon",
 		"cooldown":0.0,
-		"incurs_gcd":false
+		"incurs_gcd":false,
+		"ability-type":null,
+		"hits":[]
 	},
 	{
-		"ability":"Shadow Glaive",
+		"action":"Shadow Glaive",
 		"type":"weapon",
 		"cooldown":0.0,
-		"incurs_gcd":false
+		"incurs_gcd":false,
+		"ability-type":null,
+		"hits":[]
 	},
 	{
-		"ability":"Mechanized Chinchompa",
+		"action":"Mechanized Chinchompa",
 		"type":"weapon",
 		"cooldown":0.0,
-		"incurs_gcd":false
+		"incurs_gcd":false,
+		"ability-type":null,
+		"hits":[]
 	},
 	{
-		"ability":"Decimation",
+		"action":"Decimation",
 		"type":"weapon",
 		"cooldown":0.0,
-		"incurs_gcd":false
+		"incurs_gcd":false,
+		"ability-type":null,
+		"hits":[]
 	},
 	{
-		"ability":"Noxious Longbow",
+		"action":"Noxious Longbow",
 		"type":"weapon",
 		"cooldown":0.0,
-		"incurs_gcd":false
+		"incurs_gcd":false,
+		"ability-type":null,
+		"hits":[]
 	},
 	{
-		"ability":"Seren Godbow",
+		"action":"Seren Godbow",
 		"type":"weapon",
 		"cooldown":0.0,
-		"incurs_gcd":false
+		"incurs_gcd":false,
+		"ability-type":null,
+		"hits":[]
 	},
 	{
-		"ability":"Strykebow",
+		"action":"Strykebow",
 		"type":"weapon",
 		"cooldown":0.0,
-		"incurs_gcd":false
+		"incurs_gcd":false,
+		"ability-type":null,
+		"hits":[]
 	},
 	{
-		"ability":"Eldritch Crossbow",
+		"action":"Eldritch Crossbow",
 		"type":"weapon",
 		"cooldown":0.0,
-		"incurs_gcd":false
+		"incurs_gcd":false,
+		"ability-type":null,
+		"hits":[]
 	},
 	{
-		"ability":"Wyvern Crossbow",
+		"action":"Wyvern Crossbow",
 		"type":"weapon",
 		"cooldown":0.0,
-		"incurs_gcd":false
+		"incurs_gcd":false,
+		"ability-type":null,
+		"hits":[]
 	},
 	{
-		"ability":"Wand of the Praesul",
+		"action":"Wand of the Praesul",
 		"type":"weapon",
 		"cooldown":0.0,
-		"incurs_gcd":false
+		"incurs_gcd":false,
+		"ability-type":null,
+		"hits":[]
 	},
 	{
-		"ability":"Seismic Wand",
+		"action":"Seismic Wand",
 		"type":"weapon",
 		"cooldown":0.0,
-		"incurs_gcd":false
+		"incurs_gcd":false,
+		"ability-type":null,
+		"hits":[]
 	},
 	{
-		"ability":"Fractured Staff of Armadyl",
+		"action":"Fractured Staff of Armadyl",
 		"type":"weapon",
 		"cooldown":0.0,
-		"incurs_gcd":false
+		"incurs_gcd":false,
+		"ability-type":null,
+		"hits":[]
 	},
 	{
-		"ability":"Staff of Sliske",
+		"action":"Staff of Sliske",
 		"type":"weapon",
 		"cooldown":0.0,
-		"incurs_gcd":false
+		"incurs_gcd":false,
+		"ability-type":null,
+		"hits":[]
 	},
 	{
-		"ability":"Noxious Staff",
+		"action":"Noxious Staff",
 		"type":"weapon",
 		"cooldown":0.0,
-		"incurs_gcd":false
+		"incurs_gcd":false,
+		"ability-type":null,
+		"hits":[]
 	}
 ]

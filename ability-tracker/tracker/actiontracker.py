@@ -12,14 +12,15 @@ from action import Action, KeybindAction, ActionProfile
 class ActionTracker:
     global_cooldown = 1.8
     tick = 0.6
-    def __init__(self, ui_queue, default_profile):
+    def __init__(self, ui_queue, configuration):
         self._ui_queue = ui_queue
         self._modifier_key = None
 
-        self._weapon_map = self.load_weapons('ability-tracker\\data\\weapons.json')
-        self._action_map = self.load_actions('ability-tracker\\data\\abilityinfo.json')
-        self._input_profiles = self.load_input_profiles('ability-tracker\\data\\saved_profiles.json', 'ability-tracker\\data\\saved profiles\\')
-        self.update_weapon_profile(default_profile)
+        self._weapon_map = self.load_weapons(configuration['weapons-file'])
+        self._action_map = self.load_actions(configuration['action-info-file'])
+        self._input_profiles = self.load_input_profiles(configuration['saved-profiles-metadata-file'],
+                                                        configuration['saved-profiles-directory'])
+        self.update_weapon_profile(configuration['default-profile'])
 
         keyboard_listener = keyboard.Listener(on_press=self.on_press, on_release=self.on_release)
         keyboard_listener.start()
@@ -86,7 +87,7 @@ class ActionTracker:
             loaded_actions = json.loads("".join(file.readlines()))
             action_map = {}
             for action in loaded_actions:
-                action_map[action['ability']] = Action(action)
+                action_map[action['action']] = Action(action)
             return action_map
         
     def load_input_profiles(self, profiles_metadata_path, saved_profiles_directory):
@@ -126,19 +127,19 @@ class ActionTracker:
             self._modifier_key = None
 
 class ActionTrackerUI:
-    def __init__(self, icons_path, max_icons, update_interval, icon_shape, padding, tracker_queue):
+    def __init__(self, configuration, tracker_queue):
         self._root = tkinter.Tk()
-        self._icon_map = self.load_icons(icons_path)
+        self._icon_map = self.load_icons(configuration['action-icon-directory'])
         self._icon_history = []
-        self._max_icons = max_icons
-        self._update_interval = update_interval
-        self._icon_shape = icon_shape
-        self._padding = padding
+        self._max_icons = configuration['actiontracker-icons']
+        self._update_interval = configuration['actiontracker-update-interval']
+        self._icon_shape = configuration['actiontracker-icon-shape']
+        self._padding = configuration['actiontracker-icon-padding']
         self._tracker_queue = tracker_queue
         self._ability_queue = []
         self._root.title("LMT's Ability Tracker")
-        self._root.attributes('-topmost', True)
-        self._root.iconphoto(False,ImageTk.PhotoImage(file='ability-tracker\\data\\app icons\\icon.png'))
+        self._root.attributes('-topmost', configuration['actiontracker-always-on-top'])
+        self._root.iconphoto(False,ImageTk.PhotoImage(file=configuration['application-icon-file']))
         self._root.geometry("{}x{}".format(((self._icon_shape[0]+1) * self._padding[0]) +
                                            self._icon_shape[0]*self._max_icons,
                                            self._icon_shape[1] + (self._padding[1] * 2)))
@@ -163,11 +164,11 @@ class ActionTrackerUI:
         self._root.mainloop()
 
     def update(self):
-        while(self._tracker_queue.qsize() > 0):
+        while self._tracker_queue.qsize() > 0:
             self._ability_queue.append(self._tracker_queue.get())
         for widget in self._root.winfo_children():
             widget.destroy()
-        while(len(self._ability_queue) > self._max_icons):
+        while len(self._ability_queue) > self._max_icons:
             self._ability_queue.pop(0)
         for i in range(len(self._ability_queue)-1, -1, -1):
             try:
@@ -179,7 +180,7 @@ class ActionTrackerUI:
         self._root.after(self._update_interval, self.update)
 
 
-def run_tracker(ui_queue):
-    tracker = ActionTracker(ui_queue, '2h_melee')
+def run_tracker(ui_queue, configuration):
+    tracker = ActionTracker(ui_queue, configuration)
     tracker.mainloop()
  

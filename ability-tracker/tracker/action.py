@@ -1,11 +1,13 @@
 from pynput import keyboard
 
 class Action:
-    def __init__(self, deserializeable):
-        self.id = deserializeable['ability']
-        self.action_type = deserializeable['type']
-        self.cooldown = deserializeable['cooldown']
-        self.incurs_gcd = deserializeable['incurs_gcd']
+    def __init__(self, action_dict):
+        self.id = action_dict['action']
+        self.action_type = action_dict['type']
+        self.cooldown = action_dict['cooldown']
+        self.incurs_gcd = action_dict['incurs_gcd']
+        self.ability_type = action_dict['ability-type']
+        self.damage_hits = action_dict['hits']
         self.last_use = 0
 
     def can_activate(self, activation_time):
@@ -18,6 +20,9 @@ class Action:
         else:
             return False
 
+    def get_damage_hits(self):
+        return self.damage_hits.copy()
+
     def __str__(self):
         return "{} : {}".format(self.id, self.action_type)
 
@@ -25,12 +30,13 @@ class Action:
 class MousebindAction:
     shape = (30,30)
     def __init__(self, mousebind_dict):
-        self.action = mousebind_dict['ability']
-        self.x1 = mousebind_dict['x']
-        self.y1 = mousebind_dict['y']
-        self.x2 = mousebind_dict['w']
-        self.y2 = mousebind_dict['h']
+        self.action = mousebind_dict['action']
+        self.x1 = mousebind_dict['x1']
+        self.y1 = mousebind_dict['y1']
+        self.x2 = mousebind_dict['x2']
+        self.y2 = mousebind_dict['y2']
         self.key = ((self.x1+self.x2)/2, (self.y1+self.y2)/2)
+        self.image = None
             #      y1
             #   x1    x2
             #      y2
@@ -63,11 +69,11 @@ class MousebindAction:
 
     def to_dict(self):
         ability = {}
-        ability['ability'] = self.action
-        ability['x'] = self.x1
-        ability['y'] = self.y1
-        ability['w'] = self.x2
-        ability['h'] = self.y2
+        ability['action'] = self.action
+        ability['x1'] = self.x1
+        ability['y1'] = self.y1
+        ability['x2'] = self.x2
+        ability['y2'] = self.y2
         return ability
 
     def __str__(self):
@@ -83,7 +89,7 @@ class KeybindAction:
                        'key.f8':'f8', 'key.f9':'f9', 'key.f10':'f10', 'key.f11':'f11', 'key.f12':'f12'}
 
     def __init__(self, keybind_dict):
-        self.action = keybind_dict['ability']
+        self.action = keybind_dict['action']
         self.primary_key = keybind_dict['key'].casefold()
         if keybind_dict['modifier'] is None:
             self.modifier_key = None
@@ -114,7 +120,7 @@ class KeybindAction:
         return self.key == other
 
     def to_dict(self):
-        return {'ability':self.action, 'key':self.primary_key, 'modifier':self.modifier_key}
+        return {'action':self.action, 'key':self.primary_key, 'modifier':self.modifier_key}
 
     def __hash__(self):
         return self.key.__hash__()
@@ -128,11 +134,11 @@ class ActionProfile:
         self._keybinds = {}
         self._mousebinds = []
 
-        for keybind in profile_dict['keypress_activated']:
+        for keybind in profile_dict['keybind']:
             keybind_action = KeybindAction(keybind)
             self._keybinds[keybind_action.__hash__()] = keybind_action
 
-        for mousebind in profile_dict['mouse_activated']:
+        for mousebind in profile_dict['mousebind']:
             self._mousebinds.append(MousebindAction(mousebind))
         self._mousebinds.sort()
 
