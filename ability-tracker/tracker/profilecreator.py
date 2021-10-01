@@ -25,10 +25,10 @@ class MouseBindSelector:
             time.sleep(1)
 
     def on_click(self, x, y, button, pressed):
-        if(pressed):
-            if(button == mouse.Button.middle):
+        if pressed:
+            if button == mouse.Button.middle:
                 self.popup(x,y)
-            elif(button == mouse.Button.right):
+            elif button == mouse.Button.right:
                 self.active = False
                 return False
 
@@ -50,7 +50,27 @@ class MouseBindSelector:
     def add_mousebind(self, action, x, y, root, screenshot):
         self.queue.put((action, x, y, screenshot))
         root.destroy()
-        
+
+class MouseAdrenSelector:
+    def __init__(self, queue, configuration):
+        self.configuration = configuration
+        self.queue = queue
+        self.active = True
+        self.coords = []
+
+    def run(self):
+        self.mouse_listener = mouse.Listener(on_click=self.on_click)
+        self.mouse_listener.start()
+        while(self.active):
+            time.sleep(1)
+
+    def on_click(self, x, y, button, pressed):
+        if pressed and button == mouse.Button.right:
+            self.coords.append((x,y))
+            if len(self.coords) == 2:
+                self.queue.put((self.coords[0][0], self.coords[0][1], self.coords[1][0]-self.coords[0][0], 1))
+                self.active = False
+                return False
 
 
 class ProfileCreator:
@@ -65,16 +85,18 @@ class ProfileCreator:
         self.clickable_region_path = self.configuration['clickable-region-file-template']
 
         self.root = tkinter.Tk()
-        self.root.geometry('420x500')
+        self.root.geometry('420x700')
         self.root.attributes('-topmost', True)
         self.root.iconphoto(False,ImageTk.PhotoImage(file=self.configuration['application-icon-file']))
         self.root.title('Input Profile Creator')
 
         self.mouse_queue = multiprocessing.Queue()
+        self.adren_queue = multiprocessing.Queue()
 
         self.build_profile_selector()
         self.build_mousebind_creator()
         self.build_keybind_creator()
+        self.build_misc_tools()
         
         self.load_profile()
         self.loop()
@@ -153,9 +175,29 @@ class ProfileCreator:
                                                        command=self.delete_keybind)
         self.keybind_delete.grid(row=2, column=3, sticky=tkinter.NSEW, pady=2)
 
+    def build_misc_tools(self):
+        self.misc_container = tkinter.Frame(self.root)
+        self.misc_container.grid(row=3, sticky=tkinter.EW)
+
+        self.adrenaline_label = tkinter.Label(self.misc_container, text="Adrenaline Reader")
+        self.adrenaline_label.grid(row=0, column=0, sticky=tkinter.EW, pady=2)
+
+        self.adrenaline_listener_button = tkinter.Button(self.misc_container,
+                                                         text="Start Mouse Listener",
+                                                         command=self.start_adrenaline_listener)
+        self.adrenaline_listener_button.grid(row=0, column=1, sticky=tkinter.EW, pady=2)
+        self.adrenaline_description = tkinter.Label(self.misc_container,
+                                                   text="Right click both ends of the adrenaline bar to mark its position.")
+        self.adrenaline_description.grid(row=1, column=0, sticky=tkinter.EW, pady=2,
+                                          rowspan=2,columnspan=3)
+        self.adrenaline_display = tkinter.Label(self.misc_container, text="")
+        self.adrenaline_display.grid(row=3, column=0, sticky=tkinter.EW, pady=2)
+
     def loop(self):
         if self.mouse_queue.qsize() > 0:
             self.add_mousebind(self.mouse_queue.get())
+        if self.adren_queue.qsize() > 0:
+            self.update_adrenaline_bar(self.adren_queue.get())
         self.root.after(25, self.loop)
 
     def load_profile(self):
@@ -170,7 +212,8 @@ class ProfileCreator:
         self.update_keybinds()
 
     def save_profile(self):
-        saved_profile_data = {'keybinds':[], 'mousebinds':[]}
+        saved_profile_data = {'keybinds':[], 'mousebinds':[], 'adrenaline-bar':[]}
+        saved_profile_data['adrenaline-bar'] = self.profile_data['adrenaline-bar']
         for i in range(len(self.profile_data['keybinds'])):
                 saved_profile_data['keybinds'].append(self.profile_data['keybinds'][i].to_dict())
         for i in range(len(self.profile_data['mousebinds'])):
@@ -183,11 +226,16 @@ class ProfileCreator:
         self.load_profile()
 
     def generate_profile(self):
-        self.profile_data = {'keybinds':[], 'mousebinds':[]}
+        self.profile_data = {'keybinds':[], 'mousebinds':[], 'adrenaline-bar':[]}
         self.save_profile()
 
     def start_mouse_listener(self):
         mouse = MouseBindSelector(self.mouse_queue, self.configuration, self.actions)
+        mouse_process = multiprocessing.Process(target=mouse.run)
+        mouse_process.start()
+
+    def start_adrenaline_listener(self):
+        mouse = MouseAdrenSelector(self.adren_queue, self.configuration)
         mouse_process = multiprocessing.Process(target=mouse.run)
         mouse_process.start()
 
@@ -224,6 +272,10 @@ class ProfileCreator:
         self.profile_data['keybinds'].insert(0, KeybindAction({
             'action':action, 'key':key, 'modifier':modifier}))
         self.update_keybinds()
+
+    def update_adrenaline_bar(self, region):
+        self.profile_data['adrenaline-bar'] = region
+        self.adrenaline_display.text = "Location recorded"
 
     def update_mousebinds(self):
         self.mousebind_list.delete(0, self.mousebind_list.size()-1)
