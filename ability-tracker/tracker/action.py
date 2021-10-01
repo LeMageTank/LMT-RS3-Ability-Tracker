@@ -6,9 +6,13 @@ class Action:
         self.action_type = action_dict['type']
         self.cooldown = action_dict['cooldown']
         self.incurs_gcd = action_dict['incurs_gcd']
+        self.adrenaline_delta = action_dict['adrenaline-delta']
         self.ability_type = action_dict['ability-type']
         self.damage_hits = action_dict['hits']
         self.last_use = 0
+
+    def cooldown_remaining(self, current_time):
+        return - min(current_time - self.last_use - self.cooldown, 0)
 
     def can_activate(self, activation_time):
         return activation_time - self.last_use > self.cooldown
@@ -130,17 +134,27 @@ class KeybindAction:
     
 
 class ActionProfile:
-    def __init__(self, profile_dict):
+    def __init__(self, profile_dict, weapon_type):
         self._keybinds = {}
         self._mousebinds = []
+        self._adrenaline_bar = profile_dict['adrenaline-bar']
+        self._weapon_type = weapon_type
 
-        for keybind in profile_dict['keybind']:
+        for keybind in profile_dict['keybinds']:
             keybind_action = KeybindAction(keybind)
             self._keybinds[keybind_action.__hash__()] = keybind_action
 
-        for mousebind in profile_dict['mousebind']:
+        for mousebind in profile_dict['mousebinds']:
             self._mousebinds.append(MousebindAction(mousebind))
         self._mousebinds.sort()
+
+    @property
+    def adrenaline_bar(self):
+        return self._adrenaline_bar
+
+    @property
+    def weapon_type(self):
+        return self._weapon_type
 
     def search_mousebind(self, key):
         first_index = 0

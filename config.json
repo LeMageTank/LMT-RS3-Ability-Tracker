@@ -9,13 +9,27 @@
 	"actiontracker-icons": 8,
 	"actiontracker-icon-shape": [30,30],
 	"actiontracker-icon-padding": [4,4],
-	"actiontracker-update-interval": 25,
+	"actiontracker-update-interval": 250,
 	"actiontracker-always-on-top": true,
 	"profile-types":["dw_melee", "2h_melee", "dw_range", "2h_range", "dw_magic", "2h_magic"],
 	"modifier-keys":["","alt","shift","ctrl"],
 	"clickable-region-file-template":"ability-tracker\\data\\saved profile clickables\\{}{}{}.png",
 	"profile-creator-default-icon-file":"ability-tracker\\icons\\Zaros Godsword.png",
-	"action-icon-file-template":"ability-tracker\\icons\\{}.png"
-	
-	
+	"action-icon-file-template":"ability-tracker\\icons\\{}.png",
+	"rotation-helper-enabled":true,
+	"action-tracker-enabled":true,
+	"rotation-helper-rotation":"berserk",
+	"rotation-helper-icon-shape":[30,30],
+	"rotation-helper-icon-padding":[4,4],
+	"tools-path":"ability-tracker\\tracker\\tools\\",
+	"tools":[{"file-name": "ActionTracker",
+		  "name": "action-tracker",
+		  "tracker-tool": "ActionTracker",
+		  "tracker-tool-ui": "ActionTrackerUI",
+		  "enabled": true},
+		 {"file-name": "RotationHelper",
+		  "name": "rotation-helper",
+		  "tracker-tool": "RotationHelper",
+		  "tracker-tool-ui": "RotationHelperUI",
+		  "enabled": true}]
 }

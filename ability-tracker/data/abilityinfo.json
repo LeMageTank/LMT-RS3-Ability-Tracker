@@ -4,6 +4,7 @@
 		"type":"basic",
 		"cooldown":3.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":1, "damage":[30.0,120.0]}]
 	},
@@ -12,6 +13,7 @@
 		"type":"basic",
 		"cooldown":10.2,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[20.0,120.0]}]
 	},
@@ -20,6 +22,7 @@
 		"type":"basic",
 		"cooldown":10.2,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[20.0,120.0]}]
 	},
@@ -28,6 +31,7 @@
 		"type":"basic", 
 		"cooldown":15.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[28.8,120.0]}]
 	},
@@ -36,6 +40,7 @@
 		"type":"basic",
 		"cooldown":15.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":1, "damage":[20.0,100.0]}]
 	},
@@ -44,6 +49,7 @@
 		"type":"threshold",
 		"cooldown":30.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"bleed",
 		"hits":[{"tick":1, "damage":[20.0,50.0]},
 			{"tick":3, "damage":[20.0,50.0]},
@@ -56,6 +62,7 @@
 		"type":"utlimate",
 		"cooldown":30.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-100,
 		"ability-type":"standard",
 		"hits":[{"tick":2, "damage":[250.0,350.0]}]
 	},
@@ -64,14 +71,16 @@
 		"type":"basic",
 		"cooldown":10.2,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":1, "damage":[31.4,157.0]}]
 	},
 	{
 		"action":"Forceful Backhand",
 		"type":"threshold",
-		"cooldown":3.0,
+		"cooldown":15.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"standard",
 		"hits":[{"tick":1, "damage":[40.0,200.0]}]
 	},
@@ -80,6 +89,7 @@
 		"type":"basic",
 		"cooldown":10.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":1, "damage":[31.4,157.0]}]
 	},
@@ -88,6 +98,7 @@
 		"type":"basic",
 		"cooldown":20.4,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":1, "damage":[25.0,125.0]}]
 	},
@@ -96,6 +107,7 @@
 		"type":"basic",
 		"cooldown":20.4,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":1, "damage":[45.0,225.0]}]
 	},
@@ -104,6 +116,7 @@
 		"type":"threshold",
 		"cooldown":20.4,
 		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"channeled",
 		"hits":[{"tick":1, "damage":[31.25,157.0]},
 			{"tick":3, "damage":[31.25,157.0]},
@@ -115,6 +128,7 @@
 		"type":"threshold",
 		"cooldown":20.4,
 		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"channeled",
 		"hits":[{"tick":1, "damage":[18.75,94.0]},
 			{"tick":3, "damage":[18.75,94.0]},
@@ -126,6 +140,7 @@
 		"type":"basic",
 		"cooldown":15.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[37.6,188.0]}]
 	},
@@ -133,16 +148,18 @@
 		"action":"Hurricane",
 		"type":"threshold",
 		"cooldown":20.4,
-		"incurs_gcd":true,,
+		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[66.0,219.0]},
-			{"tick":, "damage":[84.0,161.0]}]
+			{"tick":1, "damage":[84.0,161.0]}]
 	},
 	{
 		"action":"Bladed Dive",
 		"type":"basic",
 		"cooldown":20.4,
 		"incurs_gcd":false,
+		"adrenaline-delta":0,
 		"ability-type":"movement",
 		"hits":[]
 	},
@@ -151,6 +168,7 @@
 		"type":"ultimate",
 		"cooldown":60.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-100,
 		"ability-type":"bleed",
 		"hits":[{"tick":0, "damage":[37.0,188.0]},
 			{"tick":2, "damage":[62.0,62.0]},
@@ -162,8 +180,9 @@
 	{
 		"action":"Blood Tendrils",
 		"type":"threshold",
-		"cooldown":25.0,
+		"cooldown":45.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"bleed",
 		"hits":[{"tick":1, "damage":[36.0,180.0]},
 			{"tick":3, "damage":[18.0,90.0]},
@@ -176,6 +195,7 @@
 		"type":"ultimate",
 		"cooldown":60.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-100,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[250.0,350.0]}]
 	},
@@ -184,6 +204,7 @@
 		"type":"Ultimate",
 		"cooldown":120.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-100,
 		"ability-type":"standard",
 		"hits":[]
 	},
@@ -192,6 +213,7 @@
 		"type":"basic",
 		"cooldown":15.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"bleed",
 		"hits":[{"tick":1, "damage":[20.0,28.0]},
 			{"tick":3, "damage":[20.0,28.0]},
@@ -204,6 +226,7 @@
 		"type":"threshold",
 		"cooldown":15.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[40.0,200.0]}]
 	},
@@ -212,6 +235,7 @@
 		"type":"basic",
 		"cooldown":15.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[20.0,100.0]}]
 	},
@@ -220,6 +244,7 @@
 		"type":"basic",
 		"cooldown":3.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[18.0,94.0]}]
 	},
@@ -228,6 +253,7 @@
 		"type":"basic",
 		"cooldown":15.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":1, "damage":[20.0,37.0]},
 			{"tick":3, "damage":[20.0,37.0]},
@@ -240,6 +266,7 @@
 		"type":"basic",
 		"cooldown":5.4,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[31.0,157.0]}]
 	},
@@ -248,6 +275,7 @@
 		"type":"basic",
 		"cooldown":5.4,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"channeled",
 		"hits":[{"tick":0, "damage":[16.0,82.0]},
 			{"tick":2, "damage":[16.0,82.0]},
@@ -258,6 +286,7 @@
 		"type":"Threshold",
 		"cooldown":20.4,
 		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"channeled",
 		"hits":[{"tick":1, "damage":[37.6,188.0]},
 			{"tick":3, "damage":[37.6,188.0]},
@@ -269,6 +298,7 @@
 		"type":"theshold",
 		"cooldown":20.4,
 		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[43.0,219.0]}]
 	},
@@ -277,6 +307,7 @@
 		"type":"ultimate",
 		"cooldown":60.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-100,
 		"ability-type":"non-damage",
 		"hits":[]
 	},
@@ -285,6 +316,7 @@
 		"type":"basic",
 		"cooldown":7.2,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[37.6,188.0]}]
 	},
@@ -293,6 +325,7 @@
 		"type":"theshold",
 		"cooldown":30.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"channeled",
 		"hits":[{"tick":1, "damage":[43.8,219.0]},
 			{"tick":4, "damage":[43.8,219.0]},
@@ -304,6 +337,7 @@
 		"type":"basic",
 		"cooldown":7.2,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[37.6,188.0]}]
 	},
@@ -312,6 +346,7 @@
 		"type":"ultimate",
 		"cooldown":60.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-100,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[250.0,350.0]}]
 	},
@@ -320,6 +355,7 @@
 		"type":"ultimate",
 		"cooldown":60.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-100,
 		"ability-type":"standard",
 		"hits":[{"tick":1, "damage":[80.0,180.0]},
 			{"tick":3, "damage":[90.0,200.0]},
@@ -331,6 +367,7 @@
 		"type":"threshold",
 		"cooldown":60.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"non-damage",
 		"hits":[]
 	},
@@ -339,6 +376,7 @@
 		"type":"basic",
 		"cooldown":24.6,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"non-damage",
 		"hits":[]
 	},
@@ -347,6 +385,7 @@
 		"type":"basic",
 		"cooldown":15.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[20.0,100.0]}]
 	},
@@ -355,6 +394,7 @@
 		"type":"threshold",
 		"cooldown":45.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"non-damage",
 		"hits":[]
 	},
@@ -363,6 +403,7 @@
 		"type":"ultimate",
 		"cooldown":120.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-100,
 		"ability-type":"non-damage",
 		"hits":[]
 	},
@@ -371,6 +412,7 @@
 		"type":"basic",
 		"cooldown":30.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"non-damage",
 		"hits":[]
 	},
@@ -379,6 +421,7 @@
 		"type":"threshold",
 		"cooldown":30.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"non-damage",
 		"hits":[]
 	},
@@ -387,6 +430,7 @@
 		"type":"basic",
 		"cooldown":30.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"non-damage",
 		"hits":[]
 	},
@@ -395,6 +439,7 @@
 		"type":"basic",
 		"cooldown":30.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"non-damage",
 		"hits":[]
 	},
@@ -403,6 +448,7 @@
 		"type":"threshold",
 		"cooldown":30.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[20.0,100.0]}]
 	},
@@ -411,6 +457,7 @@
 		"type":"basic",
 		"cooldown":20.4,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"non-damage",
 		"hits":[]
 	},
@@ -419,6 +466,7 @@
 		"type":"ultimate",
 		"cooldown":60.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-100,
 		"ability-type":"non-damage",
 		"hits":[]
 	},
@@ -427,6 +475,7 @@
 		"type":"ultimate",
 		"cooldown":120.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-100,
 		"ability-type":"non-damage",
 		"hits":[]
 	},
@@ -435,6 +484,7 @@
 		"type":"special",
 		"cooldown":0.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":0,
 		"ability-type":"special",
 		"hits":[]
 	},
@@ -443,6 +493,7 @@
 		"type":"basic",
 		"cooldown":0.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":0,
 		"ability-type":"non-damage",
 		"hits":[]
 	},
@@ -451,6 +502,7 @@
 		"type":"basic",
 		"cooldown":30.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[20.0,100.0]}]
 	},
@@ -459,6 +511,7 @@
 		"type":"special",
 		"cooldown":0.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":0,
 		"ability-type":"special",
 		"hits":[]
 	},
@@ -467,6 +520,7 @@
 		"type":"basic",
 		"cooldown":30.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"non-damage",
 		"hits":[]
 	},
@@ -475,6 +529,7 @@
 		"type":"threshold",
 		"cooldown":120.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"non-damage",
 		"hits":[]
 	},
@@ -483,6 +538,7 @@
 		"type":"threshold",
 		"cooldown":60.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"non-damage",
 		"hits":[]
 	},
@@ -491,6 +547,7 @@
 		"type":"ultimate",
 		"cooldown":120.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-100,
 		"ability-type":"channeled",
 		"hits":[{"tick":0, "damage":[49.5,150.0]},
 			{"tick":0, "damage":[60.3,183.0]},
@@ -524,6 +581,7 @@
 		"type":"ultimate",
 		"cooldown":300.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-100,
 		"ability-type":"non-damage",
 		"hits":[]
 	},
@@ -532,6 +590,7 @@
 		"type":"consumable",
 		"cooldown":1.2,
 		"incurs_gcd":false,
+		"adrenaline-delta":0,
 		"ability-type":"non-damage",
 		"hits":[]
 	},
@@ -540,6 +599,7 @@
 		"type":"basic",
 		"cooldown":10.2,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[125.0,219.0]}]
 	},
@@ -548,6 +608,7 @@
 		"type":"basic",
 		"cooldown":5.4,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[31.4,157.0]}]
 	},
@@ -556,6 +617,7 @@
 		"type":"basic",
 		"cooldown":3.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[18.0,94.0]}]
 	},
@@ -564,6 +626,7 @@
 		"type":"basic",
 		"cooldown":15.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[20.0,100.0]}]
 	},
@@ -572,6 +635,7 @@
 		"type":"basic",
 		"cooldown":5.2,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[31.0,157.0]}]
 	},
@@ -580,6 +644,7 @@
 		"type":"basic",
 		"cooldown":15.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"bleed",
 		"hits":[{"tick":1, "damage":[20.0,37.0]},
 			{"tick":3, "damage":[20.0,37.0]},
@@ -592,6 +657,7 @@
 		"type":"threshold",
 		"cooldown":20.4,
 		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[100.0,120.0]},
 			{"tick":1, "damage":[100.0,210.0]}]
@@ -601,6 +667,7 @@
 		"type":"ultimate",
 		"cooldown":30.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-100,
 		"ability-type":"bleed",
 		"hits":[{"tick":0, "damage":[37.0,188.0]},
 			{"tick":2, "damage":[62.0,62.0]},
@@ -614,6 +681,7 @@
 		"type":"threshold",
 		"cooldown":15.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[40.0,200.0]}]
 	},
@@ -622,6 +690,7 @@
 		"type":"basic",
 		"cooldown":5.4,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"bleed",
 		"hits":[{"tick":0, "damage":[31.0,157.0]}]
 	},
@@ -630,6 +699,7 @@
 		"type":"basic",
 		"cooldown":15.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[20.0,100.0]}]
 	},
@@ -638,6 +708,7 @@
 		"type":"threshold",
 		"cooldown":15.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[40.0,200.0]}]
 	},
@@ -646,6 +717,7 @@
 		"type":"basic",
 		"cooldown":20.4,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"movement",
 		"hits":[]
 	},
@@ -654,6 +726,7 @@
 		"type":"threshold",
 		"cooldown":20.4,
 		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"channeled",
 		"hits":[{"tick":0, "damage":[18.75,94.0]},
 			{"tick":1, "damage":[18.75,94.0]},
@@ -669,6 +742,7 @@
 		"type":"basic",
 		"cooldown":10.2,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[20.0,100.0]},
 			{"tick":1, "damage":[10.0,50.0]},
@@ -679,6 +753,7 @@
 		"type":"basic",
 		"cooldown":10.2,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[20.0,100.0]}]
 	},
@@ -687,6 +762,7 @@
 		"type":"threshold",
 		"cooldown":30.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[43.0,219.0]}]
 	},
@@ -695,6 +771,7 @@
 		"type":"threshold",
 		"cooldown":15.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[37.0,188.0]}]
 	},
@@ -703,6 +780,7 @@
 		"type":"ultimate",
 		"cooldown":60.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-100,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[250.0,350.0]}]
 	},
@@ -711,6 +789,7 @@
 		"type":"basic",
 		"cooldown":15.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"bleed",
 		"hits":[{"tick":1, "damage":[33.0,100.0]},
 			{"tick":3, "damage":[33.0,100.0]},
@@ -723,6 +802,7 @@
 		"type":"threshold",
 		"cooldown":45.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"standard",
 		"hits":[{"tick":1, "damage":[66.0,500.0]}]
 	},
@@ -731,6 +811,7 @@
 		"type":"ultimate",
 		"cooldown":60.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-100,
 		"ability-type":"channeled",
 		"hits":[{"tick":1, "damage":[95.0,210.0]},
 			{"tick":3, "damage":[95.0,210.0]},
@@ -742,14 +823,16 @@
 		"type":"ultimate",
 		"cooldown":60.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-100,
 		"ability-type":"non-damage",
 		"hits":[]
 	},
 	{
-		"action":"Wrack,
+		"action":"Wrack",
 		"type":"basic",
 		"cooldown":3.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":1, "damage":[18.0,94.0]}]
 	},
@@ -758,6 +841,7 @@
 		"type":"threshold",
 		"cooldown":20.4,
 		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"channeled",
 		"hits":[{"tick":1, "damage":[37.5,188.0]},
 			{"tick":3, "damage":[37.5,188.0]},
@@ -769,6 +853,7 @@
 		"type":"basic",
 		"cooldown":3.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":1, "damage":[60.0,300.0]}]
 	},
@@ -777,6 +862,7 @@
 		"type":"basic",
 		"cooldown":5.4,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"channeled",
 		"hits":[{"tick":0, "damage":[16.0,82.0]},
 			{"tick":2, "damage":[16.0,82.0]},
@@ -787,6 +873,7 @@
 		"type":"basic",
 		"cooldown":15.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":1, "damage":[20.0,100.0]}]
 	},
@@ -795,6 +882,7 @@
 		"type":"basic",
 		"cooldown":5.4,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":1, "damage":[31.0,157.0]}]
 	},
@@ -803,6 +891,7 @@
 		"type":"basic",
 		"cooldown":10.2,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":1, "damage":[37.0,188.0]}]
 	},
@@ -811,6 +900,7 @@
 		"type":"basic",
 		"cooldown":15.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"bleed",
 		"hits":[{"tick":1, "damage":[20.0,37.0]},
 			{"tick":3, "damage":[20.0,37.0]},
@@ -823,6 +913,7 @@
 		"type":"ultimate",
 		"cooldown":30.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-100,
 		"ability-type":"standard",
 		"hits":[{"tick":1, "damage":[200.0,400.0]}]
 	},
@@ -831,6 +922,7 @@
 		"type":"threshold",
 		"cooldown":15.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"standard",
 		"hits":[{"tick":1, "damage":[40.0,200.0]}]
 	},
@@ -839,6 +931,7 @@
 		"type":"basic",
 		"cooldown":15.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":1, "damage":[20.0,100.0]}]
 	},
@@ -847,6 +940,7 @@
 		"type":"basic",
 		"cooldown":5.4,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"channeled",
 		"hits":[{"tick":0, "damage":[17.6,89.0]},
 			{"tick":1, "damage":[17.6,89.0]},
@@ -857,6 +951,7 @@
 		"type":"threshold",
 		"cooldown":15.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"standard",
 		"hits":[{"tick":1, "damage":[40.0,200.0]}]
 	},
@@ -865,6 +960,7 @@
 		"type":"basic",
 		"cooldown":20.4,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"movement",
 		"hits":[]
 	},
@@ -873,6 +969,7 @@
 		"type":"threshold",
 		"cooldown":30.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"standard",
 		"hits":[{"tick":4, "damage":[100.0,350.0]}]
 	},
@@ -881,6 +978,7 @@
 		"type":"basic",
 		"cooldown":10.2,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":1, "damage":[20.0,100.0]}]
 	},
@@ -889,6 +987,7 @@
 		"type":"basic",
 		"cooldown":10.2,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":1, "damage":[20.0,100.0]}]
 	},
@@ -897,6 +996,7 @@
 		"type":"threshold",
 		"cooldown":20.4,
 		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"standard",
 		"hits":[{"tick":1, "damage":[50.0,165.0]},
 			{"tick":2, "damage":[50.0,215.0]}]
@@ -906,6 +1006,7 @@
 		"type":"ultimate",
 		"cooldown":60.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-100,
 		"ability-type":"non-damage",
 		"hits":[]
 	},
@@ -914,6 +1015,7 @@
 		"type":"basic",
 		"cooldown":15.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":8,
 		"ability-type":"bleed",
 		"hits":[{"tick":1, "damage":[33.0,100.0]},
 			{"tick":3, "damage":[33.0,100.0]},
@@ -926,6 +1028,7 @@
 		"type":"threshold",
 		"cooldown":45.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-15,
 		"ability-type":"channeled",
 		"hits":[{"tick":1, "damage":[28.75,143.75]},
 			{"tick":3, "damage":[28.75,143.75]},
@@ -937,6 +1040,7 @@
 		"type":"ultimate",
 		"cooldown":60.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-100,
 		"ability-type":"standard",
 		"hits":[{"tick":1, "damage":[200.0,300.0]}]
 	},
@@ -945,6 +1049,7 @@
 		"type":"ultimate",
 		"cooldown":60.0,
 		"incurs_gcd":true,
+		"adrenaline-delta":-100,
 		"ability-type":"non-damage",
 		"hits":[]
 	},
@@ -953,6 +1058,7 @@
 		"type":"special",
 		"cooldown":90.0,
 		"incurs_gcd":false,
+		"adrenaline-delta":0,
 		"ability-type":"non-damage",
 		"hits":[]
 	},
@@ -961,6 +1067,7 @@
 		"type":"weapon",
 		"cooldown":0.0,
 		"incurs_gcd":false,
+		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[]
 	},
@@ -969,6 +1076,7 @@
 		"type":"weapon",
 		"cooldown":0.0,
 		"incurs_gcd":false,
+		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[]
 	},
@@ -977,6 +1085,7 @@
 		"type":"weapon",
 		"cooldown":0.0,
 		"incurs_gcd":false,
+		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[]
 	},
@@ -985,6 +1094,7 @@
 		"type":"weapon",
 		"cooldown":0.0,
 		"incurs_gcd":false,
+		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[]
 	},
@@ -993,6 +1103,7 @@
 		"type":"weapon",
 		"cooldown":0.0,
 		"incurs_gcd":false,
+		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[]
 	},
@@ -1001,6 +1112,7 @@
 		"type":"weapon",
 		"cooldown":0.0,
 		"incurs_gcd":false,
+		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[]
 	},
@@ -1009,6 +1121,7 @@
 		"type":"weapon",
 		"cooldown":0.0,
 		"incurs_gcd":false,
+		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[]
 	},
@@ -1017,6 +1130,7 @@
 		"type":"weapon",
 		"cooldown":0.0,
 		"incurs_gcd":false,
+		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[]
 	},
@@ -1025,6 +1139,7 @@
 		"type":"weapon",
 		"cooldown":0.0,
 		"incurs_gcd":false,
+		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[]
 	},
@@ -1033,6 +1148,7 @@
 		"type":"weapon",
 		"cooldown":0.0,
 		"incurs_gcd":false,
+		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[]
 	},
@@ -1041,6 +1157,7 @@
 		"type":"weapon",
 		"cooldown":0.0,
 		"incurs_gcd":false,
+		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[]
 	},
@@ -1049,6 +1166,7 @@
 		"type":"weapon",
 		"cooldown":0.0,
 		"incurs_gcd":false,
+		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[]
 	},
@@ -1057,6 +1175,7 @@
 		"type":"weapon",
 		"cooldown":0.0,
 		"incurs_gcd":false,
+		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[]
 	},
@@ -1065,6 +1184,7 @@
 		"type":"weapon",
 		"cooldown":0.0,
 		"incurs_gcd":false,
+		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[]
 	},
@@ -1073,6 +1193,7 @@
 		"type":"weapon",
 		"cooldown":0.0,
 		"incurs_gcd":false,
+		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[]
 	},
@@ -1081,6 +1202,7 @@
 		"type":"weapon",
 		"cooldown":0.0,
 		"incurs_gcd":false,
+		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[]
 	},
@@ -1089,6 +1211,7 @@
 		"type":"weapon",
 		"cooldown":0.0,
 		"incurs_gcd":false,
+		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[]
 	},
@@ -1097,6 +1220,7 @@
 		"type":"weapon",
 		"cooldown":0.0,
 		"incurs_gcd":false,
+		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[]
 	},
@@ -1105,6 +1229,7 @@
 		"type":"weapon",
 		"cooldown":0.0,
 		"incurs_gcd":false,
+		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[]
 	},
@@ -1113,6 +1238,7 @@
 		"type":"weapon",
 		"cooldown":0.0,
 		"incurs_gcd":false,
+		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[]
 	},
@@ -1121,6 +1247,7 @@
 		"type":"weapon",
 		"cooldown":0.0,
 		"incurs_gcd":false,
+		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[]
 	},
@@ -1129,6 +1256,7 @@
 		"type":"weapon",
 		"cooldown":0.0,
 		"incurs_gcd":false,
+		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[]
 	},
@@ -1137,6 +1265,7 @@
 		"type":"weapon",
 		"cooldown":0.0,
 		"incurs_gcd":false,
+		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[]
 	},
@@ -1145,6 +1274,7 @@
 		"type":"weapon",
 		"cooldown":0.0,
 		"incurs_gcd":false,
+		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[]
 	}
