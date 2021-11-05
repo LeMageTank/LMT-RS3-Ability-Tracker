@@ -31,5 +31,5 @@
 		  "name": "rotation-helper",
 		  "tracker-tool": "RotationHelper",
 		  "tracker-tool-ui": "RotationHelperUI",
-		  "enabled": true}]
+		  "enabled": false}]
 }
