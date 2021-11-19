@@ -90,7 +90,10 @@ class KeybindAction:
     modifier_key_map = {'shift':'shift', 'shift_r':'shift', 'alt_l':'alt', 'alt_gr':'alt', 'alt':'alt', 'ctrl':'ctrl',
                         'ctrl_l':'ctrl', 'ctrl_r':'ctrl'}
     special_key_map = {'key.f1':'f1', 'key.f2':'f2', 'key.f3':'f3', 'key.f4':'f4', 'key.f5':'f5', 'key.f6':'f6', 'key.f7':'f7',
-                       'key.f8':'f8', 'key.f9':'f9', 'key.f10':'f10', 'key.f11':'f11', 'key.f12':'f12'}
+                       'key.f8':'f8', 'key.f9':'f9', 'key.f10':'f10', 'key.f11':'f11', 'key.f12':'f12', 'À':'`', '½':'-',
+                       '»':'=', 'Û':'[', 'Ý':']', 'Ü':'\\', 'º':';', 'Þ':'\'', '¼':',', '¾':'.', '¿':'/', 'key.backspace':'backspace',
+                       'key.tab':'tab', 'key.caps_lock':'caps lock', 'key.esc':'esc', 'key.delete':'delete', 'key.left':'left',
+                       'key.up':'up', 'key.down':'down', 'key.right':'right'}
 
     def __init__(self, keybind_dict):
         self.action = keybind_dict['action']
@@ -137,8 +140,12 @@ class ActionProfile:
     def __init__(self, profile_dict, weapon_type):
         self._keybinds = {}
         self._mousebinds = []
-        self._adrenaline_bar = profile_dict['adrenaline-bar']
+        if 'adrenaline-bar' in profile_dict.keys() and len(profile_dict['adrenaline-bar']) == 4:
+            self._adrenaline_bar = profile_dict['adrenaline-bar']
+        else:
+            self._adrenaline_bar = None
         self._weapon_type = weapon_type
+        self.weapon = None
 
         for keybind in profile_dict['keybinds']:
             keybind_action = KeybindAction(keybind)
