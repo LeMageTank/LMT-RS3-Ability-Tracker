@@ -1,5 +1,6 @@
 from pynput import mouse, keyboard
 import multiprocessing
+import subprocess
 import os
 import json
 import math
@@ -15,16 +16,13 @@ import importlib
 class TrackerManager:
     global_cooldown = 1.8
     tick = 0.6
-    def __init__(self, manager_queue, configuration):
+    def __init__(self, control_queue, manager_queue, configuration):
         self._configuration = configuration
+        self.control_queue = control_queue
         self._manager_queue = manager_queue
         self._modifier_key = None
 
-        self._weapon_map = self.load_weapons(configuration['weapons-file'])
-        self._action_map = self.load_actions(configuration['action-info-file'])
-        self._input_profiles = self.load_input_profiles(configuration['saved-profiles-metadata-file'],
-                                                        configuration['saved-profiles-directory'])
-        self.update_weapon_profile(configuration['default-profile'])
+        self.load_tracker()
 
         keyboard_listener = keyboard.Listener(on_press=self.on_press, on_release=self.on_release)
         keyboard_listener.start()
@@ -37,8 +35,23 @@ class TrackerManager:
 
         self._tracker_tools = self.load_tools()
 
+        self.paused = False
+
     def mainloop(self):
         while True:
+            while self.control_queue.qsize() > 0:
+                control_task = self.control_queue.get()
+                if control_task == 'refresh':
+                    self.load_tracker()
+                elif control_task == 'pause':
+                    self.paused = True
+                    self._action_queue = []
+                elif control_task == 'play':
+                    self.paused = False
+                elif control_task == 'configuration-open':
+                    subprocess.Popen(['python', self._configuration['profile-creator-file']])
+            if self.paused:
+                continue
             time.sleep(self.tick)
             queued_action = None
             output_actions = []
@@ -51,7 +64,7 @@ class TrackerManager:
                     action = self._action_map[bound_action.action]
                     # Weapon swap, change input profile
                     if action.action_type == 'weapon':
-                        self.update_weapon_profile(self._weapon_map[action.id])
+                        self.update_weapon_profile(weapon=action.id)
                         output_actions.append(action.id)
                     # Action incurs the global cooldown
                     elif action.incurs_gcd:
@@ -76,10 +89,21 @@ class TrackerManager:
                 self._action_queue.insert(0, queued_action)
             player_state = self.get_player_state()
             for tool in self._tracker_tools:
-                for output in tool.run(self.action_profile, self._action_map, output_actions,
-                                       min(activation_time - self._last_action, self.global_cooldown),
-                                       player_state):
-                    self._manager_queue.put(output)
+                try:
+                    for output in tool.run(self.action_profile, self._action_map, output_actions,
+                                           min(activation_time - self._last_action, self.global_cooldown),
+                                           player_state):
+                        self._manager_queue.put(output)
+                except Exception as e:
+                    print("Error in tool: {}".format(tool.__class__.__name__))
+                    print(e)
+
+    def load_tracker(self):
+        self._weapon_map = self.load_weapons(self._configuration['weapons-file'])
+        self._action_map = self.load_actions(self._configuration['action-info-file'])
+        self._input_profiles = self.load_input_profiles(self._configuration['saved-profiles-metadata-file'],
+                                                        self._configuration['saved-profiles-directory'])
+        self.update_weapon_profile(profile=self._configuration['default-profile'])
 
     def load_tools(self):
         tools = []
@@ -93,8 +117,12 @@ class TrackerManager:
             tools.append(tool_class(self._configuration))
         return tools
             
-    def update_weapon_profile(self, profile_name):
-        self.action_profile = self._input_profiles[profile_name]
+    def update_weapon_profile(self, profile=None, weapon=None):
+        if weapon:
+            self.action_profile = self._input_profiles[self._weapon_map[weapon]]
+            self.action_profile.weapon = weapon
+        if profile:
+            self.action_profile = self._input_profiles[profile]
 
     def load_weapons(self, weapons_path):
         with open(weapons_path, 'r+') as file:
@@ -124,15 +152,19 @@ class TrackerManager:
             return input_profiles
 
     def get_player_state(self):
-        adrenaline_bar = pyautogui.screenshot(region=self.action_profile.adrenaline_bar)
-        pixel_reader = adrenaline_bar.load()
-        adrenaline_pixels = 0
-        for i in range(adrenaline_bar.size[0]):
-            r,g,b = pixel_reader[i,0]
-            if r > 180 and g > 90:
-                adrenaline_pixels += 1
-        adrenaline = math.ceil((adrenaline_pixels)*100/(self.action_profile.adrenaline_bar[2] - 1))
-        player_state = {'adrenaline':adrenaline}
+        player_state = {}
+        if self.action_profile.adrenaline_bar is not None:
+            adrenaline_bar = pyautogui.screenshot(region=self.action_profile.adrenaline_bar)
+            pixel_reader = adrenaline_bar.load()
+            adrenaline_pixels = 0
+            for i in range(adrenaline_bar.size[0]):
+                r,g,b = pixel_reader[i,0]
+                if r > 180 and g > 90:
+                    adrenaline_pixels += 1
+            adrenaline = math.ceil((adrenaline_pixels)*100/(self.action_profile.adrenaline_bar[2] - 1))
+            player_state['adrenaline'] = adrenaline
+        else:
+            player_state['adrenaline'] = None
         return player_state
 
     def on_click(self, x, y , button, pressed):
@@ -147,6 +179,8 @@ class TrackerManager:
         else:
             try:
                 key = chr(key.vk)
+                if key in KeybindAction.special_key_map.keys():
+                    key = KeybindAction.special_key_map[key]
             except AttributeError:
                 try:
                     key = KeybindAction.special_key_map[str(key).casefold()]
@@ -162,7 +196,7 @@ class TrackerManager:
             self._modifier_key = None
 
 class TrackerUI:
-    def __init__(self, configuration, tracker_queue):
+    def __init__(self, configuration, control_queue, tracker_queue):
         self._configuration = configuration
         self._root = tkinter.Tk()
         self._icon_map = self.load_icons(configuration['action-icon-directory'])
@@ -171,6 +205,7 @@ class TrackerUI:
         self._update_interval = configuration['actiontracker-update-interval']
         self._icon_shape = configuration['actiontracker-icon-shape']
         self._padding = configuration['actiontracker-icon-padding']
+        self._control_queue = control_queue
         self._tracker_queue = tracker_queue
         self._ability_queue = []
         self._root.title("LMT's Ability Tracker")
@@ -180,17 +215,58 @@ class TrackerUI:
         self._root.bind('<B1-Motion>', self.move_window)
         self._root.configure(background='black')
 
-        self._uitracker_tools = self.load_tools()
+        self._paused = False
+        self._tool_width = 0
+        self._tool_height = 12
+        self._controls_container = tkinter.Frame(self._root)
+        self._tools_container = tkinter.Frame(self._root)
+        self.load_controls(self._controls_container)
+        self._uitracker_tools = self.load_tools(self._tools_container)
+        
+        self._controls_container.grid(row=0, column=0, sticky=tkinter.W)
+        self._tools_container.grid(row=0, column=1, sticky=tkinter.W)
         self._root.geometry("{}x{}".format(self._tool_width, self._tool_height))
 
     def move_window(self, event):
         x,y = self._root.winfo_pointerxy()
         self._root.geometry("{}x{}+{}+{}".format(self._tool_width, self._tool_height, x, y))
 
-    def load_tools(self):
+    def load_controls(self, controls_container):
+        self._play_button_image = ImageTk.PhotoImage(Image.open(self._configuration['play-image-file']).resize((12,12)))
+        self._pause_button_image = ImageTk.PhotoImage(Image.open(self._configuration['pause-image-file']).resize((12,12)))
+        self._refresh_button_image = ImageTk.PhotoImage(Image.open(self._configuration['refresh-image-file']).resize((12,12)))
+        self._configuration_button_image = ImageTk.PhotoImage(Image.open(self._configuration['configuration-image-file']).resize((12,12)))        
+        self._play_pause_button = tkinter.Button(controls_container, image=self._play_button_image,
+                                                 command=self.play_pause_button_event, height=12, width=12)
+        self._refresh_button = tkinter.Button(controls_container, image=self._refresh_button_image,
+                                                 command=self.refresh_button_event, height=12, width=12)
+        self._configuration_button = tkinter.Button(controls_container, image=self._configuration_button_image,
+                                                 command=self.configuration_button_event, height=12, width=12)
+
+        self._play_pause_button.grid(row=0, column=0, sticky=tkinter.W)
+        self._refresh_button.grid(row=1, column=0, sticky=tkinter.W)
+        self._configuration_button.grid(row=2, column=0, sticky=tkinter.W)
+
+    def play_pause_button_event(self):
+        if self._paused:
+            self._play_pause_button.configure(image=self._play_button_image)
+            self._control_queue.put('play')    
+        else:
+            self._play_pause_button.configure(image=self._pause_button_image)
+            self._control_queue.put('pause')
+        self._paused = not self._paused
+
+    def configuration_button_event(self):
+        self._control_queue.put('configuration-open')
+        self._paused = True
+        self._play_pause_button.configure(image=self._pause_button_image)
+        self._control_queue.put('pause')
+
+    def refresh_button_event(self):
+        self._control_queue.put('refresh')
+
+    def load_tools(self, tool_container):
         num_tools = 0
-        self._tool_width = 0
-        self._tool_height = 10
         tools = {}
         for tool in self._configuration['tools']:
             if tool['enabled'] is False:
@@ -199,10 +275,10 @@ class TrackerUI:
             module = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(module)
             tool_class = getattr(module, tool['tracker-tool-ui'])
-            tool_ui = tool_class(self._configuration, self._root)
+            tool_ui = tool_class(self._configuration, tool_container)
             self._tool_width = max(self._tool_width, tool_ui.shape[0])
             self._tool_height += tool_ui.shape[1]
-            tool_widget = tool_ui.get_widget().grid(row=num_tools, sticky=tkinter.W)
+            tool_widget = tool_ui.widget.grid(row=num_tools, sticky=tkinter.W)
             num_tools += 1
             tools[tool['name']] = tool_ui
         return tools
@@ -228,8 +304,9 @@ class TrackerUI:
             
         self._root.after(self._update_interval, self.update)
 
-
-def run_tracker(manager_queue, configuration):
-    tracker = TrackerManager(manager_queue, configuration)
+# manager_queue: manager -> UI
+# control_queue: UI/User -> manager
+def run_tracker(control_queue, manager_queue, configuration):
+    tracker = TrackerManager(control_queue, manager_queue, configuration)
     tracker.mainloop()
  
