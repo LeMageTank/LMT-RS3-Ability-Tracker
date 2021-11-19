@@ -9,9 +9,11 @@ if __name__ == '__main__':
         configuration = json.loads("".join(config_file.readlines()))
     
     manager_queue = multiprocessing.Queue()
+    control_queue = multiprocessing.Queue()
 
-    manager_process = multiprocessing.Process(target=run_tracker, args=(manager_queue, configuration))
+    manager_process = multiprocessing.Process(target=run_tracker,
+                                              args=(control_queue, manager_queue, configuration))
     manager_process.start()
 
-    tracker_ui = TrackerUI(configuration, manager_queue)
+    tracker_ui = TrackerUI(configuration, control_queue, manager_queue)
     tracker_ui.run()
