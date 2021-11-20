@@ -49,7 +49,7 @@ class TrackerManager:
                 elif control_task == 'play':
                     self.paused = False
                 elif control_task == 'configuration-open':
-                    subprocess.Popen(['python', self._configuration['profile-creator-file']])
+                    subprocess.Popen(['ability-tracker\Scripts\python.exe', self._configuration['profile-creator-file']])
             if self.paused:
                 continue
             time.sleep(self.tick)
@@ -168,12 +168,16 @@ class TrackerManager:
         return player_state
 
     def on_click(self, x, y , button, pressed):
+        if self.paused:
+            return
         if pressed:
             action = self.action_profile.search_mousebind((x,y))
             if action:
                 self._action_queue.append(action)
 
     def on_press(self, key):
+        if self.paused:
+            return
         if key in KeybindAction.modifier_keys:
             self._modifier_key = key
         else:

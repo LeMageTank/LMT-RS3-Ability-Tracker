@@ -8,3 +8,4 @@ ability-tracker/data/saved profiles/2h_melee.json
 ability-tracker/data/saved profiles/dw_melee.json
 ability-tracker/tracker/__pycache__/actiontracker.cpython-39.pyc
 ability-tracker/tracker/__pycache__/action.cpython-39.pyc
+installpackages.bat
