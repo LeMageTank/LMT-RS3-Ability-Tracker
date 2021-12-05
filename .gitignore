@@ -3,3 +3,5 @@ ability-tracker/data/saved profile clickables/*
 !ability-tracker/data/saved profile clickables/.gitkeep
 installpackages.bat
 *.pyc
+*.pyc
+*.pyc
