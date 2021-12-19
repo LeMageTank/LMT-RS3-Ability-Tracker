@@ -1,5 +1,9 @@
-logs.txt
-ability-tracker/data/saved profile clickables/*
+dist/*
+build/*
+pycache/*
+Lib/*
 !ability-tracker/data/saved profile clickables/.gitkeep
-installpackages.bat
+ability-tracker/data/saved profile clickables/*
 *.pyc
+*.pyo
+*.pyd
