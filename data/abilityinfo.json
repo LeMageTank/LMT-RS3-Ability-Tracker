@@ -1277,5 +1277,25 @@
 		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[]
+	},
+	{
+		"action":"Magma Tempest",
+		"type":"basic",
+		"cooldown":15.0,
+		"incurs_gcd":true,
+		"adrenaline-delta":8,
+		"ability-type":"standard",
+		"hits":[{"tick":1, "damage":[5.0,19.0]}, {"tick":3, "damage":[5.0,19.0]}, {"tick":5, "damage":[5.0,19.0]},
+			{"tick":7, "damage":[5.0,19.0]}, {"tick":9, "damage":[5.0,19.0]}, {"tick":11, "damage":[5.0,19.0]},
+			{"tick":13, "damage":[5.0,19.0]}, {"tick":15, "damage":[5.0,19.0]}]
+	},
+	{
+		"action":"Ek-ZekKil",
+		"type":"weapon",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[]
 	}
 ]
