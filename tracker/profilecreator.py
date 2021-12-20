@@ -9,6 +9,9 @@ import time
 import numpy as np
 from tracker.action import *
 
+def run_mouse_bind_selector(queue, config, action_list):
+    mouse_bind_selector = MouseBindSelector(queue, config, action_list)
+    mouse_bind_selector.run()
 
 class MouseBindSelector:
     def __init__(self, queue, configuration, action_list):
@@ -200,7 +203,7 @@ class ProfileCreator:
             self.add_mousebind(self.mouse_queue.get())
         if self.adren_queue.qsize() > 0:
             self.update_adrenaline_bar(self.adren_queue.get())
-        self.root.after(25, self.loop)
+        self.root.after(100, self.loop)
 
     def load_profile(self):
         with open(self.configuration['saved-profiles-directory'] + self.profile_selection.get() + '.json', 'r+') as file:
@@ -232,9 +235,11 @@ class ProfileCreator:
         self.save_profile()
 
     def start_mouse_listener(self):
-        mouse = MouseBindSelector(self.mouse_queue, self.configuration, self.actions)
-        mouse_process = multiprocessing.Process(target=mouse.run)
+        mouse_process = multiprocessing.Process(target=run_mouse_bind_selector, args=(self.mouse_queue, self.configuration, self.actions))
         mouse_process.start()
+        #mouse = MouseBindSelector(self.mouse_queue, self.configuration, self.actions)
+        #mouse_process = multiprocessing.Process(target=mouse.run)
+        #mouse_process.start()
 
     def start_adrenaline_listener(self):
         mouse = MouseAdrenSelector(self.adren_queue, self.configuration)
