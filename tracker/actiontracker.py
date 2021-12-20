@@ -23,6 +23,7 @@ class TrackerManager:
         self._modifier_key = None
         self._control_queue = control_queue
         self._manager_queue = manager_queue
+        self._profilecreator_process = None
         self.load_tracker()
 
         keyboard_listener = keyboard.Listener(on_press=self.on_press, on_release=self.on_release)
@@ -40,8 +41,6 @@ class TrackerManager:
 
     def logfile(self, text):
         pass
-        #with open('trackermanager.log', 'a') as file:
-        #    file.write(text)
 
     def mainloop(self):
         self.logfile('mainloop\n')
@@ -60,6 +59,7 @@ class TrackerManager:
                 elif control_task == 'exit':
                     return
             if self.paused:
+                time.sleep(self.tick)
                 continue
             time.sleep(self.tick)
             queued_action = None
@@ -108,12 +108,12 @@ class TrackerManager:
                     print(e)
 
     def open_profilecreator(self):
-        self.logfile('run_profilecreator\n')
-        profilecreator_process = multiprocessing.Process(target=run_profilecreator, args=(self._configuration,))
-        profilecreator_process.start()
+        if self._profilecreator_process is not None and self._profilecreator_process.is_alive():
+            return
+        self._profilecreator_process = multiprocessing.Process(target=run_profilecreator, args=(self._configuration,))
+        self._profilecreator_process.start()
 
     def load_tracker(self):
-        self.logfile('load_tracker\n')
         self._weapon_map = self.load_weapons(self._configuration['weapons-file'])
         self._action_map = self.load_actions(self._configuration['action-info-file'])
         self._input_profiles = self.load_input_profiles(self._configuration['saved-profiles-metadata-file'],

@@ -93,6 +93,7 @@ class ProfileCreator:
         self.root.iconphoto(False,ImageTk.PhotoImage(file=self.configuration['application-icon-file']))
         self.root.title('Input Profile Creator')
 
+        self.mouse_listener_process = None
         self.mouse_queue = multiprocessing.Queue()
         self.adren_queue = multiprocessing.Queue()
 
@@ -200,7 +201,11 @@ class ProfileCreator:
 
     def loop(self):
         if self.mouse_queue.qsize() > 0:
-            self.add_mousebind(self.mouse_queue.get())
+            message = self.mouse_queue.get()
+            if message == 'exit':
+                self.mouse_listener_process = None
+            else:
+                self.add_mousebind(message)
         if self.adren_queue.qsize() > 0:
             self.update_adrenaline_bar(self.adren_queue.get())
         self.root.after(100, self.loop)
@@ -235,11 +240,9 @@ class ProfileCreator:
         self.save_profile()
 
     def start_mouse_listener(self):
-        mouse_process = multiprocessing.Process(target=run_mouse_bind_selector, args=(self.mouse_queue, self.configuration, self.actions))
-        mouse_process.start()
-        #mouse = MouseBindSelector(self.mouse_queue, self.configuration, self.actions)
-        #mouse_process = multiprocessing.Process(target=mouse.run)
-        #mouse_process.start()
+        if self.mouse_listener_process is None:
+            self.mouse_listener_process = multiprocessing.Process(target=run_mouse_bind_selector, args=(self.mouse_queue, self.configuration, self.actions))
+            self.mouse_listener_process.start()
 
     def start_adrenaline_listener(self):
         mouse = MouseAdrenSelector(self.adren_queue, self.configuration)

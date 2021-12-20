@@ -8,6 +8,4 @@ if __name__ == '__main__':
     configuration = None
     with open('config.json', 'r+') as config_file:
         configuration = json.loads("".join(config_file.readlines()))
-    print('Running tracker...')
     tracker.actiontracker.run_tracker_ui(configuration)
-    print('Done')
