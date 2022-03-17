@@ -5,7 +5,6 @@ jobs:
         runs-on: ubuntu-latest
         outputs:
             asset_upload_url: ${{ steps.create_release.outputs.upload_url }}
-            version_number: ${{ cat version }}
         steps:
             - uses: actions/checkout@v2
             - name: Create Release
