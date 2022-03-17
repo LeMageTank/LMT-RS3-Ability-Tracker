@@ -7,7 +7,8 @@ import multiprocessing
 import json
 import time
 import numpy as np
-from tracker.action import *
+from tracker.actions.KeybindAction import KeybindAction
+from tracker.actions.MousebindAction import MousebindAction
 
 def run_mouse_bind_selector(queue, config, action_list):
     mouse_bind_selector = MouseBindSelector(queue, config, action_list)
