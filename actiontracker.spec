@@ -47,5 +47,5 @@ coll = COLLECT(
     strip=False,
     upx=True,
     upx_exclude=[],
-    name='LMT\'s Ability Tracker',
+    name='AbilityTracker',
 )
