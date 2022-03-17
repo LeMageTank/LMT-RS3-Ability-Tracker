@@ -248,7 +248,7 @@ class TrackerUI:
         self._tool_width = 0
         self._tool_height = 12
         self._controls_container = tkinter.Frame(self._root)
-        self._tools_container = tkinter.Frame(self._root)
+        self._tools_container = tkinter.Frame(self._root, background='black')
         self.load_controls(self._controls_container)
         self._uitracker_tools = self.load_tools(self._tools_container)
         
@@ -322,7 +322,7 @@ class TrackerUI:
             tool_ui = tool_class(self._configuration, tool_container)
             self._tool_width = max(self._tool_width, tool_ui.shape[0])
             self._tool_height += tool_ui.shape[1]
-            tool_widget = tool_ui.widget.grid(row=num_tools, sticky=tkinter.W)
+            tool_widget = tool_ui.widget.grid(column=0, row=num_tools, sticky=tkinter.W)
             num_tools += 1
             tools[tool['name']] = tool_ui
         return tools
