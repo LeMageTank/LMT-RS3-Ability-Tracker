@@ -5,14 +5,18 @@ jobs:
         runs-on: ubuntu-latest
         outputs:
             asset_upload_url: ${{ steps.create_release.outputs.upload_url }}
+            version_number: ${{ steps.get_version.outputs.version_number }}
         steps:
             - uses: actions/checkout@v2
+            - name: Get Version
+              id: get_version
+              run: echo ::set-output name=version_number::$(cat version)
             - name: Create Release
               id: create_release
               uses: softprops/action-gh-release@v1
               with:
-                tag_name: Release-${{ cat version }}
-                name: Release-${{ cat version }}
+                tag_name: Release-${{ steps.get_version.outputs.version_number }}
+                name: Release-${{ steps.get_version.outputs.version_number }}
                 draft: false
                 prerelease: false
     Build-And-Publish-Windows:
