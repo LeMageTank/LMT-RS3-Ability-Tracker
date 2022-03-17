@@ -1,5 +1,8 @@
 name: Build and Release
-on: [push]
+on: 
+    push:
+        branches:
+            - master
 jobs:
     Create-Release:
         runs-on: ubuntu-latest
@@ -16,7 +19,7 @@ jobs:
               uses: softprops/action-gh-release@v1
               with:
                 tag_name: Release-${{ steps.get_version.outputs.version_number }}
-                name: Release-${{ steps.get_version.outputs.version_number }}
+                name: ${{ steps.get_version.outputs.version_number }}
                 draft: false
                 prerelease: false
     Build-And-Publish-Windows:
