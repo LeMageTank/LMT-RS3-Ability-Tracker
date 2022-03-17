@@ -28,7 +28,7 @@ class APMCounterUI(TrackerToolUI):
         self.widget = tkinter.Frame(root, background='black')
         self.apm = tkinter.StringVar()
         self.apm.set('0')
-        self.apm_widget = tkinter.Label(self.widget, anchor='center', textvariable=self.apm, fg='white', background='black')
+        self.apm_widget = tkinter.Label(self.widget, anchor='center', textvariable=self.apm, font=('Arial', 16), fg='white', background='black')
         self.apm_widget.pack(side='left', fill='none', pady=4, padx=4)
 
     def draw(self, icon_map):
