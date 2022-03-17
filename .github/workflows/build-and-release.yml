@@ -6,26 +6,26 @@ jobs:
         steps:
             - uses: actions/checkout@v2
             - uses: actions/create-release@v1
-                with:
-                    tag_name: ${{ github.ref }}
-                    release_name: ${{ github.ref }}
-                    draft: true
-                    prerelease: false
+              with:
+                tag_name: ${{ github.ref }}
+                release_name: ${{ github.ref }}
+                draft: true
+                prerelease: false
     Build-And-Publish-Windows:
         runs-on: windows-latest
         steps:
         - uses: actions/checkout@v2
         - uses: actions/setup-python@v2
-            with:
-                python-version: '3.9' 
-                architecture: 'x64'
+          with:
+            python-version: '3.9' 
+            architecture: 'x64'
         - run: pip install -r requirements.txt
         - run: pyinstaller actiontracker.spec
         - run: powershell.exe -noexit "Compress-Archive -Path dist\AbilityTracker -DestinationPath dist\LMTsAbilityTracker.zip"
         - uses: actions/upload-release-asset@v1
-            with:
-                upload_url: ${{ steps.create_release.outputs.upload_url }}
-                asset_path: ./dist/LMTsAbilityTracker.zip
-                asset_name: LMTs-Ability-Tracker
-                asset_content_type: application/zip
+          with:
+            upload_url: ${{ steps.create_release.outputs.upload_url }}
+            asset_path: ./dist/LMTsAbilityTracker.zip
+            asset_name: LMTs-Ability-Tracker
+            asset_content_type: application/zip
                 
