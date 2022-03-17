@@ -2,7 +2,7 @@ name: Build and Release
 on: 
     push:
         branches:
-            - master
+            - main
 jobs:
     Create-Release:
         runs-on: ubuntu-latest
