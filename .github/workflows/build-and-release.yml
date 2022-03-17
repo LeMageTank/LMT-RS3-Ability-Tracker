@@ -23,9 +23,9 @@ jobs:
         - run: pip install -r requirements.txt
         - run: pyinstaller actiontracker.spec
         - run: powershell.exe -noexit "Compress-Archive -Path dist\AbilityTracker -DestinationPath dist\LMTsAbilityTracker.zip"
-        - uses: actions/upload-release-asset@v1
+        - uses: shogo82148/actions-upload-release-asset@v1
           with:
             asset_path: ./dist/LMTsAbilityTracker.zip
-            asset_name: LMTs-Ability-Tracker
+            asset_name: LMTs-Ability-Tracker-winx64.zip
             asset_content_type: application/zip
             upload_url: ${{ env.RELEASE_URL }}
