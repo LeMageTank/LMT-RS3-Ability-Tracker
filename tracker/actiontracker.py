@@ -9,7 +9,9 @@ import tkinter
 import pyautogui
 from PIL import Image, ImageDraw, ImageTk
 import numpy as np
-from tracker.action import Action, KeybindAction, ActionProfile
+from tracker.actions.Action import Action
+from tracker.actions.KeybindAction import KeybindAction
+from tracker.actions.ActionProfile import ActionProfile
 from tracker.profilecreator import run_profilecreator
 import importlib
 import multiprocessing
