@@ -13,7 +13,7 @@ jobs:
                 name: Release-${{ github.ref }}
                 draft: false
                 prerelease: false
-            - run: echo "RELEASE_URL=$(steps.create_release.outputs.upload_url)" >> $GITHUB_ENV
+            - run: echo "RELEASE_URL=${{ steps.create_release.outputs.upload_url }}" >> $GITHUB_ENV
     Build-And-Publish-Windows:
         runs-on: windows-latest
         steps:
