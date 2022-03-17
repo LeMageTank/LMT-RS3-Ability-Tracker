@@ -5,14 +5,15 @@ jobs:
         runs-on: ubuntu-latest
         outputs:
             asset_upload_url: ${{ steps.create_release.outputs.upload_url }}
+            version_number: ${{ cat version }}
         steps:
             - uses: actions/checkout@v2
             - name: Create Release
               id: create_release
               uses: softprops/action-gh-release@v1
               with:
-                tag_name: Release-${{ github.ref }}
-                name: Release-${{ github.ref }}
+                tag_name: Release-${{ cat version }}
+                name: Release-${{ cat version }}
                 draft: false
                 prerelease: false
     Build-And-Publish-Windows:
@@ -26,11 +27,11 @@ jobs:
             architecture: 'x64'
         - run: pip install -r requirements.txt
         - run: pyinstaller actiontracker.spec
-        - run: powershell.exe -noexit "Compress-Archive -Path dist\AbilityTracker -DestinationPath dist\LMTsAbilityTracker.zip"
+        - run: powershell.exe -noexit "Compress-Archive -Path dist\AbilityTracker\* -DestinationPath dist\LMTsAbilityTracker.zip"
         - uses: shogo82148/actions-upload-release-asset@v1
           with:
             upload_url: ${{ needs.Create-Release.outputs.asset_upload_url }}
             asset_path: ./dist/LMTsAbilityTracker.zip
-            asset_name: LMTs-Ability-Tracker-winx64.zip
+            asset_name: LMTs-Ability-Tracker-${{ needs.Create-Release.outputs.version_number }}-win-x64.zip
             asset_content_type: application/zip
             
