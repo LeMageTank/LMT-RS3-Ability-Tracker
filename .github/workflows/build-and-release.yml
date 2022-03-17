@@ -15,6 +15,7 @@ jobs:
     Build-And-Publish-Windows:
         runs-on: windows-latest
         steps:
+        - run: echo "${{ env.RELEASE_URL }}"
         - uses: actions/checkout@v2
         - uses: actions/setup-python@v2
           with:
