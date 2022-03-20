@@ -28,7 +28,7 @@
 	"rotation-helper-rotation":"berserk",
 	"rotation-helper-icon-shape":[30,30],
 	"rotation-helper-icon-padding":[4,4],
-	"apm-counter-sliding-time-window":10.0,
+	"apm-counter-sliding-time-window":30.0,
 	"tools-path":"tracker\\tools\\",
 	"tools":[{"file-name": "ActionTracker",
 		  "name": "action-tracker",
