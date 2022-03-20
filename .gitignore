@@ -7,3 +7,4 @@ ability-tracker/data/saved profile clickables/*
 *.pyc
 *.pyo
 *.pyd
+*.log

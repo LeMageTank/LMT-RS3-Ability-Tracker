@@ -28,14 +28,14 @@ class ActionTrackerUI(TrackerToolUI):
         for i in range(len(self.on_display)-1, -1, -1):
             try:
                 action_widget = tkinter.Label(self.widget, image=icon_map[self.on_display[i]], background='black')
-                action_widget.pack(side='left', fill='none', pady=4, padx=4)
+                action_widget.pack(side='left', fill='none', pady=self.padding[1], padx=self.padding[0])
             except:
                 action_widget = tkinter.Label(self.widget, text="?", background='black')
                 action_widget.pack(side='left', fill='none', pady=self.padding[1], padx=self.padding[0])
                 
     @property
     def shape(self):
-        return ((self.padding[0]*3 + self.icon_shape[0]) * self.max_icons, self.padding[1]*3 + self.icon_shape[1])
+        return (((self.padding[0] * 2) + self.icon_shape[0]) * (self.max_icons + 1), (self.padding[1] * 3) + self.icon_shape[1])
 
 class ActionTrackerConfiguration(TrackerToolConfiguration):
     def set_default_configuration(self):
