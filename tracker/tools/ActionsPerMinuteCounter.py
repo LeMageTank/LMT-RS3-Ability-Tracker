@@ -18,7 +18,7 @@ class APMCounter(TrackerTool):
             else:
                 break
         action_count = len(self.actions_time_queue)
-        time_delta = self.actions_time_queue[-1] - self.actions_time_queue[0]
+        time_delta = self.actions_time_queue[-1] - self.actions_time_queue[0] if len(self.actions_time_queue) > 0 else self.sliding_time_window
         apm = (60 / self.sliding_time_window) * action_count * (time_delta / self.sliding_time_window)
         return([('apm-counter', int(apm))])
 
