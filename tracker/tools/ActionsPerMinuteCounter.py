@@ -18,7 +18,7 @@ class APMCounter(TrackerTool):
             else:
                 break
         action_count = len(self.actions_time_queue)
-        time_delta = self.actions_time_queue[-1] - self.actions_time_queue[0]
+        time_delta = self.actions_time_queue[-1] - self.actions_time_queue[0] if len(self.actions_time_queue) > 0 else self.sliding_time_window
         apm = (60 / self.sliding_time_window) * action_count * (time_delta / self.sliding_time_window)
         return([('apm-counter', int(apm))])
 
@@ -27,19 +27,19 @@ class APMCounterUI(TrackerToolUI):
         super().__init__(configuration, root)
         self.widget = tkinter.Frame(root, background='black')
         self.apm = tkinter.StringVar()
-        self.apm.set('0')
+        self.apm_text = configuration['apm-counter-text']
+        self.apm.set(self.apm_text + '0')
         self.apm_widget = tkinter.Label(self.widget, anchor='center', textvariable=self.apm, font=('Arial', 16), fg='white', background='black')
         self.apm_widget.pack(side='left', fill='none', pady=4, padx=4)
 
     def draw(self, icon_map):
         if len(self.buffer) > 0:
-            self.apm.set(str(self.buffer[-1]))
+            self.apm.set(self.apm_text + str(self.buffer[-1]))
             self.buffer = []
-            
             
     @property
     def shape(self):
-        return (30, 30)
+        return (20, 30)
 
 class APMCounterConfiguration(TrackerToolConfiguration):
     def set_default_configuration(self):

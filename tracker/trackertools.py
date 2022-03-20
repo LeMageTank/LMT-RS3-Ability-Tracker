@@ -32,6 +32,9 @@ class TrackerToolUI:
     def get_widget(self):
         return self.widget
 
+    def draw(self, icon_map):
+        pass
+
     @property
     def shape(self):
         pass

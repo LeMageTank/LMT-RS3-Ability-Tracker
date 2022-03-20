@@ -13,8 +13,8 @@ from tracker.actions.Action import Action
 from tracker.actions.KeybindAction import KeybindAction
 from tracker.actions.ActionProfile import ActionProfile
 from tracker.profilecreator import run_profilecreator
+from tracker.ui.TrackerUITool import TrackerUITool
 import importlib
-import multiprocessing
 
 
 class TrackerManager:
@@ -235,29 +235,20 @@ class TrackerUI:
         self._padding = configuration['actiontracker-icon-padding']
         self._control_queue = multiprocessing.Queue()
         self._manager_queue = multiprocessing.Queue()
-        
-        self._ability_queue = []
         self._root.title("LMT's Ability Tracker")
         self._root.attributes('-topmost', configuration['actiontracker-always-on-top'])
-        self._root.iconphoto(False,ImageTk.PhotoImage(file=configuration['application-icon-file']))
-        
+        self._root.iconphoto(False, ImageTk.PhotoImage(file=configuration['application-icon-file']))
         self._root.bind('<B1-Motion>', self.move_window)
         self._root.configure(background='black')
-
         self._paused = False
-        self._tool_width = 0
-        self._tool_height = 12
         self._controls_container = tkinter.Frame(self._root)
-        self._tools_container = tkinter.Frame(self._root, background='black')
         self.load_controls(self._controls_container)
-        self._uitracker_tools = self.load_tools(self._tools_container)
-        
+        self._uitracker_tools = self.load_tools()        
         self._controls_container.grid(row=0, column=0, sticky=tkinter.W)
-        self._tools_container.grid(row=0, column=1, sticky=tkinter.W)
-        self._root.geometry("{}x{}".format(self._tool_width, self._tool_height))
-
+        self._width = 20
+        self._height = 60
+        self._root.geometry("{}x{}".format(self._width, self._height))
         self._root.protocol('WM_DELETE_WINDOW', self.close)
-
         self.start_tracker()
         self.update()
         self._root.mainloop()
@@ -273,7 +264,7 @@ class TrackerUI:
         
     def move_window(self, event):
         x,y = self._root.winfo_pointerxy()
-        self._root.geometry("{}x{}+{}+{}".format(self._tool_width, self._tool_height, x, y))
+        self._root.geometry("{}x{}+{}+{}".format(self._width, self._height, x, y))
 
     def load_controls(self, controls_container):
         self._play_button_image = ImageTk.PhotoImage(Image.open(self._configuration['play-image-file']).resize((12,12)))
@@ -309,22 +300,16 @@ class TrackerUI:
     def refresh_button_event(self):
         self._control_queue.put('refresh')
 
-    def load_tools(self, tool_container):
+    def load_tools(self):
         num_tools = 0
         tools = {}
         for tool in self._configuration['tools']:
-            if tool['enabled'] is False:
-                continue
-            spec = importlib.util.spec_from_file_location(tool['file-name'], self._configuration['tools-path'] + tool['file-name'] + '.py')
-            module = importlib.util.module_from_spec(spec)
-            spec.loader.exec_module(module)
-            tool_class = getattr(module, tool['tracker-tool-ui'])
-            tool_ui = tool_class(self._configuration, tool_container)
-            self._tool_width = max(self._tool_width, tool_ui.shape[0])
-            self._tool_height += tool_ui.shape[1]
-            tool_widget = tool_ui.widget.grid(column=0, row=num_tools, sticky=tkinter.W)
-            num_tools += 1
-            tools[tool['name']] = tool_ui
+            if tool['enabled']:
+                tool_ui_control_queue = multiprocessing.Queue()
+                tool_ui_process = multiprocessing.Process(target=run_tracker_ui_tool,
+                                                          args=(tool_ui_control_queue, tool, self._configuration))
+                tool_ui_process.start()
+                tools[tool['name']] = tool_ui_control_queue
         return tools
 
     def load_icons(self, path):
@@ -337,11 +322,17 @@ class TrackerUI:
     def update(self):
         while self._manager_queue.qsize() > 0:
             item = self._manager_queue.get()
-            self._uitracker_tools[item[0]].add_item(item[1])
-        for name, tool in self._uitracker_tools.items():
-            tool.draw(self._icon_map)
+            self._uitracker_tools[item[0]].put(item[1])
         self._root.after(self._update_interval, self.update)
+        
 
+def run_tracker_ui_tool(control_queue, tool_config, configuration):
+    try:
+        tool_ui = TrackerUITool(configuration, control_queue, tool_config)
+        tool_ui.start()
+    except Exception as e:
+        open(configuration['logs-directory'] + '-{}-exception.log'.format(tool_config['name']), 'w+').write('Exception: ' + str(e))
+    
 # manager_queue: manager -> UI
 # control_queue: UI/User -> manager
 def run_tracker(control_queue, manager_queue, configuration):
