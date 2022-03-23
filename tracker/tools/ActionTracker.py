@@ -38,7 +38,22 @@ class ActionTrackerUI(TrackerToolUI):
         return (((self.padding[0] * 2) + self.icon_shape[0]) * (self.max_icons + 1), (self.padding[1] * 3) + self.icon_shape[1])
 
 class ActionTrackerConfiguration(TrackerToolConfiguration):
-    def set_default_configuration(self):
-        self.configuration['actiontracker-icons'] = 8
-        self.configuration['actiontracker-icon-shape'] = [30,30]
-        self.configuration['actiontracker-icon-padding'] = [2,2]
+    def get_default_configuration(self):
+        self.num_icons_var.set(8)
+        return {'actiontracker-icons': 8,
+        'actiontracker-icon-shape': [30,30],
+        'actiontracker-icon-padding': [2,2]}
+
+    def get_configuration_delta(self):
+        return {'actiontracker-icons': self.num_icons_var.get()}
+
+    def get_configuration_widget(self, root):
+        widget = tkinter.Frame(root)
+        num_icons_label = tkinter.Label(widget, text='No. Icons')
+        num_icons_label.grid(row=0, column=0)
+        self.num_icons_var = tkinter.IntVar()
+        self.num_icons_spinbox = tkinter.Spinbox(widget, from_=1, to=20, textvariable=self.num_icons_var)
+        self.num_icons_spinbox.grid(row=0, column=1)
+        return widget
+        
+    
