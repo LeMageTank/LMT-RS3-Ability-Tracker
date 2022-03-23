@@ -9,3 +9,4 @@ if __name__ == '__main__':
     with open('config.json', 'r+') as config_file:
         configuration = json.loads(''.join(config_file.readlines()))
     tracker.actiontracker.run_tracker_ui(configuration)
+    #tracker.profilecreator.run_profilecreator(configuration)

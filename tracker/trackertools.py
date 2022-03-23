@@ -42,9 +42,16 @@ class TrackerToolUI:
 class TrackerToolConfiguration:
     def __init__(self, configuration):
         self.configuration = configuration
+        self.configuration_delta = {}
 
-    def set_default_configuration(self):
+    def get_default_configuration(self):
         pass
+
+    def get_configuration_widget(self, root):
+        pass
+
+    def get_configuration_delta(self):
+        return self.configuration_delta
     
 
 

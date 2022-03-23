@@ -7,6 +7,7 @@ import multiprocessing
 import json
 import time
 import numpy as np
+import importlib
 from tracker.actions.KeybindAction import KeybindAction
 from tracker.actions.MousebindAction import MousebindAction
 
@@ -55,28 +56,6 @@ class MouseBindSelector:
         self.queue.put((action, x, y, screenshot))
         root.destroy()
 
-class MouseAdrenSelector:
-    def __init__(self, queue, configuration):
-        self.configuration = configuration
-        self.queue = queue
-        self.active = True
-        self.coords = []
-
-    def run(self):
-        self.mouse_listener = mouse.Listener(on_click=self.on_click)
-        self.mouse_listener.start()
-        while(self.active):
-            time.sleep(1)
-
-    def on_click(self, x, y, button, pressed):
-        if pressed and button == mouse.Button.right:
-            self.coords.append((x,y))
-            if len(self.coords) == 2:
-                self.queue.put((self.coords[0][0], self.coords[0][1], self.coords[1][0]-self.coords[0][0], 1))
-                self.active = False
-                return False
-
-
 class ProfileCreator:
     def __init__(self, configuration):
         self.configuration = configuration
@@ -96,18 +75,23 @@ class ProfileCreator:
 
         self.mouse_listener_process = None
         self.mouse_queue = multiprocessing.Queue()
-        self.adren_queue = multiprocessing.Queue()
 
         self.build_profile_selector()
         self.build_mousebind_creator()
         self.build_keybind_creator()
-        self.build_misc_tools()
+        self.build_extension_configurator()
         
         self.load_profile()
         
     def run(self):
         self.loop()
         self.root.mainloop()
+
+    def create_profile(self, profile_name):
+        pass
+
+    def add_weapon_to_profile(self, weapon_name):
+        pass
 
     def build_profile_selector(self):
         self.profile_container = tkinter.Frame(self.root)
@@ -182,23 +166,92 @@ class ProfileCreator:
                                                        command=self.delete_keybind)
         self.keybind_delete.grid(row=2, column=3, sticky=tkinter.NSEW, pady=2)
 
-    def build_misc_tools(self):
-        self.misc_container = tkinter.Frame(self.root)
-        self.misc_container.grid(row=3, sticky=tkinter.EW)
+    def load_extension_configurator_classes(self):
+        tool_configurator_classes = {}
+        for tool in self.configuration['tools']:
+            tool_import_spec = importlib.util.spec_from_file_location(tool['file-name'], self.configuration['tools-path'] + tool['file-name'] + '.py')
+            tool_module = importlib.util.module_from_spec(tool_import_spec)
+            tool_import_spec.loader.exec_module(tool_module)
+            tool_config_class = getattr(tool_module, tool['tracker-tool-configurator'])
+            tool_configurator_classes[tool['tracker-tool']] = tool_config_class
+        return tool_configurator_classes
 
-        self.adrenaline_label = tkinter.Label(self.misc_container, text="Adrenaline Reader")
-        self.adrenaline_label.grid(row=0, column=0, sticky=tkinter.EW, pady=2)
+    def build_extension_configurator(self):
+        self.extension_configurator_classes = self.load_extension_configurator_classes()
+        
+        self.extension_config_container = tkinter.Frame(self.root)
+        self.extension_config_container.grid(row=3, sticky=tkinter.EW)
 
-        self.adrenaline_listener_button = tkinter.Button(self.misc_container,
-                                                         text="Start Mouse Listener",
-                                                         command=self.start_adrenaline_listener)
-        self.adrenaline_listener_button.grid(row=0, column=1, sticky=tkinter.EW, pady=2)
-        self.adrenaline_description = tkinter.Label(self.misc_container,
-                                                   text="Right click both ends of the adrenaline bar to mark its position.")
-        self.adrenaline_description.grid(row=1, column=0, sticky=tkinter.EW, pady=2,
-                                          rowspan=2,columnspan=3)
-        self.adrenaline_display = tkinter.Label(self.misc_container, text="")
-        self.adrenaline_display.grid(row=3, column=0, sticky=tkinter.EW, pady=2)
+        self.extension_label = tkinter.Label(self.extension_config_container, text="Extension")
+        self.extension_label.grid(row=0, column=0, sticky=tkinter.EW, pady=2)
+        self.extension_selection = tkinter.ttk.Combobox(self.extension_config_container)
+        self.extension_selection['values'] = list(self.extension_configurator_classes.keys())
+        self.extension_selection.grid(row=1, column=0, sticky=tkinter.EW, pady=2)
+        self.extension_selection.current(0)
+        self.extension_selection.bind("<<ComboboxSelected>>", self.extension_selection_selection_event_handler)
+
+        self.extension_enabled_var = tkinter.IntVar()
+        self.extension_enabled_label = tkinter.Label(self.extension_config_container, text='Enabled')
+        self.extension_enabled_checkbox = tkinter.Checkbutton(self.extension_config_container, variable=self.extension_enabled_var)
+        self.extension_enabled_label.grid(row=2, column=0)
+        self.extension_enabled_checkbox.grid(row=2, column=1)
+        self.extension_enabled_var.set(self.get_extension_active_state(list(self.extension_configurator_classes.keys())[0]))
+
+        self.extension_configurator = list(self.extension_configurator_classes.values())[0](self.configuration)
+        self.extension_configurator_widget = self.extension_configurator.get_configuration_widget(self.extension_config_container)
+        self.extension_configurator_widget.grid(row=3, column=0, columnspan=2, sticky=tkinter.EW, pady=2)
+
+        self.extension_controls_container = tkinter.Frame(self.extension_config_container)
+        self.extension_controls_container.grid(row=4, column=0, sticky=tkinter.EW, pady=2)
+        self.default_config_save = tkinter.Button(self.extension_controls_container,
+                                                       text="Reset to default",
+                                                       command=self.extension_default_save)
+        self.default_config_save.grid(row=5, column=1)
+        self.extension_config_save = tkinter.Button(self.extension_controls_container,
+                                                       text="Save",
+                                                       command=self.extension_config_save)
+        self.extension_config_save.grid(row=5, column=0)
+
+    def get_extension_active_state(self, extension_name):
+        for extension_config in self.configuration['tools']:
+            if extension_config['tracker-tool'] == extension_name:
+                return extension_config['enabled']
+        raise Exception('No extension named: {}'.format(extension_name))
+
+    def set_extension_active_state(self, extension_name, state):
+        for extension_config in self.configuration['tools']:
+            if extension_config['tracker-tool'] == extension_name:
+                extension_config['enabled'] = state
+                return
+        raise Exception('No extension named: {}'.format(extension_name))
+
+    def extension_config_save(self):
+        extension_name = self.extension_selection.get()
+        config_delta = self.extension_configurator.get_configuration_delta()
+        self.set_extension_active_state(extension_name, bool(self.extension_enabled_var.get()))
+        for key, value in config_delta.items():
+            self.configuration[key] = value
+        with open('config.json', 'w') as config_file:
+            config_file.write(json.dumps(self.configuration, indent=4))
+
+    def extension_default_save(self):
+        extension_name = self.extension_selection.get()
+        config_delta = self.extension_configurator.get_default_configuration()
+        for key, value in config_delta.items():
+            self.configuration[key] = value
+        with open('config.json', 'w') as config_file:
+            config_file.write(json.dumps(self.configuration, indent=4))
+
+    def extension_selection_selection_event_handler(self, event):
+        extension_name = self.extension_selection.get()
+        self.load_extension_configurator(extension_name)
+
+    def load_extension_configurator(self, extension_configurator_key):
+        self.extension_configurator_widget.destroy()
+        self.extension_configurator = self.extension_configurator_classes[extension_configurator_key](self.configuration)
+        self.extension_configurator_widget = self.extension_configurator.get_configuration_widget(self.extension_config_container)
+        self.extension_configurator_widget.grid(row=3, column=0, sticky=tkinter.EW, pady=2)
+        self.extension_enabled_var.set(self.get_extension_active_state(extension_configurator_key))
 
     def loop(self):
         if self.mouse_queue.qsize() > 0:
@@ -207,8 +260,6 @@ class ProfileCreator:
                 self.mouse_listener_process = None
             else:
                 self.add_mousebind(message)
-        if self.adren_queue.qsize() > 0:
-            self.update_adrenaline_bar(self.adren_queue.get())
         self.root.after(100, self.loop)
 
     def load_profile(self):
@@ -224,7 +275,7 @@ class ProfileCreator:
 
     def save_profile(self):
         saved_profile_data = {'keybinds':[], 'mousebinds':[], 'adrenaline-bar':[]}
-        saved_profile_data['adrenaline-bar'] = self.profile_data['adrenaline-bar']
+        #saved_profile_data['adrenaline-bar'] = self.profile_data['adrenaline-bar']
         for i in range(len(self.profile_data['keybinds'])):
                 saved_profile_data['keybinds'].append(self.profile_data['keybinds'][i].to_dict())
         for i in range(len(self.profile_data['mousebinds'])):
@@ -244,11 +295,6 @@ class ProfileCreator:
         if self.mouse_listener_process is None:
             self.mouse_listener_process = multiprocessing.Process(target=run_mouse_bind_selector, args=(self.mouse_queue, self.configuration, self.actions))
             self.mouse_listener_process.start()
-
-    def start_adrenaline_listener(self):
-        mouse = MouseAdrenSelector(self.adren_queue, self.configuration)
-        mouse_process = multiprocessing.Process(target=mouse.run)
-        mouse_process.start()
 
     def add_mousebind(self, binding):
         action = MousebindAction({'action':binding[0], 'x1':binding[1]-15, 'y1': binding[2]-15,
@@ -284,10 +330,6 @@ class ProfileCreator:
             'action':action, 'key':key, 'modifier':modifier}))
         self.update_keybinds()
 
-    def update_adrenaline_bar(self, region):
-        self.profile_data['adrenaline-bar'] = region
-        self.adrenaline_display.text = "Location recorded"
-
     def update_mousebinds(self):
         self.mousebind_list.delete(0, self.mousebind_list.size()-1)
         for i in range(len(self.profile_data['mousebinds'])):
@@ -314,22 +356,3 @@ class ProfileCreator:
 def run_profilecreator(configuration):
     profile_creator = ProfileCreator(configuration)
     profile_creator.run()
-
-
-if __name__ == '__main__':
-    multiprocessing.freeze_support()
-    configuration = None
-    with open('config.json', 'r+') as config_file:
-        configuration = json.loads("".join(config_file.readlines()))
-    profile_creator = ProfileCreator(configuration)
-    profile_creator.run()
-
-
-
-
-
-
-
-
-
-        

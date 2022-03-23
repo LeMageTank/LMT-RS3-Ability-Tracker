@@ -245,8 +245,8 @@ class TrackerUI:
         self.load_controls(self._controls_container)
         self._uitracker_tools = self.load_tools()        
         self._controls_container.grid(row=0, column=0, sticky=tkinter.W)
-        self._width = 20
-        self._height = 60
+        self._width = 300
+        self._height = 18
         self._root.geometry("{}x{}".format(self._width, self._height))
         self._root.protocol('WM_DELETE_WINDOW', self.close)
         self.start_tracker()
@@ -279,8 +279,8 @@ class TrackerUI:
                                                  command=self.configuration_button_event, height=12, width=12)
 
         self._play_pause_button.grid(row=0, column=0, sticky=tkinter.W)
-        self._refresh_button.grid(row=1, column=0, sticky=tkinter.W)
-        self._configuration_button.grid(row=2, column=0, sticky=tkinter.W)
+        self._refresh_button.grid(row=0, column=1, sticky=tkinter.W)
+        self._configuration_button.grid(row=0, column=2, sticky=tkinter.W)
 
     def play_pause_button_event(self):
         if self._paused:
