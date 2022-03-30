@@ -10,7 +10,7 @@ import time
 # actions: The actions detected by the tracker since the last call to this object.
 # global_cooldown: Time remaining until the end of the global cooldown [0 s., 1.8 s.]
 # player_state: A dict containing the current state of the player.
-class TrackerTool:
+class TrackerExtensionController:
     def __init__(self, configuration):
         self.configuration = configuration
     
@@ -19,7 +19,7 @@ class TrackerTool:
 
 # configuration: A dict of the config.json file in the root directory.
 # root: The base tkinter frame that this class's widget will be attached to.
-class TrackerToolUI:
+class TrackerExtensionUI:
     def __init__(self, configuration, root):
         self.configuration = configuration
         self.on_display = []
@@ -39,7 +39,7 @@ class TrackerToolUI:
     def shape(self):
         pass
 
-class TrackerToolConfiguration:
+class TrackerExtensionConfiguration:
     def __init__(self, configuration):
         self.configuration = configuration
         self.configuration_delta = {}

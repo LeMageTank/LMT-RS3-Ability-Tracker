@@ -6,7 +6,7 @@ from PIL import Image, ImageDraw, ImageTk
 from tracker.util.Configurator import save_configuration_options
 
 
-class TrackerUITool:
+class TrackerExtensionUI:
     def __init__(self, configuration, control_queue, tool_config):
         self._configuration = configuration
         self._control_queue = control_queue
@@ -17,6 +17,7 @@ class TrackerUITool:
         self._height = 1
         self._tool_ui = self.load_tool(tool_config)
         self._root.title('Ability Tracker: ' + tool_config['file-name'])
+        self._root.overrideredirect(True)
         self._root.attributes('-topmost', configuration['actiontracker-always-on-top'])
         self._root.iconphoto(False,ImageTk.PhotoImage(file=configuration['application-icon-file']))
         self._root.bind('<B1-Motion>', self.move_window)

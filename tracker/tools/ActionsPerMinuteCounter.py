@@ -1,8 +1,8 @@
-from tracker.trackertools import TrackerTool, TrackerToolUI, TrackerToolConfiguration
+from tracker.TrackerExtension import TrackerExtensionController, TrackerExtensionUI, TrackerExtensionConfiguration
 import tkinter
 import time
 
-class APMCounter(TrackerTool):
+class APMCounter(TrackerExtensionController):
     def __init__(self, configuration):
         super().__init__(configuration)
         self.actions_time_queue = []
@@ -22,7 +22,7 @@ class APMCounter(TrackerTool):
         apm = (60 / time_delta) * action_count
         return([('apm-counter', int(apm))])
 
-class APMCounterUI(TrackerToolUI):
+class APMCounterUI(TrackerExtensionUI):
     def __init__(self, configuration, root):
         super().__init__(configuration, root)
         self.widget = tkinter.Frame(root, background='black')
@@ -39,9 +39,10 @@ class APMCounterUI(TrackerToolUI):
             
     @property
     def shape(self):
-        return (20, 30)
+        width = (len(self.apm_text) + 3) * 14
+        return (width, 30)
 
-class APMCounterConfiguration(TrackerToolConfiguration):
+class APMCounterConfiguration(TrackerExtensionConfiguration):
     def get_default_configuration(self):
         self.apm_text_var.set('APM: ')
         self.window_time_var.set(30.0)

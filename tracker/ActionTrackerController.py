@@ -9,7 +9,7 @@ import time
 from tracker.actions.Action import Action
 from tracker.actions.KeybindAction import KeybindAction
 from tracker.actions.ActionProfile import ActionProfile
-from tracker.profilecreator import run_profilecreator
+from tracker.ProfileCreator import run_profilecreator
 import importlib
 
 class ActionTrackerController:

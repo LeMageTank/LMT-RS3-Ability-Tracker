@@ -12,8 +12,7 @@ import numpy as np
 from tracker.actions.Action import Action
 from tracker.actions.KeybindAction import KeybindAction
 from tracker.actions.ActionProfile import ActionProfile
-from tracker.profilecreator import run_profilecreator
-from tracker.ui.TrackerUITool import TrackerUITool
+from tracker.ui.TrackerExtensionUI import TrackerExtensionUI
 from tracker.ActionTrackerController import run_tracker_controller
 from tracker.util.Configurator import load_configuration, save_configuration_options
 import importlib
@@ -148,7 +147,7 @@ class ActionTrackerUI:
 
 def run_tracker_ui_tool(control_queue, tool_config, configuration):
     try:
-        tool_ui = TrackerUITool(configuration, control_queue, tool_config)
+        tool_ui = TrackerExtensionUI(configuration, control_queue, tool_config)
         tool_ui.start()
     except Exception as e:
         open(configuration['logs-directory'] + '-{}-exception.log'.format(tool_config['name']), 'w+').write('Exception: ' + str(e))
