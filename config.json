@@ -59,7 +59,9 @@
             "tracker-tool-ui": "ActionTrackerUI",
             "tracker-tool-configurator": "ActionTrackerConfiguration",
             "enabled": true,
-            "requires-icons": true
+            "transparent-background": false,
+            "requires-icons": true,
+            "transparent": false
         },
         {
             "file-name": "ActionsPerMinuteCounter",
@@ -68,6 +70,7 @@
             "tracker-tool-ui": "APMCounterUI",
             "tracker-tool-configurator": "APMCounterConfiguration",
             "enabled": true,
+            "transparent-background": false,
             "requires-icons": false
         }
     ],

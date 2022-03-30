@@ -198,20 +198,27 @@ class ProfileCreator:
         self.extension_enabled_checkbox.grid(row=2, column=1)
         self.extension_enabled_var.set(self.get_extension_active_state(list(self.extension_configurator_classes.keys())[0]))
 
+        self.extension_transparent_var = tkinter.IntVar()
+        self.extension_transparent_label = tkinter.Label(self.extension_config_container, text='Transparent')
+        self.extension_transparent_checkbox = tkinter.Checkbutton(self.extension_config_container, variable=self.extension_transparent_var)
+        self.extension_transparent_label.grid(row=3, column=0)
+        self.extension_transparent_checkbox.grid(row=3, column=1)
+        self.extension_transparent_var.set(self.get_extension_active_state(list(self.extension_configurator_classes.keys())[0]))
+
         self.extension_configurator = list(self.extension_configurator_classes.values())[0](self.configuration)
         self.extension_configurator_widget = self.extension_configurator.get_configuration_widget(self.extension_config_container)
-        self.extension_configurator_widget.grid(row=3, column=0, columnspan=2, sticky=tkinter.EW, pady=2)
+        self.extension_configurator_widget.grid(row=4, column=0, columnspan=2, sticky=tkinter.EW, pady=2)
 
         self.extension_controls_container = tkinter.Frame(self.extension_config_container)
-        self.extension_controls_container.grid(row=4, column=0, sticky=tkinter.EW, pady=2)
+        self.extension_controls_container.grid(row=5, column=0, sticky=tkinter.EW, pady=2)
         self.default_config_save = tkinter.Button(self.extension_controls_container,
                                                        text="Reset to default",
                                                        command=self.extension_default_save)
-        self.default_config_save.grid(row=5, column=1)
-        self.extension_config_save = tkinter.Button(self.extension_controls_container,
+        self.default_config_save.grid(row=6, column=1)
+        self.extension_config_save_button = tkinter.Button(self.extension_controls_container,
                                                        text="Save",
                                                        command=self.extension_config_save)
-        self.extension_config_save.grid(row=5, column=0)
+        self.extension_config_save_button.grid(row=6, column=0)
 
     def get_extension_active_state(self, extension_name):
         for extension_config in self.configuration['tools']:
@@ -226,10 +233,24 @@ class ProfileCreator:
                 return
         raise Exception('No extension named: {}'.format(extension_name))
 
+    def get_extension_transparent_state(self, extension_name):
+        for extension_config in self.configuration['tools']:
+            if extension_config['tracker-tool'] == extension_name:
+                return extension_config['transparent-background']
+        raise Exception('No extension named: {}'.format(extension_name))
+
+    def set_extension_transparent_state(self, extension_name, state):
+        for extension_config in self.configuration['tools']:
+            if extension_config['tracker-tool'] == extension_name:
+                extension_config['transparent-background'] = state
+                return
+        raise Exception('No extension named: {}'.format(extension_name))
+
     def extension_config_save(self):
         extension_name = self.extension_selection.get()
         config_delta = self.extension_configurator.get_configuration_delta()
         self.set_extension_active_state(extension_name, bool(self.extension_enabled_var.get()))
+        self.set_extension_transparent_state(extension_name, bool(self.extension_transparent_var.get()))
         for key, value in config_delta.items():
             self.configuration[key] = value
         save_configuration_options(self.configuration)
@@ -250,8 +271,9 @@ class ProfileCreator:
         self.extension_configurator_widget.destroy()
         self.extension_configurator = self.extension_configurator_classes[extension_configurator_key](self.configuration)
         self.extension_configurator_widget = self.extension_configurator.get_configuration_widget(self.extension_config_container)
-        self.extension_configurator_widget.grid(row=3, column=0, sticky=tkinter.EW, pady=2)
+        self.extension_configurator_widget.grid(row=4, column=0, columnspan=2, sticky=tkinter.EW, pady=2)
         self.extension_enabled_var.set(self.get_extension_active_state(extension_configurator_key))
+        self.extension_transparent_var.set(self.get_extension_transparent_state(extension_configurator_key))
 
     def loop(self):
         if self.mouse_queue.qsize() > 0:
@@ -284,7 +306,6 @@ class ProfileCreator:
         with open(self.configuration['saved-profiles-directory'] + self.profile_selection.get() + '.json', 'w+') as file:
             saved_profile_data = json.dumps(saved_profile_data)
             file.write(saved_profile_data)
-
         self.load_profile()
 
     def generate_profile(self):

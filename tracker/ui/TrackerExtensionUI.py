@@ -22,6 +22,8 @@ class TrackerExtensionUI:
         self._root.iconphoto(False,ImageTk.PhotoImage(file=configuration['application-icon-file']))
         self._root.bind('<B1-Motion>', self.move_window)
         self._root.configure(background='black')
+        if tool_config['transparent-background']:
+            self._root.wm_attributes("-transparentcolor", 'black')
         position = None
         try:
             position = configuration['{}-window-position'.format(self._tool_name)]
