@@ -70,8 +70,7 @@ jobs:
             architecture: 'x64'
         - run: pip install -r requirements.txt
         - run: pyinstaller actiontracker.spec
-        - run: zip -r LMTsAbilityTracker.zip /dist/AbilityTracker
-        - run: powershell.exe -noexit "Compress-Archive -Path dist\AbilityTracker\* -DestinationPath dist\LMTsAbilityTracker.zip"
+        - run: zip -r LMTsAbilityTracker.zip . -i /dist/AbilityTracker
         - uses: shogo82148/actions-upload-release-asset@v1
           with:
             upload_url: ${{ needs.Create-Release.outputs.asset_upload_url }}
