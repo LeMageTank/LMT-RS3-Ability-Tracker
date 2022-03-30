@@ -3,29 +3,41 @@ import importlib
 import os
 import traceback
 from PIL import Image, ImageDraw, ImageTk
+from tracker.util.Configurator import save_configuration_options
 
 
-class TrackerUITool:
+class TrackerExtensionUI:
     def __init__(self, configuration, control_queue, tool_config):
         self._configuration = configuration
         self._control_queue = control_queue
         self._root = tkinter.Tk()
         self._update_interval = configuration['actiontracker-update-interval']
+        self._tool_name = tool_config['name']
         self._width = 1
         self._height = 1
         self._tool_ui = self.load_tool(tool_config)
         self._root.title('Ability Tracker: ' + tool_config['file-name'])
+        self._root.overrideredirect(True)
         self._root.attributes('-topmost', configuration['actiontracker-always-on-top'])
         self._root.iconphoto(False,ImageTk.PhotoImage(file=configuration['application-icon-file']))
         self._root.bind('<B1-Motion>', self.move_window)
         self._root.configure(background='black')
-        self._root.geometry("{}x{}".format(self._width, self._height))
+        position = None
+        try:
+            position = configuration['{}-window-position'.format(self._tool_name)]
+        except:
+            position = [0,0]
+        self._root.geometry("{}x{}+{}+{}".format(self._width, self._height, position[0], position[1]))
         self._root.protocol('WM_DELETE_WINDOW', self.close)
+        self._root.bind('<B1-Motion>', self.move_window)
         
         self._icon_map = self.load_icons(configuration['action-icon-directory']) if tool_config['requires-icons'] else None
         self.update()
 
     def close(self):
+        configuration_delta = {}
+        configuration_delta['{}-window-position'.format(self._tool_name)] = [self._root.winfo_x(), self._root.winfo_y()]
+        save_configuration_options(configuration_delta)
         self._root.destroy()
         
     def move_window(self, event):
@@ -49,10 +61,20 @@ class TrackerUITool:
             icon_map[file.split('.')[0]] = icon
         return icon_map
 
+    def control_event_handler(self, event_content):
+        if event_content == 'exit':
+            self.close()
+        self.close()
+
     def update(self):
         while self._control_queue.qsize() > 0:
-            item = self._control_queue.get()
-            self._tool_ui.add_item(item)
+            event = self._control_queue.get()
+            event_type = event[0]
+            event_content = event[1]
+            if event_type == 'control_event':
+                self.control_event_handler(event_content)
+            elif event_type == 'tracker_event':
+                self._tool_ui.add_item(event_content)
         self._tool_ui.draw(self._icon_map)
         self._root.after(self._update_interval, self.update)
 

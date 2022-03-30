@@ -10,6 +10,7 @@ import numpy as np
 import importlib
 from tracker.actions.KeybindAction import KeybindAction
 from tracker.actions.MousebindAction import MousebindAction
+from tracker.util.Configurator import save_configuration_options
 
 def run_mouse_bind_selector(queue, config, action_list):
     mouse_bind_selector = MouseBindSelector(queue, config, action_list)
@@ -231,8 +232,7 @@ class ProfileCreator:
         self.set_extension_active_state(extension_name, bool(self.extension_enabled_var.get()))
         for key, value in config_delta.items():
             self.configuration[key] = value
-        with open('config.json', 'w') as config_file:
-            config_file.write(json.dumps(self.configuration, indent=4))
+        save_configuration_options(self.configuration)
 
     def extension_default_save(self):
         extension_name = self.extension_selection.get()

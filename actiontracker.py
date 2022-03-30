@@ -1,12 +1,11 @@
 import multiprocessing
-import tracker.actiontracker
+import tracker.ActionTrackerUI
 import json
 import tkinter
+from tracker.util.Configurator import load_configuration
 
 if __name__ == '__main__':
     multiprocessing.freeze_support()
     configuration = None
-    with open('config.json', 'r+') as config_file:
-        configuration = json.loads(''.join(config_file.readlines()))
-    tracker.actiontracker.run_tracker_ui(configuration)
-    #tracker.profilecreator.run_profilecreator(configuration)
+    configuration = load_configuration()
+    tracker.ActionTrackerUI.run_tracker_ui(configuration)

@@ -1,14 +1,14 @@
-from tracker.trackertools import TrackerTool, TrackerToolUI, TrackerToolConfiguration
+from tracker.TrackerExtension import TrackerExtensionController, TrackerExtensionUI, TrackerExtensionConfiguration
 import tkinter
 
-class ActionTracker(TrackerTool):
+class ActionTracker(TrackerExtensionController):
     def run(self, action_profile, action_map, actions, global_cooldown, player_state):
         output_list = []
         for action in actions:
             output_list.append(('action-tracker', action))
         return output_list
 
-class ActionTrackerUI(TrackerToolUI):
+class ActionTrackerUI(TrackerExtensionUI):
     def __init__(self, configuration, root):
         super().__init__(configuration, root)
         self.max_icons = configuration['actiontracker-icons']
@@ -37,7 +37,7 @@ class ActionTrackerUI(TrackerToolUI):
     def shape(self):
         return (((self.padding[0] * 2) + self.icon_shape[0]) * (self.max_icons + 1), (self.padding[1] * 3) + self.icon_shape[1])
 
-class ActionTrackerConfiguration(TrackerToolConfiguration):
+class ActionTrackerConfiguration(TrackerExtensionConfiguration):
     def get_default_configuration(self):
         self.num_icons_var.set(8)
         return {'actiontracker-icons': 8,
