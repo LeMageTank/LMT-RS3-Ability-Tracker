@@ -8,7 +8,7 @@ a = Analysis(
     ['actiontracker.py'],
     pathex=[],
     binaries=[],
-    datas=[('config.json','.'),('data','data'),('tracker','tracker'),('icons','icons')],
+    datas=[('config.json','.'),('data','data'),('tracker','tracker'),('icons','icons'),('LICENSE','.')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
