@@ -6,11 +6,17 @@
     "saved-profiles-directory": "data\\saved profiles\\",
     "play-image-file": "data\\app icons\\play.png",
     "pause-image-file": "data\\app icons\\pause.png",
+    "move-image-file": "data\\app icons\\move.png",
+    "exit-image-file": "data\\app icons\\exit.png",
     "refresh-image-file": "data\\app icons\\sync.png",
     "configuration-image-file": "data\\app icons\\configuration.png",
     "application-icon-file": "data\\app icons\\icon.png",
     "action-icon-directory": "icons\\",
     "profile-creator-file": "tracker\\profilecreator.py",
+    "tracker-window-position": [
+        0,
+        0
+    ],
     "actiontracker-icons": 8,
     "actiontracker-icon-shape": [
         30,
@@ -64,5 +70,13 @@
             "enabled": true,
             "requires-icons": false
         }
+    ],
+    "action-tracker-window-position": [
+        0,
+        0
+    ],
+    "apm-counter-window-position": [
+        0,
+        0
     ]
 }
