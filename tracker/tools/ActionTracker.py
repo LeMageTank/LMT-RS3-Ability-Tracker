@@ -52,6 +52,7 @@ class ActionTrackerConfiguration(TrackerExtensionConfiguration):
         num_icons_label = tkinter.Label(widget, text='No. Icons')
         num_icons_label.grid(row=0, column=0)
         self.num_icons_var = tkinter.IntVar()
+        self.num_icons_var.set(8)
         self.num_icons_spinbox = tkinter.Spinbox(widget, from_=1, to=20, textvariable=self.num_icons_var)
         self.num_icons_spinbox.grid(row=0, column=1)
         return widget
