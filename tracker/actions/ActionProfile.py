@@ -5,10 +5,6 @@ class ActionProfile:
     def __init__(self, profile_dict, weapon_type):
         self._keybinds = {}
         self._mousebinds = []
-        if 'adrenaline-bar' in profile_dict.keys() and len(profile_dict['adrenaline-bar']) == 4:
-            self._adrenaline_bar = profile_dict['adrenaline-bar']
-        else:
-            self._adrenaline_bar = None
         self._weapon_type = weapon_type
         self.weapon = None
 
@@ -19,10 +15,6 @@ class ActionProfile:
         for mousebind in profile_dict['mousebinds']:
             self._mousebinds.append(MousebindAction(mousebind))
         self._mousebinds.sort()
-
-    @property
-    def adrenaline_bar(self):
-        return self._adrenaline_bar
 
     @property
     def weapon_type(self):
