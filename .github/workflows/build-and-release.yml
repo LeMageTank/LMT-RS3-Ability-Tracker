@@ -40,39 +40,39 @@ jobs:
             asset_path: ./dist/LMTsAbilityTracker.zip
             asset_name: LMTs-Ability-Tracker-${{ needs.Create-Release.outputs.version_number }}-WIN-x64.zip
             asset_content_type: application/zip
-    Build-And-Publish-Mac-Intel:
-        runs-on: macos-latest
-        needs: Create-Release
-        steps:
-        - uses: actions/checkout@v2
-        - uses: actions/setup-python@v2
-          with:
-            python-version: '3.9'
-            architecture: 'x64'
-        - run: pip install -r requirements.txt
-        - run: pyinstaller actiontracker.spec
-        - run: zip -vr LMTsAbilityTracker.zip dist/AbilityTracker/
-        - uses: shogo82148/actions-upload-release-asset@v1
-          with:
-            upload_url: ${{ needs.Create-Release.outputs.asset_upload_url }}
-            asset_path: ./LMTsAbilityTracker.zip
-            asset_name: LMTs-Ability-Tracker-${{ needs.Create-Release.outputs.version_number }}-MacOS-x64.zip
-            asset_content_type: application/zip
-    Build-And-Publish-Linux:
-        runs-on: ubuntu-latest
-        needs: Create-Release
-        steps:
-        - uses: actions/checkout@v2
-        - uses: actions/setup-python@v2
-          with:
-            python-version: '3.9'
-            architecture: 'x64'
-        - run: pip install -r requirements.txt
-        - run: pyinstaller actiontracker.spec
-        - run: zip -r LMTsAbilityTracker.zip . -i /dist/AbilityTracker
-        - uses: shogo82148/actions-upload-release-asset@v1
-          with:
-            upload_url: ${{ needs.Create-Release.outputs.asset_upload_url }}
-            asset_path: ./LMTsAbilityTracker.zip
-            asset_name: LMTs-Ability-Tracker-${{ needs.Create-Release.outputs.version_number }}-linux-x64.zip
-            asset_content_type: application/zip
+#    Build-And-Publish-Mac-Intel:
+#        runs-on: macos-latest
+#        needs: Create-Release
+#        steps:
+#        - uses: actions/checkout@v2
+#        - uses: actions/setup-python@v2
+#          with:
+#            python-version: '3.9'
+#            architecture: 'x64'
+#        - run: pip install -r requirements.txt
+#        - run: pyinstaller actiontracker.spec
+#        - run: zip -vr LMTsAbilityTracker.zip dist/AbilityTracker/
+#        - uses: shogo82148/actions-upload-release-asset@v1
+#          with:
+#            upload_url: ${{ needs.Create-Release.outputs.asset_upload_url }}
+#            asset_path: ./LMTsAbilityTracker.zip
+#            asset_name: LMTs-Ability-Tracker-${{ needs.Create-Release.outputs.version_number }}-MacOS-x64.zip
+#            asset_content_type: application/zip
+#    Build-And-Publish-Linux:
+#        runs-on: ubuntu-latest
+#        needs: Create-Release
+#        steps:
+#        - uses: actions/checkout@v2
+#        - uses: actions/setup-python@v2
+#          with:
+#            python-version: '3.9'
+#            architecture: 'x64'
+#        - run: pip install -r requirements.txt
+#        - run: pyinstaller actiontracker.spec
+#        - run: zip -r LMTsAbilityTracker.zip . -i /dist/AbilityTracker
+#        - uses: shogo82148/actions-upload-release-asset@v1
+#          with:
+#            upload_url: ${{ needs.Create-Release.outputs.asset_upload_url }}
+#            asset_path: ./LMTsAbilityTracker.zip
+#            asset_name: LMTs-Ability-Tracker-${{ needs.Create-Release.outputs.version_number }}-linux-x64.zip
+#            asset_content_type: application/zip
