@@ -10,9 +10,9 @@ class KeybindAction:
                        '»':'=', 'Û':'[', 'Ý':']', 'Ü':'\\', 'º':';', 'Þ':'\'', '¼':',', '¾':'.', '¿':'/', 'key.backspace':'backspace',
                        'key.tab':'tab', 'key.caps_lock':'caps lock', 'key.esc':'esc', 'key.delete':'delete', 'key.left':'left',
                        'key.up':'up', 'key.down':'down', 'key.right':'right'}
+    modifier_keys_strings = ['', 'alt', 'shift', 'ctrl']
 
     def __init__(self, keybind_dict):
-        self.action = keybind_dict['action']
         self.primary_key = keybind_dict['key'].casefold()
         if keybind_dict['modifier'] is None:
             self.modifier_key = None
@@ -43,10 +43,10 @@ class KeybindAction:
         return self.key == other
 
     def to_dict(self):
-        return {'action':self.action, 'key':self.primary_key, 'modifier':self.modifier_key}
+        return {'key':self.primary_key, 'modifier':self.modifier_key}
 
     def __hash__(self):
         return self.key.__hash__()
 
     def __str__(self):
-        return "{} : ({} + {})".format(self.action, self.primary_key, self.modifier_key)
+        return "({} + {})".format(self.primary_key, self.modifier_key)

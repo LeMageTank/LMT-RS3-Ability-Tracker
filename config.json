@@ -12,6 +12,24 @@
     "configuration-image-file": "data\\app icons\\configuration.png",
     "application-icon-file": "data\\app icons\\icon.png",
     "action-icon-directory": "icons\\",
+    "wizard-welcome-page-background":"data\\app images\\cannon-image-blur.png",
+    "wizard-welcome-page-start":"data\\app images\\start-button.png",
+    "wizard-acknowledge-page-acknowledge":"data\\app images\\acknowledge-button.png",
+    "wizard-continue": "data\\app images\\continue-button.png",
+    "github-link": "https://github.com/LeMageTank/LMT-RS3-Ability-Tracker",
+    "discord-invite": "https://discord.gg/79SCj6888e",
+    "wizard-background-color":"#ffffff",
+    "wizard-background-color-dark":"#01293d",
+    "wizard-heading-color":"#3079f0",
+    "wizard-heading-color-dark":"#ffffff",
+    "wizard-text-color":"#000000",
+    "wizard-text-color-dark":"#acafb0",
+	"wizard-frame-color":"#e6f3fa",
+    "wizard-frame-color-dark":"#153363",
+	"wizard-highlight-color":"#9c4702",
+    "wizard-highlight-color-dark":"#ffa75e",
+	"wizard-error-color":"red",
+    "wizard-error-color-dark":"red",
     "profile-creator-file": "tracker\\profilecreator.py",
     "tracker-window-position": [
         0,
@@ -43,6 +61,123 @@
         "shift",
         "ctrl"
     ],
+    "setup-wizard-transparent-color":"#32a8a8",
+    "preset-action-bar-template": "data\\app images\\action bar templates\\preset\\preset template.png",
+    "preset-action-bar-template-dimensions": [30, 30],
+    "main-action-bar-templates": [
+      {"file":"data\\app images\\action bar templates\\main\\horizontal_1row.PNG",
+        "num-rows":1,
+        "num-columns":14,
+        "x-start":0,
+        "y-start":0,
+        "row-space":0,
+        "column-space":0,
+        "clickable-region-width":0,
+        "clickable-region-height":0
+      },
+      {"file":"data\\app images\\action bar templates\\main\\horizontal_2row.PNG",
+        "num-rows":1,
+        "num-columns":14,
+        "x-start":0,
+        "y-start":0,
+        "row-space":0,
+        "column-space":0,
+        "clickable-region-width":0,
+        "clickable-region-height":0
+      },
+      {"file":"data\\app images\\action bar templates\\main\\vertical_1column.PNG",
+        "num-rows":1,
+        "num-columns":14,
+        "x-start":0,
+        "y-start":0,
+        "row-space":0,
+        "column-space":0,
+        "clickable-region-width":0,
+        "clickable-region-height":0
+      },
+      {"file":"data\\app images\\action bar templates\\main\\vertical_2column.PNG",
+        "num-rows":1,
+        "num-columns":14,
+        "x-start":0,
+        "y-start":0,
+        "row-space":0,
+        "column-space":0,
+        "clickable-region-width":0,
+        "clickable-region-height":0
+      }
+    ],
+    "additional-action-bar-templates": [
+      {"file":"data\\app images\\action bar templates\\additional\\horizontal_1row.PNG",
+        "num-rows":1,
+        "num-columns":14,
+        "x-start":0,
+        "y-start":0,
+        "row-space":0,
+        "column-space":0,
+        "clickable-region-width":0,
+        "clickable-region-height":0
+      },
+      {"file":"data\\app images\\action bar templates\\additional\\horizontal_2row.PNG",
+        "num-rows":1,
+        "num-columns":14,
+        "x-start":0,
+        "y-start":0,
+        "row-space":0,
+        "column-space":0,
+        "clickable-region-width":0,
+        "clickable-region-height":0
+      },
+      {"file":"data\\app images\\action bar templates\\additional\\vertical_1column.PNG",
+        "num-rows":1,
+        "num-columns":14,
+        "x-start":0,
+        "y-start":0,
+        "row-space":0,
+        "column-space":0,
+        "clickable-region-width":0,
+        "clickable-region-height":0
+      },
+      {"file":"data\\app images\\action bar templates\\additional\\vertical_2column.PNG",
+        "num-rows":1,
+        "num-columns":14,
+        "x-start":0,
+        "y-start":0,
+        "row-space":0,
+        "column-space":0,
+        "clickable-region-width":0,
+        "clickable-region-height":0
+      }
+    ],
+    "setup-icons": {
+      "melee":{
+        "default":"data\\app images\\setup icons\\Melee_tab.png",
+        "selected":"data\\app images\\setup icons\\Melee_tab_selected.png"
+      },
+      "magic":{
+        "default":"data\\app images\\setup icons\\Magic_tab.png",
+        "selected":"data\\app images\\setup icons\\Magic_tab_selected.png"
+      },
+      "ranged":{
+        "default":"data\\app images\\setup icons\\Ranged_tab.png",
+        "selected":"data\\app images\\setup icons\\Ranged_tab_selected.png"
+      },
+      "defence":{
+        "default":"data\\app images\\setup icons\\Defence_tab.png",
+        "selected":"data\\app images\\setup icons\\Defence_tab_selected.png"
+      },
+      "constitution":{
+        "default":"data\\app images\\setup icons\\Constitution_tab.png",
+        "selected":"data\\app images\\setup icons\\Constitution_tab_selected.png"
+      },
+      "item":{
+        "default":"data\\app images\\setup icons\\Items_tab.png",
+        "selected":"data\\app images\\setup icons\\Items_tab_selected.png"
+      },
+      "prayer":{
+        "default":"data\\app images\\setup icons\\Prayer_tab.png",
+        "selected":"data\\app images\\setup icons\\Prayer_tab_selected.png"
+      }
+    },
     "clickable-region-file-template": "data\\saved profile clickables\\{}{}{}.png",
     "logs-directory": "logs\\",
     "profile-creator-default-icon-file": "icons\\Zaros Godsword.png",

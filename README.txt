@@ -8,3 +8,6 @@ Required dependencies for running or building from source (all listed in require
 	2. pyautogui
 	3. Pillow
 	4. numpy
+
+Linux users will need to install Scrot to enable screenshot functionality:
+This program can be installed with: `sudo apt-get install scrot`

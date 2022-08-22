@@ -6,34 +6,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":1, "damage":[30.0,120.0]}]
-	},
-	{
-		"action":"Lesser Smash",
-		"type":"basic",
-		"cooldown":10.2,
-		"incurs_gcd":true,
-		"adrenaline-delta":8,
-		"ability-type":"standard",
-		"hits":[{"tick":0, "damage":[20.0,120.0]}]
-	},
-	{
-		"action":"Lesser Havoc",
-		"type":"basic",
-		"cooldown":10.2,
-		"incurs_gcd":true,
-		"adrenaline-delta":8,
-		"ability-type":"standard",
-		"hits":[{"tick":0, "damage":[20.0,120.0]}]
-	},
-	{
-		"action":"Lesser Sever",
-		"type":"basic", 
-		"cooldown":15.0,
-		"incurs_gcd":true,
-		"adrenaline-delta":8,
-		"ability-type":"standard",
-		"hits":[{"tick":0, "damage":[28.8,120.0]}]
+		"hits":[{"tick":1, "damage":[30.0,120.0]}],
+		"tag":"melee"
 	},
 	{
 		"action":"Backhand",
@@ -42,7 +16,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":1, "damage":[20.0,100.0]}]
+		"hits":[{"tick":1, "damage":[20.0,100.0]}],
+		"tag":"melee"
 	},
 	{
 		"action":"Slaughter",
@@ -55,16 +30,18 @@
 			{"tick":3, "damage":[20.0,50.0]},
 			{"tick":5, "damage":[20.0,50.0]},
 			{"tick":7, "damage":[20.0,50.0]},
-			{"tick":9, "damage":[20.0,50.0]}]
+			{"tick":9, "damage":[20.0,50.0]}],
+			"tag":"melee"
 	},
 	{
 		"action":"Overpower",
-		"type":"utlimate",
+		"type":"ultimate",
 		"cooldown":30.0,
 		"incurs_gcd":true,
 		"adrenaline-delta":-100,
 		"ability-type":"standard",
-		"hits":[{"tick":2, "damage":[250.0,350.0]}]
+		"hits":[{"tick":2, "damage":[250.0,350.0]}],
+		"tag":"melee"
 	},
 	{
 		"action":"Havoc",
@@ -73,7 +50,18 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":1, "damage":[31.4,157.0]}]
+		"hits":[{"tick":1, "damage":[31.4,157.0]}],
+		"tag":"melee"
+	},
+	{
+		"action":"Chaos Roar",
+		"type":"basic",
+		"cooldown":60.0,
+		"incurs_gcd":true,
+		"adrenaline-delta":8,
+		"ability-type":"standard",
+		"hits":[{"tick":1, "damage":[20.0,130.0]}],
+		"tag":"melee"
 	},
 	{
 		"action":"Forceful Backhand",
@@ -82,7 +70,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-15,
 		"ability-type":"standard",
-		"hits":[{"tick":1, "damage":[40.0,200.0]}]
+		"hits":[{"tick":1, "damage":[40.0,200.0]}],
+		"tag":"melee"
 	},
 	{
 		"action":"Smash",
@@ -91,7 +80,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":1, "damage":[31.4,157.0]}]
+		"hits":[{"tick":1, "damage":[31.4,157.0]}],
+		"tag":"melee"
 	},
 	{
 		"action":"Barge",
@@ -100,7 +90,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":1, "damage":[25.0,125.0]}]
+		"hits":[{"tick":1, "damage":[25.0,125.0]}],
+		"tag":"melee"
 	},
 	{
 		"action":"Greater Barge",
@@ -109,7 +100,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":1, "damage":[45.0,225.0]}]
+		"hits":[{"tick":1, "damage":[45.0,225.0]}],
+		"tag":"melee"
 	},
 	{
 		"action":"Greater Flurry",
@@ -121,7 +113,8 @@
 		"hits":[{"tick":1, "damage":[31.25,157.0]},
 			{"tick":3, "damage":[31.25,157.0]},
 			{"tick":5, "damage":[31.25,157.0]},
-			{"tick":7, "damage":[31.25,157.0]}]
+			{"tick":7, "damage":[31.25,157.0]}],
+			"tag":"melee"
 	},
 	{
 		"action":"Flurry",
@@ -133,7 +126,8 @@
 		"hits":[{"tick":1, "damage":[18.75,94.0]},
 			{"tick":3, "damage":[18.75,94.0]},
 			{"tick":5, "damage":[18.75,94.0]},
-			{"tick":7, "damage":[18.75,94.0]}]
+			{"tick":7, "damage":[18.75,94.0]}],
+			"tag":"melee"
 	},
 	{
 		"action":"Sever",
@@ -142,7 +136,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":0, "damage":[37.6,188.0]}]
+		"hits":[{"tick":0, "damage":[37.6,188.0]}],
+		"tag":"melee"
 	},
 	{
 		"action":"Hurricane",
@@ -152,7 +147,8 @@
 		"adrenaline-delta":-15,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[66.0,219.0]},
-			{"tick":1, "damage":[84.0,161.0]}]
+			{"tick":1, "damage":[84.0,161.0]}],
+			"tag":"melee"
 	},
 	{
 		"action":"Bladed Dive",
@@ -161,7 +157,8 @@
 		"incurs_gcd":false,
 		"adrenaline-delta":0,
 		"ability-type":"movement",
-		"hits":[]
+		"hits":[],
+		"tag":"melee"
 	},
 	{
 		"action":"Massacre",
@@ -175,7 +172,8 @@
 			{"tick":4, "damage":[62.0,62.0]},
 			{"tick":6, "damage":[62.0,62.0]},
 			{"tick":8, "damage":[62.0,62.0]},
-			{"tick":10, "damage":[62.0,62.0]}]
+			{"tick":10, "damage":[62.0,62.0]}],
+			"tag":"melee"
 	},
 	{
 		"action":"Blood Tendrils",
@@ -188,7 +186,8 @@
 			{"tick":3, "damage":[18.0,90.0]},
 			{"tick":5, "damage":[18.0,90.0]},
 			{"tick":7, "damage":[18.0,90.0]},
-			{"tick":7, "damage":[18.0,90.0]}]
+			{"tick":7, "damage":[18.0,90.0]}],
+			"tag":"melee"
 	},
 	{
 		"action":"Meteor Strike",
@@ -197,29 +196,18 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-100,
 		"ability-type":"standard",
-		"hits":[{"tick":0, "damage":[250.0,350.0]}]
+		"hits":[{"tick":0, "damage":[250.0,350.0]}],
+		"tag":"melee"
 	},
 	{
 		"action":"Balanced Strike",
-		"type":"Ultimate",
+		"type":"ultimate",
 		"cooldown":120.0,
 		"incurs_gcd":true,
 		"adrenaline-delta":-100,
 		"ability-type":"standard",
-		"hits":[]
-	},
-	{
-		"action":"Lesser Dismember",
-		"type":"basic",
-		"cooldown":15.0,
-		"incurs_gcd":true,
-		"adrenaline-delta":8,
-		"ability-type":"bleed",
-		"hits":[{"tick":1, "damage":[20.0,28.0]},
-			{"tick":3, "damage":[20.0,28.0]},
-			{"tick":5, "damage":[20.0,28.0]},
-			{"tick":7, "damage":[20.0,28.0]},
-			{"tick":7, "damage":[20.0,28.0]}]
+		"hits":[],
+		"tag":"melee"
 	},
 	{
 		"action":"Stomp",
@@ -228,7 +216,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-15,
 		"ability-type":"standard",
-		"hits":[{"tick":0, "damage":[40.0,200.0]}]
+		"hits":[{"tick":0, "damage":[40.0,200.0]}],
+		"tag":"melee"
 	},
 	{
 		"action":"Kick",
@@ -237,7 +226,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":0, "damage":[20.0,100.0]}]
+		"hits":[{"tick":0, "damage":[20.0,100.0]}],
+		"tag":"melee"
 	},
 	{
 		"action":"Punish",
@@ -246,7 +236,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":0, "damage":[18.0,94.0]}]
+		"hits":[{"tick":0, "damage":[18.0,94.0]}],
+		"tag":"melee"
 	},
 	{
 		"action":"Dismember",
@@ -259,7 +250,8 @@
 			{"tick":3, "damage":[20.0,37.0]},
 			{"tick":5, "damage":[20.0,37.0]},
 			{"tick":7, "damage":[20.0,37.0]},
-			{"tick":7, "damage":[20.0,37.0]}]
+			{"tick":7, "damage":[20.0,37.0]}],
+			"tag":"melee"
 	},
 	{
 		"action":"Greater Fury",
@@ -268,7 +260,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":0, "damage":[31.0,157.0]}]
+		"hits":[{"tick":0, "damage":[31.0,157.0]}],
+		"tag":"melee"
 	},
 	{
 		"action":"Fury",
@@ -279,11 +272,12 @@
 		"ability-type":"channeled",
 		"hits":[{"tick":0, "damage":[16.0,82.0]},
 			{"tick":2, "damage":[16.0,82.0]},
-			{"tick":4, "damage":[16.0,82.0]}]
+			{"tick":4, "damage":[16.0,82.0]}],
+			"tag":"melee"
 	},
 	{
 		"action":"Destroy",
-		"type":"Threshold",
+		"type":"threshold",
 		"cooldown":20.4,
 		"incurs_gcd":true,
 		"adrenaline-delta":-15,
@@ -291,16 +285,18 @@
 		"hits":[{"tick":1, "damage":[37.6,188.0]},
 			{"tick":3, "damage":[37.6,188.0]},
 			{"tick":5, "damage":[37.6,188.0]},
-			{"tick":7, "damage":[37.6,188.0]}]
+			{"tick":7, "damage":[37.6,188.0]}],
+			"tag":"melee"
 	},
 	{
 		"action":"Quake",
-		"type":"theshold",
+		"type":"threshold",
 		"cooldown":20.4,
 		"incurs_gcd":true,
 		"adrenaline-delta":-15,
 		"ability-type":"standard",
-		"hits":[{"tick":0, "damage":[43.0,219.0]}]
+		"hits":[{"tick":0, "damage":[43.0,219.0]}],
+		"tag":"melee"
 	},
 	{
 		"action":"Berserk",
@@ -309,7 +305,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-100,
 		"ability-type":"non-damage",
-		"hits":[]
+		"hits":[],
+		"tag":"melee"
 	},
 	{
 		"action":"Cleave",
@@ -318,11 +315,12 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":0, "damage":[37.6,188.0]}]
+		"hits":[{"tick":0, "damage":[37.6,188.0]}],
+		"tag":"melee"
 	},
 	{
 		"action":"Assault",
-		"type":"theshold",
+		"type":"threshold",
 		"cooldown":30.0,
 		"incurs_gcd":true,
 		"adrenaline-delta":-15,
@@ -330,7 +328,8 @@
 		"hits":[{"tick":1, "damage":[43.8,219.0]},
 			{"tick":4, "damage":[43.8,219.0]},
 			{"tick":7, "damage":[43.8,219.0]},
-			{"tick":10, "damage":[43.8,219.0]}]
+			{"tick":10, "damage":[43.8,219.0]}],
+			"tag":"melee"
 	},
 	{
 		"action":"Decimate",
@@ -339,7 +338,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":0, "damage":[37.6,188.0]}]
+		"hits":[{"tick":0, "damage":[37.6,188.0]}],
+		"tag":"melee"
 	},
 	{
 		"action":"Pulverise",
@@ -348,7 +348,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-100,
 		"ability-type":"standard",
-		"hits":[{"tick":0, "damage":[250.0,350.0]}]
+		"hits":[{"tick":0, "damage":[250.0,350.0]}],
+		"tag":"melee"
 	},
 	{
 		"action":"Frenzy",
@@ -360,7 +361,8 @@
 		"hits":[{"tick":1, "damage":[80.0,180.0]},
 			{"tick":3, "damage":[90.0,200.0]},
 			{"tick":5, "damage":[100.0,220.0]},
-			{"tick":7, "damage":[110.0,240.0]}]
+			{"tick":7, "damage":[110.0,240.0]}],
+			"tag":"melee"
 	},
 	{
 		"action":"Devotion",
@@ -369,7 +371,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-15,
 		"ability-type":"non-damage",
-		"hits":[]
+		"hits":[],
+		"tag":"defence"
 	},
 	{
 		"action":"Anticipation",
@@ -378,7 +381,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"non-damage",
-		"hits":[]
+		"hits":[],
+		"tag":"defence"
 	},
 	{
 		"action":"Bash",
@@ -387,7 +391,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":0, "damage":[20.0,100.0]}]
+		"hits":[{"tick":0, "damage":[20.0,100.0]}],
+		"tag":"defence"
 	},
 	{
 		"action":"Revenge",
@@ -396,7 +401,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-15,
 		"ability-type":"non-damage",
-		"hits":[]
+		"hits":[],
+		"tag":"defence"
 	},
 	{
 		"action":"Immortality",
@@ -405,7 +411,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-100,
 		"ability-type":"non-damage",
-		"hits":[]
+		"hits":[],
+		"tag":"defence"
 	},
 	{
 		"action":"Freedom",
@@ -414,7 +421,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"non-damage",
-		"hits":[]
+		"hits":[],
+		"tag":"defence"
 	},
 	{
 		"action":"Reflect",
@@ -423,7 +431,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-15,
 		"ability-type":"non-damage",
-		"hits":[]
+		"hits":[],
+		"tag":"defence"
 	},
 	{
 		"action":"Resonance",
@@ -432,7 +441,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"non-damage",
-		"hits":[]
+		"hits":[],
+		"tag":"defence"
 	},
 	{
 		"action":"Divert",
@@ -441,7 +451,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"non-damage",
-		"hits":[]
+		"hits":[],
+		"tag":"defence"
 	},
 	{
 		"action":"Debilitate",
@@ -450,7 +461,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-15,
 		"ability-type":"standard",
-		"hits":[{"tick":0, "damage":[20.0,100.0]}]
+		"hits":[{"tick":0, "damage":[20.0,100.0]}],
+		"tag":"defence"
 	},
 	{
 		"action":"Preparation",
@@ -459,7 +471,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"non-damage",
-		"hits":[]
+		"hits":[],
+		"tag":"defence"
 	},
 	{
 		"action":"Barricade",
@@ -468,7 +481,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-100,
 		"ability-type":"non-damage",
-		"hits":[]
+		"hits":[],
+		"tag":"defence"
 	},
 	{
 		"action":"Natural Instinct",
@@ -477,7 +491,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-100,
 		"ability-type":"non-damage",
-		"hits":[]
+		"hits":[],
+		"tag":"defence"
 	},
 	{
 		"action":"Special Attack",
@@ -486,7 +501,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":0,
 		"ability-type":"special",
-		"hits":[]
+		"hits":[],
+		"tag":"constitution"
 	},
 	{
 		"action":"Regenerate",
@@ -495,7 +511,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":0,
 		"ability-type":"non-damage",
-		"hits":[]
+		"hits":[],
+		"tag":"constitution"
 	},
 	{
 		"action":"Sacrifice",
@@ -504,7 +521,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":0, "damage":[20.0,100.0]}]
+		"hits":[{"tick":0, "damage":[20.0,100.0]}],
+		"tag":"constitution"
 	},
 	{
 		"action":"Essence of Finality",
@@ -513,7 +531,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":0,
 		"ability-type":"special",
-		"hits":[]
+		"hits":[],
+		"tag":"constitution"
 	},
 	{
 		"action":"Storm Shards",
@@ -522,7 +541,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"non-damage",
-		"hits":[]
+		"hits":[],
+		"tag":"constitution"
 	},
 	{
 		"action":"Shatter",
@@ -531,7 +551,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-15,
 		"ability-type":"non-damage",
-		"hits":[]
+		"hits":[],
+		"tag":"constitution"
 	},
 	{
 		"action":"Reprisal",
@@ -540,7 +561,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-15,
 		"ability-type":"non-damage",
-		"hits":[]
+		"hits":[],
+		"tag":"constitution"
 	},
 	{
 		"action":"Onslaught",
@@ -574,7 +596,8 @@
 			{"tick":0, "damage":[289.0,876.0]},
 			{"tick":0, "damage":[299.9,909.0]},
 			{"tick":0, "damage":[310.8,942.0]},
-			{"tick":0, "damage":[321.7,975.0]}]
+			{"tick":0, "damage":[321.7,975.0]}],
+			"tag":"constitution"
 	},
 	{
 		"action":"Ice Asylum",
@@ -583,7 +606,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-100,
 		"ability-type":"non-damage",
-		"hits":[]
+		"hits":[],
+		"tag":"constitution"
 	},
 	{
 		"action":"Eat Food",
@@ -592,7 +616,8 @@
 		"incurs_gcd":false,
 		"adrenaline-delta":0,
 		"ability-type":"non-damage",
-		"hits":[]
+		"hits":[],
+		"tag":"constitution"
 	},
 	{
 		"action":"Snipe",
@@ -601,7 +626,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":0, "damage":[125.0,219.0]}]
+		"hits":[{"tick":0, "damage":[125.0,219.0]}],
+		"tag":"ranged"
 	},
 	{
 		"action":"Needle Strike",
@@ -610,7 +636,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":0, "damage":[31.4,157.0]}]
+		"hits":[{"tick":0, "damage":[31.4,157.0]}],
+		"tag":"ranged"
 	},
 	{
 		"action":"Piercing Shot",
@@ -619,7 +646,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":0, "damage":[18.0,94.0]}]
+		"hits":[{"tick":0, "damage":[18.0,94.0]}],
+		"tag":"ranged"
 	},
 	{
 		"action":"Binding Shot",
@@ -628,7 +656,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":0, "damage":[20.0,100.0]}]
+		"hits":[{"tick":0, "damage":[20.0,100.0]}],
+		"tag":"ranged"
 	},
 	{
 		"action":"Dazing Shot",
@@ -637,7 +666,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":0, "damage":[31.0,157.0]}]
+		"hits":[{"tick":0, "damage":[31.0,157.0]}],
+		"tag":"ranged"
 	},
 	{
 		"action":"Fragmentation Shot",
@@ -650,7 +680,8 @@
 			{"tick":3, "damage":[20.0,37.0]},
 			{"tick":5, "damage":[20.0,37.0]},
 			{"tick":7, "damage":[20.0,37.0]},
-			{"tick":9, "damage":[20.0,37.0]}]
+			{"tick":9, "damage":[20.0,37.0]}],
+			"tag":"ranged"
 	},
 	{
 		"action":"Snap Shot",
@@ -660,7 +691,8 @@
 		"adrenaline-delta":-15,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[100.0,120.0]},
-			{"tick":1, "damage":[100.0,210.0]}]
+			{"tick":1, "damage":[100.0,210.0]}],
+		"tag":"ranged"
 	},
 	{
 		"action":"Deadshot",
@@ -674,7 +706,8 @@
 			{"tick":4, "damage":[62.0,62.0]},
 			{"tick":6, "damage":[62.0,62.0]},
 			{"tick":8, "damage":[62.0,62.0]},
-			{"tick":10, "damage":[62.0,62.0]}]
+			{"tick":10, "damage":[62.0,62.0]}],
+			"tag":"ranged"
 	},
 	{
 		"action":"Tight Bindings",
@@ -683,7 +716,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-15,
 		"ability-type":"standard",
-		"hits":[{"tick":0, "damage":[40.0,200.0]}]
+		"hits":[{"tick":0, "damage":[40.0,200.0]}],
+		"tag":"ranged"
 	},
 	{
 		"action":"Greater Dazing Shot",
@@ -692,16 +726,18 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"bleed",
-		"hits":[{"tick":0, "damage":[31.0,157.0]}]
+		"hits":[{"tick":0, "damage":[31.0,157.0]}],
+		"tag":"ranged"
 	},
 	{
-		"action":"Demoralize",
+		"action":"Demoralise",
 		"type":"basic",
 		"cooldown":15.0,
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":0, "damage":[20.0,100.0]}]
+		"hits":[{"tick":0, "damage":[20.0,100.0]}],
+		"tag":"ranged"
 	},
 	{
 		"action":"Rout",
@@ -710,7 +746,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-15,
 		"ability-type":"standard",
-		"hits":[{"tick":0, "damage":[40.0,200.0]}]
+		"hits":[{"tick":0, "damage":[40.0,200.0]}],
+		"tag":"ranged"
 	},
 	{
 		"action":"Escape",
@@ -719,7 +756,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"movement",
-		"hits":[]
+		"hits":[],
+		"tag":"ranged"
 	},
 	{
 		"action":"Rapid Fire",
@@ -735,7 +773,8 @@
 			{"tick":4, "damage":[18.75,94.0]},
 			{"tick":5, "damage":[18.75,94.0]},
 			{"tick":6, "damage":[18.75,94.0]},
-			{"tick":7, "damage":[18.75,94.0]}]
+			{"tick":7, "damage":[18.75,94.0]}],
+			"tag":"ranged"
 	},
 	{
 		"action":"Greater Ricochet",
@@ -746,7 +785,8 @@
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[20.0,100.0]},
 			{"tick":1, "damage":[10.0,50.0]},
-			{"tick":1, "damage":[10.0,50.0]}]
+			{"tick":1, "damage":[10.0,50.0]}],
+			"tag":"ranged"
 	},
 	{
 		"action":"Ricochet",
@@ -755,7 +795,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":0, "damage":[20.0,100.0]}]
+		"hits":[{"tick":0, "damage":[20.0,100.0]}],
+		"tag":"ranged"
 	},
 	{
 		"action":"Bombardment",
@@ -764,7 +805,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-15,
 		"ability-type":"standard",
-		"hits":[{"tick":0, "damage":[43.0,219.0]}]
+		"hits":[{"tick":0, "damage":[43.0,219.0]}],
+		"tag":"ranged"
 	},
 	{
 		"action":"Salt the Wound",
@@ -773,7 +815,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-15,
 		"ability-type":"standard",
-		"hits":[{"tick":0, "damage":[37.0,188.0]}]
+		"hits":[{"tick":0, "damage":[37.0,188.0]}],
+		"tag":"ranged"
 	},
 	{
 		"action":"Incendiary Shot",
@@ -782,7 +825,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-100,
 		"ability-type":"standard",
-		"hits":[{"tick":0, "damage":[250.0,350.0]}]
+		"hits":[{"tick":0, "damage":[250.0,350.0]}],
+		"tag":"ranged"
 	},
 	{
 		"action":"Corruption Shot",
@@ -795,7 +839,8 @@
 			{"tick":3, "damage":[33.0,100.0]},
 			{"tick":5, "damage":[33.0,100.0]},
 			{"tick":7, "damage":[33.0,100.0]},
-			{"tick":9, "damage":[33.0,100.0]}]
+			{"tick":9, "damage":[33.0,100.0]}],
+			"tag":"ranged"
 	},
 	{
 		"action":"Shadow Tendrils",
@@ -804,7 +849,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-15,
 		"ability-type":"standard",
-		"hits":[{"tick":1, "damage":[66.0,500.0]}]
+		"hits":[{"tick":1, "damage":[66.0,500.0]}],
+		"tag":"ranged"
 	},
 	{
 		"action":"Unload",
@@ -816,7 +862,8 @@
 		"hits":[{"tick":1, "damage":[95.0,210.0]},
 			{"tick":3, "damage":[95.0,210.0]},
 			{"tick":5, "damage":[95.0,210.0]},
-			{"tick":7, "damage":[95.0,210.0]}]
+			{"tick":7, "damage":[95.0,210.0]}],
+			"tag":"ranged"
 	},
 	{
 		"action":"Deaths Swiftness",
@@ -825,7 +872,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-100,
 		"ability-type":"non-damage",
-		"hits":[]
+		"hits":[],
+		"tag":"ranged"
 	},
 	{
 		"action":"Wrack",
@@ -834,7 +882,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":1, "damage":[18.0,94.0]}]
+		"hits":[{"tick":1, "damage":[18.0,94.0]}],
+		"tag":"magic"
 	},
 	{
 		"action":"Asphyxiate",
@@ -846,7 +895,8 @@
 		"hits":[{"tick":1, "damage":[37.5,188.0]},
 			{"tick":3, "damage":[37.5,188.0]},
 			{"tick":5, "damage":[37.5,188.0]},
-			{"tick":7, "damage":[37.5,188.0]}]
+			{"tick":7, "damage":[37.5,188.0]}],
+			"tag":"magic"
 	},
 	{
 		"action":"Wrack and Ruin",
@@ -855,7 +905,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":1, "damage":[60.0,300.0]}]
+		"hits":[{"tick":1, "damage":[60.0,300.0]}],
+		"tag":"magic"
 	},
 	{
 		"action":"Concentrated Blast",
@@ -866,7 +917,8 @@
 		"ability-type":"channeled",
 		"hits":[{"tick":0, "damage":[16.0,82.0]},
 			{"tick":2, "damage":[16.0,82.0]},
-			{"tick":4, "damage":[16.0,82.0]}]
+			{"tick":4, "damage":[16.0,82.0]}],
+		"tag":"magic"
 	},
 	{
 		"action":"Impact",
@@ -875,7 +927,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":1, "damage":[20.0,100.0]}]
+		"hits":[{"tick":1, "damage":[20.0,100.0]}],
+		"tag":"magic"
 	},
 	{
 		"action":"Sonic Wave",
@@ -884,7 +937,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":1, "damage":[31.0,157.0]}]
+		"hits":[{"tick":1, "damage":[31.0,157.0]}],
+		"tag":"magic"
 	},
 	{
 		"action":"Dragon Breath",
@@ -893,7 +947,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":1, "damage":[37.0,188.0]}]
+		"hits":[{"tick":1, "damage":[37.0,188.0]}],
+		"tag":"magic"
 	},
 	{
 		"action":"Combust",
@@ -906,7 +961,8 @@
 			{"tick":3, "damage":[20.0,37.0]},
 			{"tick":5, "damage":[20.0,37.0]},
 			{"tick":7, "damage":[20.0,37.0]},
-			{"tick":9, "damage":[20.0,37.0]}]
+			{"tick":9, "damage":[20.0,37.0]}],
+			"tag":"magic"
 	},
 	{
 		"action":"Omnipower",
@@ -915,7 +971,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-100,
 		"ability-type":"standard",
-		"hits":[{"tick":1, "damage":[200.0,400.0]}]
+		"hits":[{"tick":1, "damage":[200.0,400.0]}],
+		"tag":"magic"
 	},
 	{
 		"action":"Deep Impact",
@@ -924,7 +981,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-15,
 		"ability-type":"standard",
-		"hits":[{"tick":1, "damage":[40.0,200.0]}]
+		"hits":[{"tick":1, "damage":[40.0,200.0]}],
+		"tag":"magic"
 	},
 	{
 		"action":"Shock",
@@ -933,7 +991,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":1, "damage":[20.0,100.0]}]
+		"hits":[{"tick":1, "damage":[20.0,100.0]}],
+		"tag":"magic"
 	},
 	{
 		"action":"Greater Concentrated Blast",
@@ -944,7 +1003,8 @@
 		"ability-type":"channeled",
 		"hits":[{"tick":0, "damage":[17.6,89.0]},
 			{"tick":1, "damage":[17.6,89.0]},
-			{"tick":2, "damage":[17.6,89.0]}]
+			{"tick":2, "damage":[17.6,89.0]}],
+			"tag":"magic"
 	},
 	{
 		"action":"Horror",
@@ -953,7 +1013,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-15,
 		"ability-type":"standard",
-		"hits":[{"tick":1, "damage":[40.0,200.0]}]
+		"hits":[{"tick":1, "damage":[40.0,200.0]}],
+		"tag":"magic"
 	},
 	{
 		"action":"Surge",
@@ -962,7 +1023,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"movement",
-		"hits":[]
+		"hits":[],
+		"tag":"magic"
 	},
 	{
 		"action":"Detonate",
@@ -971,7 +1033,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-15,
 		"ability-type":"standard",
-		"hits":[{"tick":4, "damage":[100.0,350.0]}]
+		"hits":[{"tick":4, "damage":[100.0,350.0]}],
+		"tag":"magic"
 	},
 	{
 		"action":"Greater Chain",
@@ -980,7 +1043,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":1, "damage":[20.0,100.0]}]
+		"hits":[{"tick":1, "damage":[20.0,100.0]}],
+		"tag":"magic"
 	},
 	{
 		"action":"Chain",
@@ -989,7 +1053,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":8,
 		"ability-type":"standard",
-		"hits":[{"tick":1, "damage":[20.0,100.0]}]
+		"hits":[{"tick":1, "damage":[20.0,100.0]}],
+		"tag":"magic"
 	},
 	{
 		"action":"Wild Magic",
@@ -999,7 +1064,8 @@
 		"adrenaline-delta":-15,
 		"ability-type":"standard",
 		"hits":[{"tick":1, "damage":[50.0,165.0]},
-			{"tick":2, "damage":[50.0,215.0]}]
+			{"tick":2, "damage":[50.0,215.0]}],
+		"tag":"magic"
 	},
 	{
 		"action":"Metamorphosis",
@@ -1008,7 +1074,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-100,
 		"ability-type":"non-damage",
-		"hits":[]
+		"hits":[],
+		"tag":"magic"
 	},
 	{
 		"action":"Corruption Blast",
@@ -1021,7 +1088,8 @@
 			{"tick":3, "damage":[33.0,100.0]},
 			{"tick":5, "damage":[33.0,100.0]},
 			{"tick":7, "damage":[33.0,100.0]},
-			{"tick":9, "damage":[33.0,100.0]}]
+			{"tick":9, "damage":[33.0,100.0]}],
+		"tag":"magic"
 	},
 	{
 		"action":"Smoke Tendrils",
@@ -1033,7 +1101,8 @@
 		"hits":[{"tick":1, "damage":[28.75,143.75]},
 			{"tick":3, "damage":[28.75,143.75]},
 			{"tick":5, "damage":[28.75,143.75]},
-			{"tick":7, "damage":[28.75,143.75]}]
+			{"tick":7, "damage":[28.75,143.75]}],
+		"tag":"magic"
 	},
 	{
 		"action":"Tsunami",
@@ -1042,7 +1111,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-100,
 		"ability-type":"standard",
-		"hits":[{"tick":1, "damage":[200.0,300.0]}]
+		"hits":[{"tick":1, "damage":[200.0,300.0]}],
+		"tag":"magic"
 	},
 	{
 		"action":"Sunshine",
@@ -1051,7 +1121,8 @@
 		"incurs_gcd":true,
 		"adrenaline-delta":-100,
 		"ability-type":"non-damage",
-		"hits":[]
+		"hits":[],
+		"tag":"magic"
 	},
 	{
 		"action":"Limitless",
@@ -1060,7 +1131,8 @@
 		"incurs_gcd":false,
 		"adrenaline-delta":0,
 		"ability-type":"non-damage",
-		"hits":[]
+		"hits":[],
+		"tag":"constitution"
 	},
 	{
 		"action":"Masterwork Spear of Annihilation",
@@ -1069,7 +1141,8 @@
 		"incurs_gcd":false,
 		"adrenaline-delta":0,
 		"ability-type":null,
-		"hits":[]
+		"hits":[],
+		"tag":"item"
 	},
 	{
 		"action":"Drygore Mace",
@@ -1078,7 +1151,18 @@
 		"incurs_gcd":false,
 		"adrenaline-delta":0,
 		"ability-type":null,
-		"hits":[]
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Off-hand Drygore Mace",
+		"type":"weapon",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
 	},
 	{
 		"action":"Zaros Godsword",
@@ -1087,7 +1171,8 @@
 		"incurs_gcd":false,
 		"adrenaline-delta":0,
 		"ability-type":null,
-		"hits":[]
+		"hits":[],
+		"tag":"item"
 	},
 	{
 		"action":"Noxious Scythe",
@@ -1096,7 +1181,8 @@
 		"incurs_gcd":false,
 		"adrenaline-delta":0,
 		"ability-type":null,
-		"hits":[]
+		"hits":[],
+		"tag":"item"
 	},
 	{
 		"action":"Statiuss Warhammer",
@@ -1105,7 +1191,8 @@
 		"incurs_gcd":false,
 		"adrenaline-delta":0,
 		"ability-type":null,
-		"hits":[]
+		"hits":[],
+		"tag":"item"
 	},
 	{
 		"action":"Drygore Rapier",
@@ -1114,7 +1201,18 @@
 		"incurs_gcd":false,
 		"adrenaline-delta":0,
 		"ability-type":null,
-		"hits":[]
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Off-hand Drygore Rapier",
+		"type":"weapon",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
 	},
 	{
 		"action":"Drygore Longsword",
@@ -1123,7 +1221,18 @@
 		"incurs_gcd":false,
 		"adrenaline-delta":0,
 		"ability-type":null,
-		"hits":[]
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Off-hand Drygore Longsword",
+		"type":"weapon",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
 	},
 	{
 		"action":"Dark Shard of Leng",
@@ -1132,7 +1241,18 @@
 		"incurs_gcd":false,
 		"adrenaline-delta":0,
 		"ability-type":null,
-		"hits":[]
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Dark Sliver of Leng",
+		"type":"weapon",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
 	},
 	{
 		"action":"Khopesh of Tumeken",
@@ -1141,7 +1261,28 @@
 		"incurs_gcd":false,
 		"adrenaline-delta":0,
 		"ability-type":null,
-		"hits":[]
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Khopesh of Elidinis",
+		"type":"weapon",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Bow of the Last Guardian",
+		"type":"weapon",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
 	},
 	{
 		"action":"Blightbound Crossbow",
@@ -1150,7 +1291,18 @@
 		"incurs_gcd":false,
 		"adrenaline-delta":0,
 		"ability-type":null,
-		"hits":[]
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Off-hand Blightbound Crossbow",
+		"type":"weapon",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
 	},
 	{
 		"action":"Ascension Crossbow",
@@ -1159,7 +1311,18 @@
 		"incurs_gcd":false,
 		"adrenaline-delta":0,
 		"ability-type":null,
-		"hits":[]
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Off-hand Ascension Crossbow",
+		"type":"weapon",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
 	},
 	{
 		"action":"Shadow Glaive",
@@ -1168,7 +1331,18 @@
 		"incurs_gcd":false,
 		"adrenaline-delta":0,
 		"ability-type":null,
-		"hits":[]
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Off-hand Shadow Glaive",
+		"type":"weapon",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
 	},
 	{
 		"action":"Mechanized Chinchompa",
@@ -1177,7 +1351,8 @@
 		"incurs_gcd":false,
 		"adrenaline-delta":0,
 		"ability-type":null,
-		"hits":[]
+		"hits":[],
+		"tag":"item"
 	},
 	{
 		"action":"Decimation",
@@ -1186,7 +1361,8 @@
 		"incurs_gcd":false,
 		"adrenaline-delta":0,
 		"ability-type":null,
-		"hits":[]
+		"hits":[],
+		"tag":"item"
 	},
 	{
 		"action":"Noxious Longbow",
@@ -1195,7 +1371,8 @@
 		"incurs_gcd":false,
 		"adrenaline-delta":0,
 		"ability-type":null,
-		"hits":[]
+		"hits":[],
+		"tag":"item"
 	},
 	{
 		"action":"Seren Godbow",
@@ -1204,7 +1381,8 @@
 		"incurs_gcd":false,
 		"adrenaline-delta":0,
 		"ability-type":null,
-		"hits":[]
+		"hits":[],
+		"tag":"item"
 	},
 	{
 		"action":"Strykebow",
@@ -1213,7 +1391,8 @@
 		"incurs_gcd":false,
 		"adrenaline-delta":0,
 		"ability-type":null,
-		"hits":[]
+		"hits":[],
+		"tag":"item"
 	},
 	{
 		"action":"Eldritch Crossbow",
@@ -1222,7 +1401,8 @@
 		"incurs_gcd":false,
 		"adrenaline-delta":0,
 		"ability-type":null,
-		"hits":[]
+		"hits":[],
+		"tag":"item"
 	},
 	{
 		"action":"Wyvern Crossbow",
@@ -1231,7 +1411,8 @@
 		"incurs_gcd":false,
 		"adrenaline-delta":0,
 		"ability-type":null,
-		"hits":[]
+		"hits":[],
+		"tag":"item"
 	},
 	{
 		"action":"Wand of the Praesul",
@@ -1240,7 +1421,18 @@
 		"incurs_gcd":false,
 		"adrenaline-delta":0,
 		"ability-type":null,
-		"hits":[]
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Imperium Core",
+		"type":"weapon",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
 	},
 	{
 		"action":"Seismic Wand",
@@ -1249,7 +1441,18 @@
 		"incurs_gcd":false,
 		"adrenaline-delta":0,
 		"ability-type":null,
-		"hits":[]
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Seismic Singularity",
+		"type":"weapon",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
 	},
 	{
 		"action":"Fractured Staff of Armadyl",
@@ -1258,7 +1461,8 @@
 		"incurs_gcd":false,
 		"adrenaline-delta":0,
 		"ability-type":null,
-		"hits":[]
+		"hits":[],
+		"tag":"item"
 	},
 	{
 		"action":"Staff of Sliske",
@@ -1267,7 +1471,8 @@
 		"incurs_gcd":false,
 		"adrenaline-delta":0,
 		"ability-type":null,
-		"hits":[]
+		"hits":[],
+		"tag":"item"
 	},
 	{
 		"action":"Noxious Staff",
@@ -1276,7 +1481,8 @@
 		"incurs_gcd":false,
 		"adrenaline-delta":0,
 		"ability-type":null,
-		"hits":[]
+		"hits":[],
+		"tag":"item"
 	},
 	{
 		"action":"Magma Tempest",
@@ -1287,7 +1493,8 @@
 		"ability-type":"standard",
 		"hits":[{"tick":1, "damage":[5.0,19.0]}, {"tick":3, "damage":[5.0,19.0]}, {"tick":5, "damage":[5.0,19.0]},
 			{"tick":7, "damage":[5.0,19.0]}, {"tick":9, "damage":[5.0,19.0]}, {"tick":11, "damage":[5.0,19.0]},
-			{"tick":13, "damage":[5.0,19.0]}, {"tick":15, "damage":[5.0,19.0]}]
+			{"tick":13, "damage":[5.0,19.0]}, {"tick":15, "damage":[5.0,19.0]}],
+		"tag":"magic"
 	},
 	{
 		"action":"Ek-ZekKil",
@@ -1296,6 +1503,1008 @@
 		"incurs_gcd":false,
 		"adrenaline-delta":0,
 		"ability-type":null,
-		"hits":[]
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Abyssal Scourge",
+		"type":"weapon",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Aggression",
+		"type":"special",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"constitution"
+	},
+	{
+		"action":"Amulet of Souls",
+		"type":"neck",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Arcane Spirit Shield",
+		"type":"shield",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Elysian Spirit Shield",
+		"type":"shield",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Divine Spirit Shield",
+		"type":"shield",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Malevolent Kiteshield",
+		"type":"shield",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Merciless Kiteshield",
+		"type":"shield",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Vengeful Kiteshield",
+		"type":"shield",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Ancient Defender",
+		"type":"shield",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Ancient Lantern",
+		"type":"shield",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Ancient Repriser",
+		"type":"shield",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Smoke Cloud",
+		"type":"spell",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"magic"
+	},
+	{
+		"action":"Animate Dead",
+		"type":"spell",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"magic"
+	},
+	{
+		"action":"Exsanguinate",
+		"type":"spell",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"magic"
+	},
+	{
+		"action":"Incite Fear",
+		"type":"spell",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"magic"
+	},
+	{
+		"action":"Disruption Shield",
+		"type":"spell",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"magic"
+	},
+	{
+		"action":"Shield Dome",
+		"type":"spell",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"magic"
+	},
+	{
+		"action":"Intercept",
+		"type":"spell",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"magic"
+	},
+	{
+		"action":"Emerald Aurora",
+		"type":"spell",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"magic"
+	},
+	{
+		"action":"Prism of Salvation",
+		"type":"spell",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"magic"
+	},
+	{
+		"action":"Prism of Restoration",
+		"type":"spell",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"magic"
+	},
+	{
+		"action":"Prism of Loyalty",
+		"type":"spell",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"magic"
+	},
+	{
+		"action":"Smoke Barrage",
+		"type":"spell",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"magic"
+	},
+	{
+		"action":"Shadow Barrage",
+		"type":"spell",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"magic"
+	},
+	{
+		"action":"Blood Barrage",
+		"type":"spell",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"magic"
+	},
+	{
+		"action":"Ice Barrage",
+		"type":"spell",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"magic"
+	},
+	{
+		"action":"Armadyl Battlestaff",
+		"type":"weapon",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Ascendri Bolts",
+		"type":"ammo",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Jas Arrows",
+		"type":"ammo",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Ful Arrows",
+		"type":"ammo",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Bik Arrows",
+		"type":"ammo",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Wen Arrows",
+		"type":"ammo",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Splintering Arrows",
+		"type":"ammo",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Black Stone Arrows",
+		"type":"ammo",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Deathspore Arrows",
+		"type":"ammo",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Blue Blubber Jellyfish",
+		"type":"food",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Borrowed Power",
+		"type":"spell",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"magic"
+	},
+	{
+		"action":"Channellers Ring",
+		"type":"ring",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Combat Dummy",
+		"type":"misc",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Demon Slayer",
+		"type":"special",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"constitution"
+	},
+	{
+		"action":"Dominion Mine",
+		"type":"misc",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Dreadnip",
+		"type":"misc",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Elder Overload Salve",
+		"type":"potion",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Enhanced Replenishment Potion",
+		"type":"potion",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Erethdors Grimoire",
+		"type":"pocket",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Essence of Finality Amulet Black",
+		"type":"neck",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Essence of Finality Amulet Blue",
+		"type":"neck",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Essence of Finality Amulet Green",
+		"type":"neck",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Essence of Finality Amulet Pink",
+		"type":"neck",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Essence of Finality Amulet Red",
+		"type":"neck",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Essence of Finality Amulet Yellow",
+		"type":"neck",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Essence of Finality Amulet",
+		"type":"neck",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Golden Touch",
+		"type":"special",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"constitution"
+	},
+	{
+		"action":"Guthix Rest Flask",
+		"type":"potion",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Hydrix Bakriminel Bolts",
+		"type":"ammo",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Sapphire Bakriminel Bolts",
+		"type":"ammo",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Red Topaz Bakriminel Bolts",
+		"type":"ammo",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Pearl Bakriminel Bolts",
+		"type":"ammo",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Opal Bakriminel Bolts",
+		"type":"ammo",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Onyx Bakriminel Bolts",
+		"type":"ammo",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Jade Bakriminel Bolts",
+		"type":"ammo",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Emerald Bakriminel Bolts",
+		"type":"ammo",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Diamond Bakriminel Bolts",
+		"type":"ammo",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Dragonstone Bakriminel Bolts",
+		"type":"ammo",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Ingenuity of the Humans",
+		"type":"special",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"constitution"
+	},
+	{
+		"action":"Kalphite Defender",
+		"type":"shield",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Kalphite Rebounder",
+		"type":"shield",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Kalphite Repriser",
+		"type":"shield",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Kuradals Favour",
+		"type":"special",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"constitution"
+	},
+	{
+		"action":"Luck of the Dwarves",
+		"type":"ring",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Overload",
+		"type":"potion",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Reavers Ring",
+		"type":"ring",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Ring of Death",
+		"type":"ring",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Ring of Vigour",
+		"type":"ring",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Ruby Bakriminel Bolts",
+		"type":"ammo",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Sailfish Soup",
+		"type":"food",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Scrimshaw of the Elements",
+		"type":"pocket",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Scrimshaw of Vampyrism",
+		"type":"pocket",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Scripture of Ful",
+		"type":"pocket",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Scripture of Jas",
+		"type":"pocket",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Scripture of Wen",
+		"type":"pocket",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Spellbook Swap",
+		"type":"spell",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"magic"
+	},
+	{
+		"action":"Spiritual Prayer Potion",
+		"type":"potion",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Summoning Flask",
+		"type":"potion",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Super Guthix Brew",
+		"type":"potion",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Super Restore",
+		"type":"potion",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Super Saradomin Brew",
+		"type":"potion",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Saradomin Brew",
+		"type":"potion",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Supreme Overload",
+		"type":"potion",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Adrenaline Renewal",
+		"type":"potion",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Vengeance",
+		"type":"spell",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"magic"
+	},
+	{
+		"action":"Vulnerability Bomb",
+		"type":"misc",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Deflect Melee",
+		"type":"ancient curses",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"prayer"
+	},
+	{
+		"action":"Deflect Magic",
+		"type":"ancient curses",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"prayer"
+	},
+	{
+		"action":"Deflect Missiles",
+		"type":"ancient curses",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"prayer"
+	},
+	{
+		"action":"Soul Split",
+		"type":"ancient curses",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"prayer"
+	},
+	{
+		"action":"Turmoil",
+		"type":"ancient curses",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"prayer"
+	}
+	,
+	{
+		"action":"Torment",
+		"type":"ancient curses",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"prayer"
+	},
+	{
+		"action":"Anguish",
+		"type":"ancient curses",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"prayer"
 	}
 ]
