@@ -9,6 +9,7 @@ from tracker.setup.SetupWizard import run_setup_wizard
 if __name__ == '__main__':
     multiprocessing.freeze_support()
     configuration = load_configuration()
-    run_setup_wizard(configuration)
-    #tracker.ActionTrackerUI.run_tracker_ui(configuration)
+    #run_setup_wizard(configuration)
+    tracker.ActionTrackerUI.run_tracker_ui(configuration)
+    
  

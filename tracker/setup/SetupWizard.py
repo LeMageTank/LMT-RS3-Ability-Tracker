@@ -3,18 +3,17 @@ import tkinter
 from PIL import Image, ImageDraw, ImageTk
 import json
 import time
+from tracker.actions.KeybindAction import KeybindAction
+from tracker.actions.MousebindAction import MousebindAction
 from tracker.util.Configurator import save_configuration_options
-from tracker.setup.SetupWizardState import SetupWizardState
-from tracker.setup.pages.WizardWelcomePage import WizardWelcomePage
-from tracker.setup.pages.WizardAcknowledgePage import WizardAcknowledgePage
-from tracker.setup.pages.WizardActionBarPresetSetupPage import WizardActionBarPresetSetupPage
-from tracker.setup.pages.WizardActionBarSetupPage import WizardActionBarSetupPage
+from tracker.setup.SetupWizardPageProvider import SetupWizardPageProvider
+from tracker.setup.SetupWizardPageState import SetupWizardPageState
+from tracker.util.InputProfileJsonEncoder import InputProfileJsonEncoder
+
 
 class SetupWizard:
     def __init__(self, configuration):
         self._configuration = configuration
-        self._state = SetupWizardState.WELCOME_PAGE
-        self._state = SetupWizardState.ACTION_BAR_PRESET_SETUP_PAGE
         self._root = tkinter.Tk()
         self._root.geometry('100x100')
         self._root.iconphoto(False,
@@ -23,8 +22,9 @@ class SetupWizard:
         self._root.wm_attributes('-transparentcolor', self._configuration['setup-wizard-transparent-color'])
         self._root.title('LMT\'s Ability Tracker Setup Wizard')
         self._data = {'darkmode':True}
-
-        self.load_state(self._state)
+        self.load_input_profile()
+        self._page = None
+        self.load_page(SetupWizardPageState.WELCOME_PAGE)
 
     def set_window_size(self, width, height):
         self._root.geometry('{}x{}'.format(width, height))
@@ -32,29 +32,22 @@ class SetupWizard:
     def set_fullscreen(self, state):
         self._root.attributes('-fullscreen', state)
 
-    def load_state(self, state):
+    def set_color_to_alpha(self, color):
+        self._root.wm_attributes("-transparentcolor", color)
+
+    def load_page(self, page_state):
+        print('Loading page:', page_state)
+        page_constructor = SetupWizardPageProvider.get_page_constructor(page_state)
         for prev_page in self._root.winfo_children():
             prev_page.destroy()
 
-        self._state = state
-        print('state:', state)
-        page_constructor = None
-        if state == SetupWizardState.WELCOME_PAGE:
-            page_constructor = WizardWelcomePage
-        elif state == SetupWizardState.ACKNOWLEDGE_PAGE:
-            page_constructor = WizardAcknowledgePage
-        elif state == SetupWizardState.ACTION_BAR_PRESET_SETUP_PAGE:
-            page_constructor = WizardActionBarPresetSetupPage
-        elif state == SetupWizardState.ACTION_BAR_SETUP_PAGE:
-            page_constructor = WizardActionBarSetupPage
-        elif state == SetupWizardState.KEYBIND_SETUP_PAGE:
-            page_constructor = WizardActionBarKeybindSetupPage
-        page = page_constructor(self._configuration, self.load_state,
+        self._page = page_constructor(self._configuration, self.load_page,
                                self.add_data, self.get_data,
                                self.set_window_size, self.set_fullscreen,
-                                self._root)
-        widget = page.get_widget()
-        widget.pack(fill=tkinter.BOTH)
+                               self.set_color_to_alpha, self.exit, self._root)
+        widget = self._page.get_widget()
+        widget.pack(side=tkinter.LEFT, fill=tkinter.BOTH, expand=True)
+        self.set_color_to_alpha('#00D500')
 
     def add_data(self, key, value):
         self._data[key] = value
@@ -65,8 +58,26 @@ class SetupWizard:
         except:
             return None
 
+    def load_input_profile(self):
+        input_profile = None
+        with open(self._configuration['input-profile'], 'r+') as file:
+            input_profile = json.loads("".join(file.readlines()))
+        for key, value in input_profile.items():
+            self.add_data(key, value)
+
+    def save_input_profile(self):
+        del self._data['darkmode']
+        with open(self._configuration['input-profile'], 'w') as file:
+            file.write(json.dumps(self._data, indent=4, cls=InputProfileJsonEncoder))
+
     def run(self):
         self._root.mainloop()
+
+    def exit(self, save):
+        if save:
+            self.save_input_profile()
+        self._root.destroy()
+
 
 def run_setup_wizard(configuration):
     setup_wizard = SetupWizard(configuration)

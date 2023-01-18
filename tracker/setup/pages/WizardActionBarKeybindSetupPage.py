@@ -3,13 +3,13 @@ import pyautogui
 import webbrowser
 import multiprocessing
 from PIL import Image, ImageDraw, ImageTk
-from tracker.setup.SetupWizardState import SetupWizardState
-from tracker.setup.WizardWidget import WizardWidget
+from tracker.setup.WizardPage import WizardPage
 from tracker.actions.MousebindAction import MousebindAction
 from tracker.actions.KeybindAction import KeybindAction
 from tracker.util.Constants import *
+from tracker.setup.SetupWizardPageState import SetupWizardPageState
 
-class WizardActionBarKeybindSetupPage(WizardWidget):
+class WizardActionBarKeybindSetupPage(WizardPage):
     def set_dark_mode(self):
         background_color = self._configuration['wizard-background-color-dark']
         heading_color = self._configuration['wizard-heading-color-dark']
@@ -29,6 +29,7 @@ class WizardActionBarKeybindSetupPage(WizardWidget):
         for widget in self._widget_frame_colors:
             widget.configure(background=frame_color)
 
+        self._darkmode_button.configure(text="Light Mode")
         self._ttk_widget_style.configure('style.TCombobox', bg=frame_color, fg=heading_color)
 
     def set_light_mode(self):
@@ -50,6 +51,7 @@ class WizardActionBarKeybindSetupPage(WizardWidget):
         for widget in self._widget_frame_colors:
             widget.configure(background=frame_color)
 
+        self._darkmode_button.configure(text="Dark Mode")
         self._ttk_widget_style.configure('style.TCombobox', bg=frame_color, fg=heading_color)
 
     def change_theme(self):
@@ -67,12 +69,30 @@ class WizardActionBarKeybindSetupPage(WizardWidget):
 
     def save_and_continue(self):
         for keybind in self._keybinds:
-            self._action_bars[keybind[0]][keybind[1]]['keybind'] = KeybindAction(
+            self._active_action_bars[keybind[0]][keybind[1]]['keybind'] = KeybindAction(
                 {'key':keybind[2].get(), 'modifier':keybind[3].get()})
-        self._load_state_fp(SetupWizardState.MOUSEBIND_SETUP_PAGE)
+        self._load_page_fp(SetupWizardPageState.MOUSEBIND_SETUP_PAGE)
 
     def initialize_data(self):
         self._action_bars = self._get_data_fp('action-bars')
+        if self._action_bars is None:
+            self._action_bars = {
+		'main-action-bar':[],
+		'additional-action-bar-1':[],
+		'additional-action-bar-2':[],
+		'additional-action-bar-3':[],
+		'additional-action-bar-4':[]}
+            self._add_data_fp('action-bars', self._action_bars)
+        for action_bar in self._action_bars.values():
+            for i in range(NUM_ACTIONS_SLOTS_PER_ACTION_BAR - len(action_bar)):
+                action_bar.append({'keybind': {'key':'', 'modifier':''}, 'mousebind': None})
+            for i in range(NUM_ACTIONS_SLOTS_PER_ACTION_BAR):
+                action_bar[i]['keybind'] = KeybindAction(action_bar[i]['keybind'])
+        self._active_action_bars = {}
+        action_bar_metadata = self._get_data_fp('action-bar-metadata')
+        for action_bar_name, metadata in action_bar_metadata.items():
+            if metadata['active']:
+                self._active_action_bars[action_bar_name] = self._action_bars[action_bar_name]
 
     def get_widget(self):
         self.initialize_data()
@@ -125,7 +145,7 @@ class WizardActionBarKeybindSetupPage(WizardWidget):
 
         self._keybinds = []
         row_count = 0
-        for action_bar_name, action_bar_contents in self._action_bars.items():
+        for action_bar_name, action_bar_contents in self._active_action_bars.items():
             action_bar_label = tkinter.Label(self._keybind_list_frame, text=action_bar_name,
                 font=header_font)
             self._widget_backgrounds.append(action_bar_label)

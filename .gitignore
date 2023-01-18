@@ -1,7 +1,7 @@
 dist/*
 build/*
 pycache/*
-Lib/*
+Libs/*
 !ability-tracker/data/saved profile clickables/.gitkeep
 ability-tracker/data/saved profile clickables/*
 *.pyc

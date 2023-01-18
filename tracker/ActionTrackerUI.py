@@ -11,7 +11,6 @@ from PIL import Image, ImageDraw, ImageTk
 import numpy as np
 from tracker.actions.Action import Action
 from tracker.actions.KeybindAction import KeybindAction
-from tracker.actions.ActionProfile import ActionProfile
 from tracker.ui.TrackerExtensionUI import TrackerExtensionUI
 from tracker.ActionTrackerController import run_tracker_controller
 from tracker.util.Configurator import load_configuration, save_configuration_options

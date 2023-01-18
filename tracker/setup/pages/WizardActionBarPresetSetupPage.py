@@ -5,16 +5,16 @@ import json
 from tkinter.font import BOLD, Font
 from PIL import Image, ImageDraw, ImageTk
 from idlelib.tooltip import Hovertip
-from tracker.setup.SetupWizardState import SetupWizardState
-from tracker.setup.WizardWidget import WizardWidget
+from tracker.setup.WizardPage import WizardPage
 from tracker.setup.pages.page_elements.ActionBarPreset import ActionBarPreset
 from tracker.util.Constants import *
 from tracker.actions.KeybindAction import KeybindAction
 from tracker.actions.MousebindAction import MousebindAction
 from tracker.actions.Action import Action
+from tracker.setup.SetupWizardPageState import SetupWizardPageState
 
 
-class WizardActionBarPresetSetupPage(WizardWidget):
+class WizardActionBarPresetSetupPage(WizardPage):
     def load_actions(self):
         with open(self._configuration['action-info-file'], 'r+') as file:
             loaded_actions = json.loads("".join(file.readlines()))
@@ -115,7 +115,6 @@ class WizardActionBarPresetSetupPage(WizardWidget):
             self._prayer_image_selected_tk
         ]
 
-        actions_list = self.load_actions_with_icons()
         self._actions_map = {
             'ranged': {},
             'magic': {},
@@ -126,7 +125,7 @@ class WizardActionBarPresetSetupPage(WizardWidget):
             'prayer':{}
         }
 
-        for action in actions_list:
+        for action in self._actions_list:
             tab = self._actions_map[action.tag]
             if action.action_type not in tab.keys():
                 tab[action.action_type] = []
@@ -258,15 +257,6 @@ class WizardActionBarPresetSetupPage(WizardWidget):
             widget.configure(activebackground=background_color)
         for widget in self._widget_backgrounds:
             widget.configure(background=background_color)
-        """
-        self._darkmode_button.configure(text="Dark Mode", background=background_color, fg=text_color, activebackground=background_color)
-        self._github_link_button.configure(fg=text_color, background=background_color, activebackground=background_color)
-        self._discord_link_button.configure(fg=text_color, background=background_color, activebackground=background_color)
-        self._continue_button.configure(background=background_color, activebackground=background_color)
-        self._widget.configure(background=background_color)
-        self._action_bar_label.configure(fg=text_color, background=background_color)
-        self._main_action_bar.configure(fg=text_color, background=background_color, activebackground=heading_color, selectcolor='white')
-        """
 
     def change_theme(self):
         self._darkmode = not self._darkmode
@@ -276,7 +266,11 @@ class WizardActionBarPresetSetupPage(WizardWidget):
             self.set_dark_mode()
 
     def save_and_continue(self):
-        pass
+        actions_bar_presets_dicts = []
+        for action_bar_preset in self._action_bar_preset_templates:
+            actions_bar_presets_dicts.append(action_bar_preset.to_dict())
+        self._add_data_fp('action-bar-presets', actions_bar_presets_dicts)
+        self._load_page_fp(SetupWizardPageState.ACTION_BAR_SETUP_PAGE)
 
     def get_widget(self):
         self._set_window_size_fp(width=1235, height=400)
@@ -324,6 +318,13 @@ class WizardActionBarPresetSetupPage(WizardWidget):
                         'expand': [('selected', [0, 0, 0, 5])]}
                 }
             })
+        
+        self._actions_list = self.load_actions_with_icons()
+        def get_action(actions_list, action_id):
+            for action in actions_list:
+                if action.id == action_id:
+                    return action
+            raise Exception('Unknown action id: ' + action_id)
 
         self._hovered_action = None
         self._hovered_action_widget = None
@@ -354,13 +355,30 @@ class WizardActionBarPresetSetupPage(WizardWidget):
             height=NUM_ACTION_BAR_PRESETS*ActionBarPreset.ACTION_BAR_HEIGHT)
         self._action_bar_view.create_window((0,0), window=self._action_bar_area, anchor='nw')
 
+        self._action_bar_presets = self._get_data_fp('action-bar-presets')
+        if self._action_bar_presets is None or len(self._action_bar_presets) == 0:
+            self._action_bar_presets = []
+            self._add_data_fp('action-bar-presets', self._action_bar_presets)
+            for i in range(NUM_ACTION_BAR_PRESETS):
+                slots = [[] for i in range(NUM_ACTIONS_SLOTS_PER_ACTION_BAR)]
+                preset = {'name': 'Preset-{}'.format(i+1), 'slots': slots}
+                self._action_bar_presets.append(preset)
+        elif len(self._action_bar_presets) < NUM_ACTION_BAR_PRESETS:
+            for i in range(NUM_ACTION_BAR_PRESETS - len(self._action_bar_presets)):
+                slots = [[] for i in range(NUM_ACTIONS_SLOTS_PER_ACTION_BAR)]
+                preset = {'name': 'Preset-{}'.format(i+1), 'slots': slots}
+                self._action_bar_presets.append(preset)
+                
         self._action_bar_preset_templates = []
         for i in range(NUM_ACTION_BAR_PRESETS):
-            action_bar_preset = ActionBarPreset(0,
-                0+(i*ActionBarPreset.ACTION_BAR_HEIGHT),
-                {'preset-number':i+1, 'preset-name':'<Placeholder>'},
-                self._action_bar_area,
-                self._configuration)
+            action_bar_preset = ActionBarPreset(x=0,
+                y=0+(i*ActionBarPreset.ACTION_BAR_HEIGHT),
+                preset_number=i+1, preset_name=self._action_bar_presets[i]['name'],
+                root=self._action_bar_area,
+                configuration=self._configuration)
+            for index, slot in enumerate(self._action_bar_presets[i]['slots']):
+                if len(slot) > 0:
+                    action_bar_preset.set_action_slot(index, get_action(self._actions_list, slot[0]))
             self._action_bar_preset_templates.append(action_bar_preset)
             self._widget_frame_colors.extend(action_bar_preset.get_widgets_frame())
             self._widget_fg_heading.extend(action_bar_preset.get_widgets_font())
@@ -379,37 +397,9 @@ class WizardActionBarPresetSetupPage(WizardWidget):
         continue_button_image = Image.open(self._configuration['wizard-continue'])
         self._continue_button_image = ImageTk.PhotoImage(continue_button_image)
         self._continue_button = tkinter.Button(self._widget, image=self._continue_button_image,
-                                 command= lambda: self.save_and_continue(),
+                                 command= self.save_and_continue,
                                  borderwidth=0, highlightthickness=0)
         self._continue_button.place(x=915, y=325)
-
-        """
-        self._github_link_button = tkinter.Button(self._widget, text="View on GitHub",
-                                            font=text_font,
-                                            borderwidth=0, highlightthickness=0,
-                                            command= lambda: webbrowser.open(self._configuration['github-link']))
-
-        self._discord_link_button = tkinter.Button(self._widget, text="Join the Discord",
-                                            font=text_font,
-                                            borderwidth=0, highlightthickness=0,
-                                            command= lambda: webbrowser.open(self._configuration['discord-invite']))
-
-        self._darkmode_button = tkinter.Button(self._widget, text="Dark Mode",
-                                            font=text_font,
-                                            borderwidth=0, highlightthickness=0,
-                                            command= lambda: self.change_theme())
-
-        continue_button_image = Image.open(self._configuration['wizard-continue'])
-        self._continue_button_image = ImageTk.PhotoImage(continue_button_image)
-        self._continue_button = tkinter.Button(self._widget, image=self._continue_button_image,
-                                         command= lambda: self.save_and_continue(),
-                                         borderwidth=0, highlightthickness=0)
-
-        self._github_link_button.place(x=40, y=325)
-        self._discord_link_button.place(x=200, y=325)
-        self._continue_button.place(x=40, y=390)
-        self._darkmode_button.place(x=10, y=10)
-        """
 
         self._widget_frame_colors.extend([self._action_bar_frame, self._action_bar_view,
             self._action_bar_scrollbar, self._action_bar_area])

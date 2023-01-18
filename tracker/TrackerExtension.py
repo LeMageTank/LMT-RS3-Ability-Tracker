@@ -14,7 +14,7 @@ class TrackerExtensionController:
     def __init__(self, configuration):
         self.configuration = configuration
     
-    def run(self, action_profile, action_map, actions, global_cooldown, player_state):
+    def run(self, action_map, actions, global_cooldown, player_state):
         pass
 
 # configuration: A dict of the config.json file in the root directory.

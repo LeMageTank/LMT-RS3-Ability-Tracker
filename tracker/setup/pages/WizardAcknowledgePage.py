@@ -2,9 +2,8 @@ import tkinter
 import webbrowser
 from tkinter.font import BOLD, Font
 from PIL import Image, ImageDraw, ImageTk
-from tracker.setup.SetupWizardState import SetupWizardState
-from tracker.setup.WizardWidget import WizardWidget
-
+from tracker.setup.WizardPage import WizardPage
+from tracker.setup.SetupWizardPageState import SetupWizardPageState
 
 WARNING_MESSAGE="""This program tracks your
 mouse and keyboard inputs.
@@ -16,7 +15,7 @@ data is not shared or
 stored."""
 
 
-class WizardAcknowledgePage(WizardWidget):
+class WizardAcknowledgePage(WizardPage):
     def set_dark_mode(self):
         background_color = self._configuration['wizard-background-color-dark']
         heading_color = self._configuration['wizard-heading-color-dark']
@@ -101,7 +100,7 @@ class WizardAcknowledgePage(WizardWidget):
         acknowledge_button_image = Image.open(self._configuration['wizard-acknowledge-page-acknowledge'])
         self._acknowledge_button_image = ImageTk.PhotoImage(acknowledge_button_image)
         self._acknowledge_button = tkinter.Button(self._control_container, image=self._acknowledge_button_image,
-                                         command= lambda: self._load_state_fp(SetupWizardState.ACTION_BAR_SETUP_PAGE),
+                                         command= lambda: self._load_page_fp(SetupWizardPageState.ACTION_BAR_PRESET_SETUP_PAGE),
                                          borderwidth=0, highlightthickness=0)
 
 

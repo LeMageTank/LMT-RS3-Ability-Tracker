@@ -13,10 +13,10 @@ class ActionBarPreset:
     SPACE_BETWEEN_SLOTS = 36
     PRESET_HEIGHT = 38
     ACTION_BAR_HEIGHT = 42
-    def __init__(self, x, y, preset_data, root, configuration):
+    def __init__(self, x, y, preset_number, preset_name, root, configuration):
         self._root = root
         self._configuration = configuration
-        self._preset_data = preset_data
+        self._preset_number = preset_number
         self._slot_width, self._slot_height = self._configuration['preset-action-bar-template-dimensions']
         self._preset_template_image = Image.open(self._configuration['preset-action-bar-template'])
         self._preset_template_tkimage = ImageTk.PhotoImage(self._preset_template_image)
@@ -28,11 +28,11 @@ class ActionBarPreset:
         self._preset_slots = []
         self._action_images = []
         self._preset_name = tkinter.StringVar()
-        self._preset_name.set(preset_data['preset-name'])
+        self._preset_name.set(preset_name)
         self._font_color_widgets = []
         self._frame_color_widgets = []
 
-        preset_number_label = tkinter.Label(self._root, text='Preset {}'.format(preset_data['preset-number']),
+        preset_number_label = tkinter.Label(self._root, text='Preset {}'.format(preset_number),
             font=('Arial', 11, 'bold'))
         preset_number_label.place(x=ActionBarPreset.PRESET_SLOT_X_OFFSET,
             y=self._y+ActionBarPreset.PRESET_SLOT_Y_OFFSET+ActionBarPreset.PRESET_LABEL_Y_OFFSET)
@@ -73,6 +73,28 @@ class ActionBarPreset:
                 self._preset_slots[i] = (preset_bar_slot, action)
                 return True
         return False
+
+    def set_action_slot(self, slot_number, action):
+        preset_bar_slot = self._preset_slots[slot_number][ActionBarPreset.SLOT_INDEX]
+        preset_bar_slot.slot_number = slot_number
+        preset_bar_slot.bind('<ButtonRelease-1>', self._on_slot_clicked)
+        self._action_images[slot_number] = ImageTk.PhotoImage(action.image)
+        preset_bar_slot.create_image(0,self._slot_height//2+0,
+                image=self._action_images[slot_number], anchor=tkinter.W)
+        self._preset_slots[slot_number] = (preset_bar_slot, action)
+
+    def to_dict(self):
+        action_bar_preset_dict = {}
+        action_bar_preset_dict['name'] = self._preset_name.get()
+        slots = []
+        for preset_bar_slot in self._preset_slots:
+            action = preset_bar_slot[ActionBarPreset.ACTION_INDEX]
+            if action:
+                slots.append([action.id])
+            else:
+                slots.append([])
+        action_bar_preset_dict['slots'] = slots
+        return action_bar_preset_dict
 
     def _on_slot_clicked(self, event):
         preset_slot = event.widget

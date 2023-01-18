@@ -14,6 +14,7 @@ class KeybindAction:
 
     def __init__(self, keybind_dict):
         self.primary_key = keybind_dict['key'].casefold()
+        self.actions = []
         if keybind_dict['modifier'] is None:
             self.modifier_key = None
             self.key = self.primary_key.casefold()

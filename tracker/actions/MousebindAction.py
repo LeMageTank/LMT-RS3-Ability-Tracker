@@ -1,11 +1,12 @@
 class MousebindAction:
-    def __init__(self, mousebind_dict):
-        self.x1 = mousebind_dict['x1']
-        self.y1 = mousebind_dict['y1']
-        self.x2 = mousebind_dict['x2']
-        self.y2 = mousebind_dict['y2']
+    def __init__(self, x1, y1, x2, y2):
+        self.x1 = x1
+        self.y1 = y1
+        self.x2 = x2
+        self.y2 = y2
         self.key = ((self.x1+self.x2)/2, (self.y1+self.y2)/2)
         self.shape = (self.x2 - self.x1, self.y2 - self.y1)
+        self.actions = []
 
     def __lt__(self, other):
         if isinstance(other, MousebindAction):
@@ -44,6 +45,10 @@ class MousebindAction:
         ability['y2'] = self.y2
         return ability
 
+    @classmethod
+    def from_dict(self, mousebind_dict):
+        return MousebindAction(mousebind_dict['x1'], mousebind_dict['y1'], mousebind_dict['x2'], mousebind_dict['y2'])
+
     def __str__(self):
-        return '({},{})'.format(*self.key)
+        return '({},{})'.format(self.x1, self.y1)
 

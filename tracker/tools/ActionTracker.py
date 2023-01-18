@@ -2,7 +2,7 @@ from tracker.TrackerExtension import TrackerExtensionController, TrackerExtensio
 import tkinter
 
 class ActionTracker(TrackerExtensionController):
-    def run(self, action_profile, action_map, actions, global_cooldown, player_state):
+    def run(self, action_map, actions, global_cooldown, player_state):
         output_list = []
         for action in actions:
             output_list.append(('action-tracker', action))
