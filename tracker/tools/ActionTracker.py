@@ -1,5 +1,6 @@
 from tracker.TrackerExtension import TrackerExtensionController, TrackerExtensionUI, TrackerExtensionConfiguration
 import tkinter
+from PIL import Image
 
 class ActionTracker(TrackerExtensionController):
     def run(self, action_map, actions, global_cooldown, player_state):
@@ -15,6 +16,14 @@ class ActionTrackerUI(TrackerExtensionUI):
         self.icon_shape = configuration['actiontracker-icon-shape']
         self.padding = configuration['actiontracker-icon-padding']
         self.widget = tkinter.Frame(root, background='black')
+        self.tracker_width = self.max_icons * (self.icon_shape[0] + self.padding[0])
+        self.tracker_height = self.icon_shape[1] + self.padding[1]
+        self.tracker_background_color = None if configuration['tracker-background-color'] == '' else configuration['tracker-background-color']
+        self.action_bar_image_template = Image.new(mode='RGBA', size=(self.tracker_width, self.tracker_height), color=self.tracker_background_color)
+        self.action_bar_image = self.action_bar_image_template.copy()
+        self.action_bar_image_file_name = configuration['tracker-web-image-file']
+        self.action_bar_image.save(self.action_bar_image_file_name, 'png')
+        self.widget.configure(background=self.tracker_background_color)
 
     def draw(self, icon_map):
         if len(self.buffer) == 0:
@@ -25,18 +34,28 @@ class ActionTrackerUI(TrackerExtensionUI):
             self.on_display.append(self.buffer.pop(0))
         while len(self.on_display) > self.max_icons:
             self.on_display.pop(0)
+        new_action_bar_image = self.action_bar_image_template.copy()
         for i in range(len(self.on_display)-1, -1, -1):
             try:
-                action_widget = tkinter.Label(self.widget, image=icon_map[self.on_display[i]], background='black')
+                action_widget = tkinter.Label(self.widget, image=icon_map[self.on_display[i]], background=self.tracker_background_color)
                 action_widget.pack(side='left', fill='none', pady=self.padding[1], padx=self.padding[0])
             except:
-                action_widget = tkinter.Label(self.widget, text="?", background='black')
+                action_widget = tkinter.Label(self.widget, text="?", background=self.tracker_background_color)
                 action_widget.pack(side='left', fill='none', pady=self.padding[1], padx=self.padding[0])
-                
+            num_actions_on_display = len(self.on_display)
+            position = num_actions_on_display - i - 1
+            action_x1 = (position*(self.icon_shape[0] + self.padding[0]))
+            action_x2 = action_x1 + icon_map[self.on_display[i]].width()
+            action_y1 = self.padding[1]//2
+            action_y2 = action_y1 + icon_map[self.on_display[i]].height()
+            new_action_bar_image.paste(icon_map[self.on_display[i]].icon_image, box=(action_x1, action_y1, action_x2, action_y2))
+        self.action_bar_image = new_action_bar_image
+        self.action_bar_image.save(self.action_bar_image_file_name, 'png')
+            
     @property
     def shape(self):
         return (((self.padding[0] * 2) + self.icon_shape[0]) * (self.max_icons + 1), (self.padding[1] * 3) + self.icon_shape[1])
-
+        
 class ActionTrackerConfiguration(TrackerExtensionConfiguration):
     def get_default_configuration(self):
         self.num_icons_var.set(8)

@@ -1,3 +1,1452 @@
 {
-
+    "action-bar-presets": [
+        {
+            "name": "Utility 1",
+            "slots": [
+                [
+                    "Immortality"
+                ],
+                [
+                    "Ancient Lantern"
+                ],
+                [],
+                [
+                    "Escape"
+                ],
+                [
+                    "Spiritual Prayer Potion"
+                ],
+                [
+                    "Overpower"
+                ],
+                [
+                    "Eat Food"
+                ],
+                [
+                    "Saradomin Brew"
+                ],
+                [
+                    "Vulnerability Bomb"
+                ],
+                [
+                    "Deflect Melee"
+                ],
+                [
+                    "Deflect Magic"
+                ],
+                [
+                    "Deflect Missiles"
+                ],
+                [
+                    "Soul Split"
+                ],
+                [
+                    "Surge"
+                ]
+            ]
+        },
+        {
+            "name": "Magic 2H",
+            "slots": [
+                [
+                    "Omnipower"
+                ],
+                [
+                    "Sacrifice"
+                ],
+                [
+                    "Corruption Blast"
+                ],
+                [
+                    "Greater Concentrated Blast"
+                ],
+                [
+                    "Asphyxiate"
+                ],
+                [
+                    "Wild Magic"
+                ],
+                [
+                    "Dragon Breath"
+                ],
+                [
+                    "Chain"
+                ],
+                [
+                    "Impact"
+                ],
+                [
+                    "Wrack"
+                ],
+                [
+                    "Detonate"
+                ],
+                [
+                    "Deep Impact"
+                ],
+                [
+                    "Tsunami"
+                ],
+                [
+                    "Smoke Tendrils"
+                ]
+            ]
+        },
+        {
+            "name": "Melee 2H",
+            "slots": [
+                [
+                    "Cleave"
+                ],
+                [
+                    "Fury"
+                ],
+                [
+                    "Sever"
+                ],
+                [
+                    "Dismember"
+                ],
+                [
+                    "Smash"
+                ],
+                [
+                    "Sacrifice"
+                ],
+                [
+                    "Slice"
+                ],
+                [
+                    "Greater Barge"
+                ],
+                [
+                    "Assault"
+                ],
+                [
+                    "Quake"
+                ],
+                [
+                    "Hurricane"
+                ],
+                [
+                    "Slaughter"
+                ],
+                [
+                    "Blood Tendrils"
+                ],
+                [
+                    "Chaos Roar"
+                ]
+            ]
+        },
+        {
+            "name": "Ranged 2H",
+            "slots": [
+                [
+                    "Corruption Shot"
+                ],
+                [
+                    "Fragmentation Shot"
+                ],
+                [
+                    "Greater Dazing Shot"
+                ],
+                [
+                    "Snipe"
+                ],
+                [
+                    "Ricochet"
+                ],
+                [
+                    "Binding Shot"
+                ],
+                [
+                    "Sacrifice"
+                ],
+                [
+                    "Piercing Shot"
+                ],
+                [
+                    "Salt the Wound"
+                ],
+                [
+                    "Rapid Fire"
+                ],
+                [
+                    "Snap Shot"
+                ],
+                [
+                    "Shadow Tendrils"
+                ],
+                [
+                    "Bombardment"
+                ],
+                [
+                    "Deaths Swiftness"
+                ]
+            ]
+        },
+        {
+            "name": "Preset-5",
+            "slots": [
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                []
+            ]
+        },
+        {
+            "name": "Defensives",
+            "slots": [
+                [
+                    "Debilitate"
+                ],
+                [
+                    "Preparation"
+                ],
+                [
+                    "Resonance"
+                ],
+                [
+                    "Reflect"
+                ],
+                [
+                    "Deep Impact"
+                ],
+                [
+                    "Devotion"
+                ],
+                [
+                    "Bladed Dive"
+                ],
+                [
+                    "Revenge"
+                ],
+                [
+                    "Omnipower"
+                ],
+                [
+                    "Forceful Backhand"
+                ],
+                [
+                    "Backhand"
+                ],
+                [
+                    "Barricade"
+                ],
+                [
+                    "Freedom"
+                ],
+                [
+                    "Anticipation"
+                ]
+            ]
+        },
+        {
+            "name": "Melee DW",
+            "slots": [
+                [
+                    "Decimate"
+                ],
+                [
+                    "Fury"
+                ],
+                [
+                    "Sever"
+                ],
+                [
+                    "Dismember"
+                ],
+                [
+                    "Havoc"
+                ],
+                [
+                    "Sacrifice"
+                ],
+                [
+                    "Chaos Roar"
+                ],
+                [
+                    "Greater Barge"
+                ],
+                [
+                    "Assault"
+                ],
+                [
+                    "Destroy"
+                ],
+                [
+                    "Greater Flurry"
+                ],
+                [
+                    "Slaughter"
+                ],
+                [
+                    "Blood Tendrils"
+                ],
+                []
+            ]
+        },
+        {
+            "name": "Magic DW",
+            "slots": [
+                [
+                    "Greater Concentrated Blast"
+                ],
+                [
+                    "Dragon Breath"
+                ],
+                [
+                    "Corruption Blast"
+                ],
+                [
+                    "Combust"
+                ],
+                [
+                    "Sacrifice"
+                ],
+                [
+                    "Chain"
+                ],
+                [
+                    "Wrack"
+                ],
+                [
+                    "Impact"
+                ],
+                [
+                    "Asphyxiate"
+                ],
+                [
+                    "Detonate"
+                ],
+                [
+                    "Wild Magic"
+                ],
+                [
+                    "Smoke Tendrils"
+                ],
+                [
+                    "Tsunami"
+                ],
+                [
+                    "Sunshine"
+                ]
+            ]
+        },
+        {
+            "name": "Preset-9",
+            "slots": [
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                []
+            ]
+        },
+        {
+            "name": "Utility 2",
+            "slots": [
+                [
+                    "Limitless"
+                ],
+                [],
+                [
+                    "Berserk"
+                ],
+                [
+                    "Enhanced Replenishment Potion"
+                ],
+                [
+                    "Ring of Death"
+                ],
+                [
+                    "Essence of Finality"
+                ],
+                [
+                    "Spiritual Prayer Potion"
+                ],
+                [
+                    "Special Attack"
+                ],
+                [
+                    "Ingenuity of the Humans"
+                ],
+                [
+                    "Disruption Shield"
+                ],
+                [
+                    "Scrimshaw of Vampyrism"
+                ],
+                [
+                    "Immortality"
+                ],
+                [
+                    "Barricade"
+                ],
+                [
+                    "Divert"
+                ]
+            ]
+        },
+        {
+            "name": "Weapons",
+            "slots": [
+                [
+                    "Ancient Defender"
+                ],
+                [
+                    "Abyssal Scourge"
+                ],
+                [
+                    "Off-hand Drygore Mace"
+                ],
+                [
+                    "Zaros Godsword"
+                ],
+                [
+                    "Smoke Cloud"
+                ],
+                [
+                    "Dominion Mine"
+                ],
+                [
+                    "Dreadnip"
+                ],
+                [],
+                [],
+                [
+                    "Noxious Scythe"
+                ],
+                [
+                    "Masterwork Spear of Annihilation"
+                ],
+                [
+                    "Divert"
+                ],
+                [
+                    "Natural Instinct"
+                ],
+                [
+                    "Animate Dead"
+                ]
+            ]
+        },
+        {
+            "name": "Preset-12",
+            "slots": [
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                []
+            ]
+        },
+        {
+            "name": "Preset-13",
+            "slots": [
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                []
+            ]
+        },
+        {
+            "name": "Preset-14",
+            "slots": [
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                []
+            ]
+        },
+        {
+            "name": "Preset-15",
+            "slots": [
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                []
+            ]
+        }
+    ],
+    "action-bar-metadata": {
+        "main-action-bar": {
+            "active": true,
+            "screen-location": [
+                701,
+                762
+            ],
+            "template-number": 0
+        },
+        "additional-action-bar-1": {
+            "active": true,
+            "screen-location": [
+                701,
+                838
+            ],
+            "template-number": 0
+        },
+        "additional-action-bar-2": {
+            "active": true,
+            "screen-location": [
+                701,
+                876
+            ],
+            "template-number": 0
+        },
+        "additional-action-bar-3": {
+            "active": true,
+            "screen-location": [
+                965,
+                1003
+            ],
+            "template-number": 1
+        },
+        "additional-action-bar-4": {
+            "active": true,
+            "screen-location": [
+                965,
+                927
+            ],
+            "template-number": 1
+        }
+    },
+    "action-bars": {
+        "main-action-bar": [
+            {
+                "keybind": {
+                    "key": "1",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 708,
+                    "y1": 803,
+                    "x2": 738,
+                    "y2": 833
+                }
+            },
+            {
+                "keybind": {
+                    "key": "2",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 744,
+                    "y1": 803,
+                    "x2": 774,
+                    "y2": 833
+                }
+            },
+            {
+                "keybind": {
+                    "key": "3",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 780,
+                    "y1": 803,
+                    "x2": 810,
+                    "y2": 833
+                }
+            },
+            {
+                "keybind": {
+                    "key": "4",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 816,
+                    "y1": 803,
+                    "x2": 846,
+                    "y2": 833
+                }
+            },
+            {
+                "keybind": {
+                    "key": "5",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 852,
+                    "y1": 803,
+                    "x2": 882,
+                    "y2": 833
+                }
+            },
+            {
+                "keybind": {
+                    "key": "6",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 888,
+                    "y1": 803,
+                    "x2": 918,
+                    "y2": 833
+                }
+            },
+            {
+                "keybind": {
+                    "key": "y",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 924,
+                    "y1": 803,
+                    "x2": 954,
+                    "y2": 833
+                }
+            },
+            {
+                "keybind": {
+                    "key": "8",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 960,
+                    "y1": 803,
+                    "x2": 990,
+                    "y2": 833
+                }
+            },
+            {
+                "keybind": {
+                    "key": "1",
+                    "modifier": "shift"
+                },
+                "mousebind": {
+                    "x1": 996,
+                    "y1": 803,
+                    "x2": 1026,
+                    "y2": 833
+                }
+            },
+            {
+                "keybind": {
+                    "key": "2",
+                    "modifier": "shift"
+                },
+                "mousebind": {
+                    "x1": 1032,
+                    "y1": 803,
+                    "x2": 1062,
+                    "y2": 833
+                }
+            },
+            {
+                "keybind": {
+                    "key": "3",
+                    "modifier": "shift"
+                },
+                "mousebind": {
+                    "x1": 1068,
+                    "y1": 803,
+                    "x2": 1098,
+                    "y2": 833
+                }
+            },
+            {
+                "keybind": {
+                    "key": "4",
+                    "modifier": "shift"
+                },
+                "mousebind": {
+                    "x1": 1104,
+                    "y1": 803,
+                    "x2": 1134,
+                    "y2": 833
+                }
+            },
+            {
+                "keybind": {
+                    "key": "5",
+                    "modifier": "shift"
+                },
+                "mousebind": {
+                    "x1": 1140,
+                    "y1": 803,
+                    "x2": 1170,
+                    "y2": 833
+                }
+            },
+            {
+                "keybind": {
+                    "key": "a",
+                    "modifier": "alt"
+                },
+                "mousebind": {
+                    "x1": 1176,
+                    "y1": 803,
+                    "x2": 1206,
+                    "y2": 833
+                }
+            }
+        ],
+        "additional-action-bar-1": [
+            {
+                "keybind": {
+                    "key": "",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 708,
+                    "y1": 842,
+                    "x2": 738,
+                    "y2": 872
+                }
+            },
+            {
+                "keybind": {
+                    "key": "",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 744,
+                    "y1": 842,
+                    "x2": 774,
+                    "y2": 872
+                }
+            },
+            {
+                "keybind": {
+                    "key": "*",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 780,
+                    "y1": 842,
+                    "x2": 810,
+                    "y2": 872
+                }
+            },
+            {
+                "keybind": {
+                    "key": "",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 816,
+                    "y1": 842,
+                    "x2": 846,
+                    "y2": 872
+                }
+            },
+            {
+                "keybind": {
+                    "key": "*",
+                    "modifier": "ctrl"
+                },
+                "mousebind": {
+                    "x1": 852,
+                    "y1": 842,
+                    "x2": 882,
+                    "y2": 872
+                }
+            },
+            {
+                "keybind": {
+                    "key": "",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 888,
+                    "y1": 842,
+                    "x2": 918,
+                    "y2": 872
+                }
+            },
+            {
+                "keybind": {
+                    "key": "7",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 924,
+                    "y1": 842,
+                    "x2": 954,
+                    "y2": 872
+                }
+            },
+            {
+                "keybind": {
+                    "key": "o",
+                    "modifier": "ctrl"
+                },
+                "mousebind": {
+                    "x1": 960,
+                    "y1": 842,
+                    "x2": 990,
+                    "y2": 872
+                }
+            },
+            {
+                "keybind": {
+                    "key": "",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 996,
+                    "y1": 842,
+                    "x2": 1026,
+                    "y2": 872
+                }
+            },
+            {
+                "keybind": {
+                    "key": "",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 1032,
+                    "y1": 842,
+                    "x2": 1062,
+                    "y2": 872
+                }
+            },
+            {
+                "keybind": {
+                    "key": "",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 1068,
+                    "y1": 842,
+                    "x2": 1098,
+                    "y2": 872
+                }
+            },
+            {
+                "keybind": {
+                    "key": "",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 1104,
+                    "y1": 842,
+                    "x2": 1134,
+                    "y2": 872
+                }
+            },
+            {
+                "keybind": {
+                    "key": "",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 1140,
+                    "y1": 842,
+                    "x2": 1170,
+                    "y2": 872
+                }
+            },
+            {
+                "keybind": {
+                    "key": "",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 1176,
+                    "y1": 842,
+                    "x2": 1206,
+                    "y2": 872
+                }
+            }
+        ],
+        "additional-action-bar-2": [
+            {
+                "keybind": {
+                    "key": "",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 708,
+                    "y1": 880,
+                    "x2": 738,
+                    "y2": 910
+                }
+            },
+            {
+                "keybind": {
+                    "key": "-",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 744,
+                    "y1": 880,
+                    "x2": 774,
+                    "y2": 910
+                }
+            },
+            {
+                "keybind": {
+                    "key": "+",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 780,
+                    "y1": 880,
+                    "x2": 810,
+                    "y2": 910
+                }
+            },
+            {
+                "keybind": {
+                    "key": "",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 816,
+                    "y1": 880,
+                    "x2": 846,
+                    "y2": 910
+                }
+            },
+            {
+                "keybind": {
+                    "key": "f",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 852,
+                    "y1": 880,
+                    "x2": 882,
+                    "y2": 910
+                }
+            },
+            {
+                "keybind": {
+                    "key": "",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 888,
+                    "y1": 880,
+                    "x2": 918,
+                    "y2": 910
+                }
+            },
+            {
+                "keybind": {
+                    "key": "\\",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 924,
+                    "y1": 880,
+                    "x2": 954,
+                    "y2": 910
+                }
+            },
+            {
+                "keybind": {
+                    "key": "g",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 960,
+                    "y1": 880,
+                    "x2": 990,
+                    "y2": 910
+                }
+            },
+            {
+                "keybind": {
+                    "key": "h",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 996,
+                    "y1": 880,
+                    "x2": 1026,
+                    "y2": 910
+                }
+            },
+            {
+                "keybind": {
+                    "key": "q",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 1032,
+                    "y1": 880,
+                    "x2": 1062,
+                    "y2": 910
+                }
+            },
+            {
+                "keybind": {
+                    "key": "w",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 1068,
+                    "y1": 880,
+                    "x2": 1098,
+                    "y2": 910
+                }
+            },
+            {
+                "keybind": {
+                    "key": "e",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 1104,
+                    "y1": 880,
+                    "x2": 1134,
+                    "y2": 910
+                }
+            },
+            {
+                "keybind": {
+                    "key": "r",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 1140,
+                    "y1": 880,
+                    "x2": 1170,
+                    "y2": 910
+                }
+            },
+            {
+                "keybind": {
+                    "key": "/",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 1176,
+                    "y1": 880,
+                    "x2": 1206,
+                    "y2": 910
+                }
+            }
+        ],
+        "additional-action-bar-3": [
+            {
+                "keybind": {
+                    "key": "",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 972,
+                    "y1": 1008,
+                    "x2": 1002,
+                    "y2": 1038
+                }
+            },
+            {
+                "keybind": {
+                    "key": "u",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 1007,
+                    "y1": 1008,
+                    "x2": 1037,
+                    "y2": 1038
+                }
+            },
+            {
+                "keybind": {
+                    "key": "z",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 1042,
+                    "y1": 1008,
+                    "x2": 1072,
+                    "y2": 1038
+                }
+            },
+            {
+                "keybind": {
+                    "key": "x",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 1077,
+                    "y1": 1008,
+                    "x2": 1107,
+                    "y2": 1038
+                }
+            },
+            {
+                "keybind": {
+                    "key": "p",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 1112,
+                    "y1": 1008,
+                    "x2": 1142,
+                    "y2": 1038
+                }
+            },
+            {
+                "keybind": {
+                    "key": "m",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 1147,
+                    "y1": 1008,
+                    "x2": 1177,
+                    "y2": 1038
+                }
+            },
+            {
+                "keybind": {
+                    "key": "f",
+                    "modifier": "shift"
+                },
+                "mousebind": {
+                    "x1": 1182,
+                    "y1": 1008,
+                    "x2": 1212,
+                    "y2": 1038
+                }
+            },
+            {
+                "keybind": {
+                    "key": "c",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 972,
+                    "y1": 1043,
+                    "x2": 1002,
+                    "y2": 1073
+                }
+            },
+            {
+                "keybind": {
+                    "key": "",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 1007,
+                    "y1": 1043,
+                    "x2": 1037,
+                    "y2": 1073
+                }
+            },
+            {
+                "keybind": {
+                    "key": "n",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 1042,
+                    "y1": 1043,
+                    "x2": 1072,
+                    "y2": 1073
+                }
+            },
+            {
+                "keybind": {
+                    "key": "",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 1077,
+                    "y1": 1043,
+                    "x2": 1107,
+                    "y2": 1073
+                }
+            },
+            {
+                "keybind": {
+                    "key": "",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 1112,
+                    "y1": 1043,
+                    "x2": 1142,
+                    "y2": 1073
+                }
+            },
+            {
+                "keybind": {
+                    "key": "",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 1147,
+                    "y1": 1043,
+                    "x2": 1177,
+                    "y2": 1073
+                }
+            },
+            {
+                "keybind": {
+                    "key": "",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 1182,
+                    "y1": 1043,
+                    "x2": 1212,
+                    "y2": 1073
+                }
+            }
+        ],
+        "additional-action-bar-4": [
+            {
+                "keybind": {
+                    "key": "",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 972,
+                    "y1": 932,
+                    "x2": 1002,
+                    "y2": 962
+                }
+            },
+            {
+                "keybind": {
+                    "key": "1",
+                    "modifier": "alt"
+                },
+                "mousebind": {
+                    "x1": 1007,
+                    "y1": 932,
+                    "x2": 1037,
+                    "y2": 962
+                }
+            },
+            {
+                "keybind": {
+                    "key": "2",
+                    "modifier": "alt"
+                },
+                "mousebind": {
+                    "x1": 1042,
+                    "y1": 932,
+                    "x2": 1072,
+                    "y2": 962
+                }
+            },
+            {
+                "keybind": {
+                    "key": "3",
+                    "modifier": "alt"
+                },
+                "mousebind": {
+                    "x1": 1077,
+                    "y1": 932,
+                    "x2": 1107,
+                    "y2": 962
+                }
+            },
+            {
+                "keybind": {
+                    "key": "",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 1112,
+                    "y1": 932,
+                    "x2": 1142,
+                    "y2": 962
+                }
+            },
+            {
+                "keybind": {
+                    "key": "q",
+                    "modifier": "alt"
+                },
+                "mousebind": {
+                    "x1": 1147,
+                    "y1": 932,
+                    "x2": 1177,
+                    "y2": 962
+                }
+            },
+            {
+                "keybind": {
+                    "key": "e",
+                    "modifier": "alt"
+                },
+                "mousebind": {
+                    "x1": 1182,
+                    "y1": 932,
+                    "x2": 1212,
+                    "y2": 962
+                }
+            },
+            {
+                "keybind": {
+                    "key": "",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 972,
+                    "y1": 967,
+                    "x2": 1002,
+                    "y2": 997
+                }
+            },
+            {
+                "keybind": {
+                    "key": "",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 1007,
+                    "y1": 967,
+                    "x2": 1037,
+                    "y2": 997
+                }
+            },
+            {
+                "keybind": {
+                    "key": "7",
+                    "modifier": "alt"
+                },
+                "mousebind": {
+                    "x1": 1042,
+                    "y1": 967,
+                    "x2": 1072,
+                    "y2": 997
+                }
+            },
+            {
+                "keybind": {
+                    "key": "4",
+                    "modifier": "alt"
+                },
+                "mousebind": {
+                    "x1": 1077,
+                    "y1": 967,
+                    "x2": 1107,
+                    "y2": 997
+                }
+            },
+            {
+                "keybind": {
+                    "key": "",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 1112,
+                    "y1": 967,
+                    "x2": 1142,
+                    "y2": 997
+                }
+            },
+            {
+                "keybind": {
+                    "key": "",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 1147,
+                    "y1": 967,
+                    "x2": 1177,
+                    "y2": 997
+                }
+            },
+            {
+                "keybind": {
+                    "key": "",
+                    "modifier": ""
+                },
+                "mousebind": {
+                    "x1": 1182,
+                    "y1": 967,
+                    "x2": 1212,
+                    "y2": 997
+                }
+            }
+        ]
+    },
+    "weapon-switches": {
+        "dw_melee": {
+            "main-action-bar": 6
+        },
+        "2h_melee": {
+            "main-action-bar": 2
+        },
+        "2h_magic": {
+            "main-action-bar": 1
+        },
+        "2h_range": {
+            "main-action-bar": 3
+        },
+        "dw_range": {
+            "main-action-bar": 3
+        },
+        "dw_magic": {
+            "main-action-bar": 7
+        }
+    },
+    "default-loadout": {
+        "main-action-bar": 6,
+        "additional-action-bar-1": 5,
+        "additional-action-bar-2": 0,
+        "additional-action-bar-3": 9,
+        "additional-action-bar-4": 10
+    }
 }

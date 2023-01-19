@@ -1,0 +1,12 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <img id="tracker-image" src="ability-tracker.png">
+	<script>
+            const updateTracker = (img) => () => img.src = "ability-tracker.png?" + new Date().getTime();
+            const image = document.querySelector("#tracker-image");
+            setInterval(updateTracker(image), 200);
+        </script>
+    </body>
+</html>

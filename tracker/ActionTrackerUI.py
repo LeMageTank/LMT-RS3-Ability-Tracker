@@ -2,9 +2,11 @@ from pynput import mouse, keyboard
 import multiprocessing
 import subprocess
 import os
+import sys
 import json
 import math
 import time
+import traceback
 import tkinter
 import pyautogui
 from PIL import Image, ImageDraw, ImageTk
@@ -129,7 +131,7 @@ class ActionTrackerUI:
     def load_icons(self, path):
         icon_map = {}
         for file in os.listdir(path):
-            icon = tkinter.PhotoImage(file=(path + file))
+            icon = ImageTk.PhotoImage(file=(path + file))
             icon_map[file.split('.')[0]] = icon
         return icon_map
 
@@ -146,10 +148,13 @@ class ActionTrackerUI:
 
 def run_tracker_ui_tool(control_queue, tool_config, configuration):
     try:
-        tool_ui = TrackerExtensionUI(configuration, control_queue, tool_config)
-        tool_ui.start()
+        with open('tracker-out.log', 'w+') as sys.stdout:
+            tool_ui = TrackerExtensionUI(configuration, control_queue, tool_config)
+            tool_ui.start()
     except Exception as e:
-        open(configuration['logs-directory'] + '-{}-exception.log'.format(tool_config['name']), 'w+').write('Exception: ' + str(e))
+        with open('tracker-exception.log', 'w+') as file:
+            ex = traceback.format_exc()
+            file.write('Exception: ' + str(ex))
 
 def run_tracker_ui(configuration):
     multiprocessing.freeze_support()

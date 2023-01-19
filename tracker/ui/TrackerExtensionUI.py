@@ -59,7 +59,9 @@ class TrackerExtensionUI:
     def load_icons(self, path):
         icon_map = {}
         for file in os.listdir(path):
-            icon = tkinter.PhotoImage(file=(path + file))
+            icon_image = Image.open(path + file)
+            icon = ImageTk.PhotoImage(image=icon_image)
+            icon.icon_image = icon_image
             icon_map[file.split('.')[0]] = icon
         return icon_map
 
