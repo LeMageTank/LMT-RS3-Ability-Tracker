@@ -29,7 +29,8 @@
     "wizard-highlight-color-dark": "#ffa75e",
     "wizard-error-color": "red",
     "wizard-error-color-dark": "red",
-    "user-has-completed-setup": true,
+    "wizard-alpha-color": "#00D500",
+    "user-has-completed-setup": false,
     "tracker-window-position": [
         37,
         25
@@ -212,7 +213,7 @@
             "tracker-tool": "APMCounter",
             "tracker-tool-ui": "APMCounterUI",
             "tracker-tool-configurator": "APMCounterConfiguration",
-            "enabled": true,
+            "enabled": false,
             "transparent-background": false,
             "requires-icons": false
         }

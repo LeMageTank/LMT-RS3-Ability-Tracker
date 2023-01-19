@@ -18,7 +18,7 @@ class ActionBarTemplateWidget(tkinter.Label):
         self._image = ImageTk.PhotoImage(
             self._action_bar_templates[self._current_action_bar_template].image)
         wrap_width = self._image.width() * 0.9
-        super().__init__(root, bg='#00D500', bd=0, highlightthickness=0,
+        super().__init__(root, bg=configuration['wizard-alpha-color'], bd=0, highlightthickness=0,
                          text=action_bar_name.replace('-', ' '), font=('Arial', 14, 'bold'), fg='red',
                          wraplength=wrap_width, justify='left', image=self._image, compound='center')
 

@@ -36,7 +36,6 @@ class SetupWizard:
         self._root.wm_attributes("-transparentcolor", color)
 
     def load_page(self, page_state):
-        print('Loading page:', page_state)
         page_constructor = SetupWizardPageProvider.get_page_constructor(page_state)
         for prev_page in self._root.winfo_children():
             prev_page.destroy()
@@ -47,7 +46,7 @@ class SetupWizard:
                                self.set_color_to_alpha, self.exit, self._root)
         widget = self._page.get_widget()
         widget.pack(side=tkinter.LEFT, fill=tkinter.BOTH, expand=True)
-        self.set_color_to_alpha('#00D500')
+        self.set_color_to_alpha(self._configuration['wizard-alpha-color'])
 
     def add_data(self, key, value):
         self._data[key] = value
