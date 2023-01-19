@@ -1,10 +1,7 @@
 {
-    "default-profile": "dw_melee",
     "input-profile": "data\\input_profile.json",
     "weapons-file": "data\\weapons.json",
     "action-info-file": "data\\abilityinfo.json",
-    "saved-profiles-metadata-file": "data\\saved_profiles.json",
-    "saved-profiles-directory": "data\\saved profiles\\",
     "play-image-file": "data\\app icons\\play.png",
     "pause-image-file": "data\\app icons\\pause.png",
     "move-image-file": "data\\app icons\\move.png",
@@ -32,7 +29,7 @@
     "wizard-highlight-color-dark": "#ffa75e",
     "wizard-error-color": "red",
     "wizard-error-color-dark": "red",
-    "profile-creator-file": "tracker\\profilecreator.py",
+    "user-has-completed-setup": true,
     "tracker-window-position": [
         37,
         25
@@ -191,9 +188,7 @@
             "selected": "data\\app images\\setup icons\\Prayer_tab_selected.png"
         }
     },
-    "clickable-region-file-template": "data\\saved profile clickables\\{}{}{}.png",
     "logs-directory": "logs\\",
-    "profile-creator-default-icon-file": "icons\\Zaros Godsword.png",
     "action-icon-file-template": "icons\\{}.png",
     "rotation-helper-enabled": true,
     "action-tracker-enabled": true,

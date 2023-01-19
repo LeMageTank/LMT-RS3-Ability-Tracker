@@ -9,6 +9,7 @@ import time
 from tracker.actions.Action import Action
 from tracker.actions.KeybindAction import KeybindAction
 from tracker.actions.ActionBarController import ActionBarController
+from tracker.setup.SetupWizard import run_setup_wizard
 import importlib
 
 class ActionTrackerController:
@@ -45,6 +46,8 @@ class ActionTrackerController:
                     self._action_queue = []
                 elif control_task == 'play':
                     self.paused = False
+                elif control_task == 'configuration-open':
+                    self.load_setup_wizard()
                 elif control_task == 'exit':
                     return
             if self.paused:
@@ -82,7 +85,7 @@ class ActionTrackerController:
                 # The action is not a registered ability/weapon/item,
                 # it's name will be passed on.
                 except KeyError:
-                    output_actions.append(bound_action.action)
+                    output_actions.append(action_id)
             if queued_action:
                 self._action_queue.insert(0, queued_action)
             player_state = self.get_player_state()
@@ -114,8 +117,13 @@ class ActionTrackerController:
         return tools
 
     def swap_weapons(self, weapon):
+        if weapon not in self.weapon_map.keys():
+            return
         weapon_class = self.weapon_map[weapon]
         self.action_bar_controller.change_weapon(weapon_class)
+
+    def load_setup_wizard(self):
+        run_setup_wizard(self._configuration)
 
     def load_weapons(self):
         self.weapon_map = {}

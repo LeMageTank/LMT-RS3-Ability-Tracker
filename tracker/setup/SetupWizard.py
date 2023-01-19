@@ -3,9 +3,9 @@ import tkinter
 from PIL import Image, ImageDraw, ImageTk
 import json
 import time
+from tracker.util.Configurator import Configurator
 from tracker.actions.KeybindAction import KeybindAction
 from tracker.actions.MousebindAction import MousebindAction
-from tracker.util.Configurator import save_configuration_options
 from tracker.setup.SetupWizardPageProvider import SetupWizardPageProvider
 from tracker.setup.SetupWizardPageState import SetupWizardPageState
 from tracker.util.InputProfileJsonEncoder import InputProfileJsonEncoder
@@ -76,6 +76,7 @@ class SetupWizard:
     def exit(self, save):
         if save:
             self.save_input_profile()
+            Configurator.save_configuration_options({'user-has-completed-setup': True})
         self._root.destroy()
 
 

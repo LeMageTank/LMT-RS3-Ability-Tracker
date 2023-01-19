@@ -41,13 +41,13 @@ class ActionBarTemplateWidget(tkinter.Label):
     def generate_action_bar(self, offset_x, offset_y):
         active_template = self._action_bar_templates[self._current_action_bar_template]
         action_bar_slots = []
-
-        for column in range(active_template.num_columns):
-            for row in range(active_template.num_rows):
+        for row in range(active_template.num_rows):
+            for column in range(active_template.num_columns):
+            
                 x1 = offset_x + active_template.x_start + (column * (active_template.column_space + active_template.clickable_region_width))
                 y1 = offset_y + active_template.y_start + (row * (active_template.row_space + active_template.clickable_region_height))
-                x2 = offset_x + x1 + active_template.clickable_region_width
-                y2 = offset_y + y1 + active_template.clickable_region_height
+                x2 = x1 + active_template.clickable_region_width
+                y2 = y1 + active_template.clickable_region_height
                 slot_binding = MousebindAction(x1, y1, x2, y2)
                 action_bar_slots.append(slot_binding)
         return action_bar_slots

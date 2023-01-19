@@ -14,3 +14,4 @@ class ActionBar:
     def load_preset(self, preset):
         for i in range(len(self.keybinds)):
             self.keybinds[i].actions = preset[i]
+            self.mousebinds[i].actions = preset[i]
