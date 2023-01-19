@@ -1,16 +1,12 @@
 class MousebindAction:
-    shape = (30,30)
-    def __init__(self, mousebind_dict):
-        self.action = mousebind_dict['action']
-        self.x1 = mousebind_dict['x1']
-        self.y1 = mousebind_dict['y1']
-        self.x2 = mousebind_dict['x2']
-        self.y2 = mousebind_dict['y2']
+    def __init__(self, x1, y1, x2, y2):
+        self.x1 = x1
+        self.y1 = y1
+        self.x2 = x2
+        self.y2 = y2
         self.key = ((self.x1+self.x2)/2, (self.y1+self.y2)/2)
-        self.image = None
-            #      y1
-            #   x1    x2
-            #      y2
+        self.shape = (self.x2 - self.x1, self.y2 - self.y1)
+        self.actions = []
 
     def __lt__(self, other):
         if isinstance(other, MousebindAction):
@@ -30,6 +26,9 @@ class MousebindAction:
         elif not isinstance(other, tuple):
             return False
         return abs(other[0]-self.key[0]) <= self.shape[0]/2 and abs(other[1]-self.key[1]) <= self.shape[1]/2
+        
+    def __hash__(self):
+        return self.__str__().__hash__()
 
     def box(self):
         return [self.x1, self.y1,
@@ -38,15 +37,21 @@ class MousebindAction:
                 self.x1, self.y2,
                 self.x1, self.y1]
 
+    def coords(self):
+        return (self.x1, self.y1, self.x2, self.y2)
+
     def to_dict(self):
         ability = {}
-        ability['action'] = self.action
         ability['x1'] = self.x1
         ability['y1'] = self.y1
         ability['x2'] = self.x2
         ability['y2'] = self.y2
         return ability
 
+    @classmethod
+    def from_dict(self, mousebind_dict):
+        return MousebindAction(mousebind_dict['x1'], mousebind_dict['y1'], mousebind_dict['x2'], mousebind_dict['y2'])
+
     def __str__(self):
-        return "{} : ({},{})".format(self.action, *self.key)
+        return '({},{})'.format(self.x1, self.y1)
 

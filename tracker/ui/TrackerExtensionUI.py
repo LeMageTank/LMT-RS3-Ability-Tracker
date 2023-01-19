@@ -3,7 +3,7 @@ import importlib
 import os
 import traceback
 from PIL import Image, ImageDraw, ImageTk
-from tracker.util.Configurator import save_configuration_options
+from tracker.util.Configurator import Configurator
 
 
 class TrackerExtensionUI:
@@ -39,7 +39,7 @@ class TrackerExtensionUI:
     def close(self):
         configuration_delta = {}
         configuration_delta['{}-window-position'.format(self._tool_name)] = [self._root.winfo_x(), self._root.winfo_y()]
-        save_configuration_options(configuration_delta)
+        Configurator.save_configuration_options(configuration_delta)
         self._root.destroy()
         
     def move_window(self, event):

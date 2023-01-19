@@ -8,6 +8,7 @@ class Action:
         self.ability_type = action_dict['ability-type']
         self.damage_hits = action_dict['hits']
         self.last_use = 0
+        self.tag = action_dict['tag']
 
     def cooldown_remaining(self, current_time):
         return - min(current_time - self.last_use - self.cooldown, 0)
@@ -27,7 +28,3 @@ class Action:
 
     def __str__(self):
         return "{} : {}".format(self.id, self.action_type)
-
-
-
-

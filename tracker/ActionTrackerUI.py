@@ -11,10 +11,9 @@ from PIL import Image, ImageDraw, ImageTk
 import numpy as np
 from tracker.actions.Action import Action
 from tracker.actions.KeybindAction import KeybindAction
-from tracker.actions.ActionProfile import ActionProfile
 from tracker.ui.TrackerExtensionUI import TrackerExtensionUI
 from tracker.ActionTrackerController import run_tracker_controller
-from tracker.util.Configurator import load_configuration, save_configuration_options
+from tracker.util.Configurator import Configurator
 import importlib
 
 
@@ -63,7 +62,7 @@ class ActionTrackerUI:
                 if process.is_alive():
                     any_extensions_open = True
         self._input_queue.put('exit')
-        save_configuration_options(configuration_delta)
+        Configurator.save_configuration_options(configuration_delta)
         self._root.destroy()
         
     def move_window(self, event):
@@ -156,3 +155,4 @@ def run_tracker_ui(configuration):
     multiprocessing.freeze_support()
     tracker_ui = ActionTrackerUI(configuration)
     tracker_ui.run()
+    

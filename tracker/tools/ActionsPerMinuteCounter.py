@@ -8,7 +8,7 @@ class APMCounter(TrackerExtensionController):
         self.actions_time_queue = []
         self.sliding_time_window = self.configuration['apm-counter-sliding-time-window']
     
-    def run(self, action_profile, action_map, actions, global_cooldown, player_state):
+    def run(self, action_map, actions, global_cooldown, player_state):
         current_time = time.time()
         for action in actions:
             self.actions_time_queue.append(current_time)
