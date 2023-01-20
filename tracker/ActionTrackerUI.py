@@ -148,9 +148,8 @@ class ActionTrackerUI:
 
 def run_tracker_ui_tool(control_queue, tool_config, configuration):
     try:
-        with open('tracker-out.log', 'w+') as sys.stdout:
-            tool_ui = TrackerExtensionUI(configuration, control_queue, tool_config)
-            tool_ui.start()
+        tool_ui = TrackerExtensionUI(configuration, control_queue, tool_config)
+        tool_ui.start()
     except Exception as e:
         with open('tracker-exception.log', 'w+') as file:
             ex = traceback.format_exc()
