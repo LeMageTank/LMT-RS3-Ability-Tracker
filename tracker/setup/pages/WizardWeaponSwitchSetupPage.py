@@ -95,13 +95,13 @@ class WizardWeaponSwitchSetupPage(WizardPage):
                 weapon_switch_config['additional-action-bar-1'] = (self._additional_action_bar_1_combobox.current()-1)
         if self._additional_action_bar_2_bind_var.get() == 1:
             if self._additional_action_bar_2_combobox.current() != 0:
-                weapon_switch_config['additional-action-bar-2'] = (self._additional_action_bar_1_combobox.current()-1)
+                weapon_switch_config['additional-action-bar-2'] = (self._additional_action_bar_2_combobox.current()-1)
         if self._additional_action_bar_3_bind_var.get() == 1:
             if self._additional_action_bar_3_combobox.current() != 0:
-                weapon_switch_config['additional-action-bar-3'] = (self._additional_action_bar_1_combobox.current()-1)
+                weapon_switch_config['additional-action-bar-3'] = (self._additional_action_bar_3_combobox.current()-1)
         if self._additional_action_bar_4_bind_var.get() == 1:
             if self._additional_action_bar_4_combobox.current() != 0:
-                weapon_switch_config['additional-action-bar-4'] = (self._additional_action_bar_1_combobox.current()-1)
+                weapon_switch_config['additional-action-bar-4'] = (self._additional_action_bar_4_combobox.current()-1)
         if len(weapon_switch_config.keys()) > 0:
             self._weapon_switches[self._selected_weapon_class] = weapon_switch_config
 
