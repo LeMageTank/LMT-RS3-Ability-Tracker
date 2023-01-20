@@ -54,7 +54,8 @@ class ActionBarController:
         if weapon_class not in self.weapon_switch_loadouts.keys():
             return
         for action_bar, preset_number in self.weapon_switch_loadouts[weapon_class].items():
-            self.action_bars[action_bar].load_preset(self.action_bar_presets[preset_number])
+            if preset_number != -1:
+                self.action_bars[action_bar].load_preset(self.action_bar_presets[preset_number])
         self.compile_bindings()
 
     def compile_bindings(self):
