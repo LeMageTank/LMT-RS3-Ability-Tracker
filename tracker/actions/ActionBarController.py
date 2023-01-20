@@ -1,4 +1,5 @@
 from tracker.actions.ActionBar import ActionBar
+from tracker.util.Configurator import Configurator
 import json
 
 class ActionBarController:
@@ -9,11 +10,20 @@ class ActionBarController:
 
     def load_input_profile(self):
         self._input_profile = None
-        with open(self.configuration['input-profile'], 'r+') as file:
-            self._input_profile = json.loads("".join(file.readlines()))
-        if self._input_profile is None:
-            raise Exception('Could not load input profile.')
-
+        try:
+            with open(self.configuration['input-profile'], 'r+') as file:
+                self._input_profile = json.loads("".join(file.readlines()))
+            if self._input_profile is None:
+                raise Exception('Could not load input profile.')
+            for key in ['action-bar-presets', 'action-bar-metadata', 'action-bars', 'weapon-switches', 'default-loadout']:
+                if key not in self._input_profile.keys():
+                    raise Exception('Missing field in input profile: ' + key)
+        except Exception as e:
+            Configurator.save_configuration_options({'user-has-completed-setup': False})
+            with open(self.configuration['input-profile'], 'w+') as file:
+                file.write('{}')
+            raise e
+        
         self.current_loaded_keybinds = []
         self.current_loaded_mousebinds = []
 
