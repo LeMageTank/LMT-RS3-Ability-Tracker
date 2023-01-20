@@ -144,7 +144,6 @@ class ActionTrackerUI:
     def run(self):
         self.update()
         self._root.mainloop()
-        self.close()
 
 def run_tracker_ui_tool(control_queue, tool_config, configuration):
     try:
