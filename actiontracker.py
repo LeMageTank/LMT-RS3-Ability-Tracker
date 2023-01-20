@@ -13,4 +13,4 @@ if __name__ == '__main__':
         run_setup_wizard(configuration)
     tracker.ActionTrackerUI.run_tracker_ui(configuration)
     
- 
+
