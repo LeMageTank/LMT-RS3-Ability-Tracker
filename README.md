@@ -1,12 +1,12 @@
 # LeMageTank's RS3 Ability Tracker
 
 1. [Features](#Features)
-2. Setup
-3. Extensions
+2. [Setup](#Setup)
+3. [Extensions](#Extensions)
    - Ability Tracker
    - APM Counter
-4. Environment Setup and Building
-5. Extensions API
+4. [Environment Setup and Building](#Environment Setup and Building)
+5. [Extensions API](#Extensions API)
 
 ## Features
 Currently available and upcoming features:
