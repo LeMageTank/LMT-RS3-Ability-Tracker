@@ -1,6 +1,6 @@
 # LeMageTank's RS3 Ability Tracker
 
-1. Features
+1. [Features](#Features)
 2. Setup
 3. Extensions
    - Ability Tracker
