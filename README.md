@@ -22,7 +22,7 @@ Currently available and upcoming features:
 - [ ] Keybind Action Bar Switching
 
 ## Setup
-Setup Steps:
+**Setup Steps:**
 1. Action Bar Presets
 2. On-Screen Action Bar Selection
 3. Action Bar Keybinds
