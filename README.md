@@ -8,7 +8,6 @@
 4. Environment Setup and Building
 5. Extensions API
 
----
 ## Features
 Currently available and upcoming features:
 - [x] Ability, weapon, spell, etc. tracking for action bar keybinds and mouse-presses
@@ -21,18 +20,14 @@ Currently available and upcoming features:
 - [ ] Multi-output macro support
 - [ ] Inventory mousebinds
 
----
 ## Setup
 TODO
 
----
 ## Extensions
 TODO
 
----
 ## Environment Setup and Building
 TODO
 
----
 ## Extensions API
 TODO
