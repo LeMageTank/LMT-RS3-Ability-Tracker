@@ -1,4 +1,4 @@
-### LeMageTank's RS3 Ability Tracker
+# LeMageTank's RS3 Ability Tracker
 
 Build instructions:
 	1. Install PyInstaller.
