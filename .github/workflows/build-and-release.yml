@@ -22,7 +22,7 @@ jobs:
                 prerelease: false
                 
     Create-Snapshot:
-        if: github.ref != 'refs/heads/main' && github.event_name == 'pull_request' && github.event.label.name != 'documentation'
+        if: github.ref != 'refs/heads/main' && github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'documentation')
         runs-on: ubuntu-latest
         outputs:
             asset_upload_url: ${{ steps.create_release.outputs.upload_url }}
@@ -62,7 +62,7 @@ jobs:
             asset_content_type: application/zip
             
     Build-And-Publish-Windows-Snapshot:
-        if: github.ref != 'refs/heads/main' && github.event_name == 'pull_request' && github.event.label.name != 'documentation'
+        if: github.ref != 'refs/heads/main' && github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'documentation')
         runs-on: windows-latest
         needs: Create-Snapshot
         steps:
