@@ -18,7 +18,7 @@ Currently available and upcoming features:
 - [x] Extension API
 - [ ] EOF and weapon special tracking
 - [ ] Multi-output macro support
-- [ ] Inventory mousebinds
+- [ ] Inventory & Prayerbook mousebinds
 
 ## Setup
 TODO
