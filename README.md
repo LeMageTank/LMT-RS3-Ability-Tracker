@@ -23,12 +23,12 @@ Currently available and upcoming features:
 
 ## Setup
 Setup Steps:
-- Action Bar Presets
-- On-Screen Action Bar Selection
-- Action Bar Keybinds
-- Action Bar Mousebinds
-- Weapon Switch Action Bars
-- Default Action Bars
+1. Action Bar Presets
+2. On-Screen Action Bar Selection
+3. Action Bar Keybinds
+4. Action Bar Mousebinds
+5. Weapon Switch Action Bars
+6. Default Action Bars
 
 ## Extensions
 TODO
