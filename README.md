@@ -19,9 +19,16 @@ Currently available and upcoming features:
 - [ ] EOF and weapon special tracking
 - [ ] Multi-output macro support
 - [ ] Inventory & Prayerbook mousebinds
+- [ ] Keybind Action Bar Switching
 
 ## Setup
-TODO
+Setup Steps:
+- Action Bar Presets
+- On-Screen Action Bar Selection
+- Action Bar Keybinds
+- Action Bar Mousebinds
+- Weapon Switch Action Bars
+- Default Action Bars
 
 ## Extensions
 TODO
