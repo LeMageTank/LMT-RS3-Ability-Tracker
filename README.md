@@ -1,5 +1,4 @@
 # LeMageTank's RS3 Ability Tracker
----
 
 1. Features
 2. Setup
