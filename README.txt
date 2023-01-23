@@ -1,3 +1,5 @@
+### LeMageTank's RS3 Ability Tracker
+
 Build instructions:
 	1. Install PyInstaller.
 	2. Run pyinstaller actiontracker.spec in the project root directory.
