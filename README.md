@@ -1,4 +1,4 @@
-# LeMageTank's RS3 Ability Tracker
+# **LeMageTank's RS3 Ability Tracker**
 ---
 
 1. Features
@@ -10,7 +10,7 @@
 5. Extensions API
 
 ---
-## Features
+## **Features**
 Currently available and upcoming features:
 - [x] Ability, weapon, spell, etc. tracking for action bar keybinds and mouse-presses
 - [x] Automatic action bar updating on weapon changes
