@@ -18,6 +18,7 @@ class Configurator:
 
     @staticmethod
     def save_configuration_options(delta_map):
+        Configurator.load_configuration()
         with FileLock('config.json.lock'):
             if Configurator.configuration is None:
                 Configurator.load_configuration()

@@ -144,20 +144,26 @@ class ActionTrackerUI:
     def run(self):
         self.update()
         self._root.mainloop()
-        
 
 def run_tracker_ui_tool(control_queue, tool_config, configuration):
     try:
-        with open('tracker-out.log', 'w+') as sys.stdout:
-            tool_ui = TrackerExtensionUI(configuration, control_queue, tool_config)
-            tool_ui.start()
+        tool_ui = TrackerExtensionUI(configuration, control_queue, tool_config)
+        tool_ui.start()
     except Exception as e:
-        with open('tracker-exception.log', 'w+') as file:
+        with open(tool_config['name'] + '-exception.log', 'w+') as file:
             ex = traceback.format_exc()
             file.write('Exception: ' + str(ex))
 
 def run_tracker_ui(configuration):
     multiprocessing.freeze_support()
-    tracker_ui = ActionTrackerUI(configuration)
-    tracker_ui.run()
+    tracker_ui = None
+    try:
+        tracker_ui = ActionTrackerUI(configuration)
+        tracker_ui.run()
+    except Exception as e:
+        if tracker_ui is not None:
+            tracker_ui.close()
+        with open('ActionTrackerUI-exception.log', 'w+') as file:
+            ex = traceback.format_exc()
+            file.write('Exception: ' + str(ex))
     
