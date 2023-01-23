@@ -1,14 +1,16 @@
 # LeMageTank's RS3 Ability Tracker
+---
 
 1. Features
 2. Setup
 3. Extensions
-  - Ability Tracker
-  - APM Counter
+   - Ability Tracker
+   - APM Counter
 4. Environment Setup and Building
 5. Extensions API
 
-### Features
+---
+## Features
 Currently available and upcoming features:
 - [x] Ability, weapon, spell, etc. tracking for action bar keybinds and mouse-presses
 - [x] Automatic action bar updating on weapon changes
@@ -20,14 +22,18 @@ Currently available and upcoming features:
 - [ ] Multi-output macro support
 - [ ] Inventory mousebinds
 
-### Setup
+---
+## Setup
 TODO
 
-### Extensions
+---
+## Extensions
 TODO
 
-### Environment Setup and Building
+---
+## Environment Setup and Building
 TODO
 
-### Extensions API
+---
+## Extensions API
 TODO
