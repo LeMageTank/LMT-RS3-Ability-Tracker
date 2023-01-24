@@ -1,3 +1,11 @@
+<style type="text/css">
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      float: left;
+    }
+</style>
 # LeMageTank's RS3 Ability Tracker
 ![ability-tracker](https://user-images.githubusercontent.com/91403167/214178520-2adc9488-173b-44f0-b4cd-0675bbd607a2.PNG)
 
