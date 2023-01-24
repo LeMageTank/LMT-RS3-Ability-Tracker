@@ -25,27 +25,33 @@ Currently available and upcoming features:
 
 ## Setup
 **Setup Steps:**
-1. Action Bar Presets<br>
+1. Action Bar Presets
+<br>
 ![image](https://user-images.githubusercontent.com/91403167/214440387-07c1c02c-0eff-4d3f-83f3-a85ceff6f67b.png)<br>
 
 Drag and drop abilities, weapons, prayers, items, etc. to the numbered action bar presets to match your in-game presets.
-2. On-Screen Action Bar Selection<br>
+2. On-Screen Action Bar Selection
+<br>
 ![image](https://user-images.githubusercontent.com/91403167/214440870-871da2dd-5b28-43e0-b5af-25c14029ada1.png)<br>
 Select the action bars that you have on-screen in-game.
-3. Action Bar Keybinds<br>
+3. Action Bar Keybinds
+<br>
 ![image](https://user-images.githubusercontent.com/91403167/214441027-941654fc-a3c7-44c9-a641-ccff534bd99d.png)<br>
 Enter the keybinds for your action bars. Select the modifier for the keybind using the drop-down menu on the right, and enter the main key on the left. For non-alphanumeric keys including f keys, enter the keycode (f1 for f1, f2 for f2, del for delete, etc.).
-4. Action Bar Mousebinds<br>
+4. Action Bar Mousebinds
+<br>
 ![image](https://user-images.githubusercontent.com/91403167/214441667-9d9b0c17-dc96-4675-a490-eed7af352bee.png)<br>
 Move the setup dialogue box to the monitor where your game is shown. Clicking 'begin' will take a screen shot and display it in fullscreen.<br>
 ![image](https://user-images.githubusercontent.com/91403167/214442041-0405be7b-626c-4915-9f21-428b3b1689a0.png)<br>
 An action bar cooresponding to each active action bar you selected on the action bar selection page will be shown. Each action bar and the continue dialogue can be moved by clicking and dragging (Drag the action bars by their opaque areas, transparent areas can be clicked-through). Drag the action bars to as closely as possible align with your in-game action bars. Right click action bars to change their layout.<br>
 ![image](https://user-images.githubusercontent.com/91403167/214442555-2fed092d-78c7-459a-b64c-bc2b5482285b.png)<br>
 Click continue when you've aligned each action bar.
-5. Weapon Switch Action Bars<br>
+5. Weapon Switch Action Bars
+<br>
 ![image](https://user-images.githubusercontent.com/91403167/214442738-3702cc07-fddd-4387-b940-1c649fd1a64b.png)<br>
 For each weapon class, select which action bars that you have selected to load action bar presets when swapping to that weapon style.
-6. Default Action Bars<br>
+6. Default Action Bars
+<br>
 ![image](https://user-images.githubusercontent.com/91403167/214443299-559ba2e3-1a10-4f50-95dc-a62edb0dcdab.png)<br>
 Select which action bars that the ability tracker should load by default on start-up.
 
