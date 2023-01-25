@@ -19,7 +19,6 @@ Currently available and upcoming features:
 - [x] Actions-per-minutes counter
 - [x] Extension API
 - [ ] EOF and weapon special tracking
-- [ ] Multi-output macro support
 - [ ] Inventory & Prayerbook mousebinds
 - [ ] Keybind Action Bar Switching
 
