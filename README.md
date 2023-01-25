@@ -80,11 +80,13 @@ This application comes with two 'extensions' by default: the [ability tracker](#
 
 - ### Ability Tracker
 The Ability Tracker extension shows the abilities, items, equipment, and etc. that the player uses in a timeline format:
+
 ![Tracker](https://user-images.githubusercontent.com/91403167/214473693-c2089ade-c392-40df-8050-b65423430af9.PNG)
 
 This extension has two modes: an on-screen bar that displays an adjustable number of actions, and a 'web' endpoint that can be imported into OBS for use on-screen without it being displayed on-screen.
 
 The on-screen ability tracker is enabled by default. To use the web endpoint for displaying the tracker in OBS follow these steps:
+
 1. Add a Browser source in OBS
 
 ![image](https://user-images.githubusercontent.com/91403167/214474409-8a49e2cf-f8be-49fe-80c5-64799ec37153.png)
