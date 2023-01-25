@@ -1,14 +1,16 @@
 # LeMageTank's RS3 Ability Tracker
 ![ability-tracker](https://user-images.githubusercontent.com/91403167/214178520-2adc9488-173b-44f0-b4cd-0675bbd607a2.PNG)
 
-1. [Features](#Features)
-2. [Setup](#Setup)
-3. [Extensions](#Extensions)
+This program is under active development and is currently working but incomplete. Bugs may exist, abilities, items and spells may not be present, and there may be inconsistencies in formatting. The full feature list for the upcoming version 1.0.0 can be found in the [Features](#features) section.
+
+1. [Features](#features)
+2. [Setup](#setup)
+3. [Extensions](#extensions)
    - Ability Tracker
    - APM Counter
-4. [Environment Setup and Building](#Environment-Setup-and-Building)
-5. [Extensions API](#Extensions-API)
-6. [Adding Custom Abilities and Macros](#Adding_Custom_Abilities_and_Macros)
+4. [Environment Setup and Building](#environment-setup-and-building)
+5. [Extensions API](#extensions-api)
+6. [Adding Custom Abilities and Macros](#adding-custom-abilities-and-macros)
 
 ## Features
 Currently available and upcoming features:
@@ -74,7 +76,40 @@ For each weapon class you have set to load action bar presets when swapping weap
 Select which action bars the ability tracker should load by default on start-up.
 
 ## Extensions
-TODO
+This application comes with two 'extensions' by default: the [ability tracker](#ability-tracker) and an [actions-per-minute counter](#apm-counter). Extensions in this context are similar to plugins for runelite; an [extensions API](#Extensions-API) exposes the ui, user input/actions, and game data for use by the extensions. In the future this program may be updated with more extensions.
+
+- ### Ability Tracker
+The Ability Tracker extension shows the abilities, items, equipment, and etc. that the player uses in a timeline format:
+![Tracker](https://user-images.githubusercontent.com/91403167/214473693-c2089ade-c392-40df-8050-b65423430af9.PNG)
+
+This extension has two modes: an on-screen bar that displays an adjustable number of actions, and a 'web' endpoint that can be imported into OBS for use on-screen without it being displayed on-screen.
+
+The on-screen ability tracker is enabled by default. To use the web endpoint for displaying the tracker in OBS follow these steps:
+1. Add a Browser source in OBS
+
+![image](https://user-images.githubusercontent.com/91403167/214474409-8a49e2cf-f8be-49fe-80c5-64799ec37153.png)
+
+2. Check the `Local File` box
+
+![image](https://user-images.githubusercontent.com/91403167/214474644-cef2b78a-61b2-4c56-be1e-f125d79ef3e9.png)
+
+3. Add the file `/data/extension data/action-tracker/ability-tracker-page.html`
+
+![image](https://user-images.githubusercontent.com/91403167/214474572-4b59bf65-e1cf-4773-8561-5d0cdcd4049e.png)
+
+The ability tracker should now be visible in the scene, adjust the size and resolution as necessary.
+
+![image](https://user-images.githubusercontent.com/91403167/214474856-ad24838b-9f09-4792-ac46-366b868db707.png)
+
+
+The ability tracker has a few configuration options within the `config.json` file:
+- **action-tracker-enabled**: Enable or disable the tracker (boolean)
+- **tracker-background-color**: The background color of the ability tracker, leave empty for transparent background (hex string)
+- **actiontracker-icons**: The number of actions displayed on the tracker (int)
+- **actiontracker-always-on-top**: Sets if the ability tracker always shows on top of other programs (boolean)
+- **action-tracker-window-position**: The position of the ability tracker on-screen, updates automaticall on exit (int [x, y])
+---
+- ### APM Counter
 
 ## Environment Setup and Building
 TODO
