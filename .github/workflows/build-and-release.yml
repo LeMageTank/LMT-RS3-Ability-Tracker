@@ -1,8 +1,8 @@
 name: Build and Release
-on: push
+on: [push, pull_request]
 jobs:
     Create-Release:
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         runs-on: ubuntu-latest
         outputs:
             asset_upload_url: ${{ steps.create_release.outputs.upload_url }}
@@ -22,7 +22,7 @@ jobs:
                 prerelease: false
                 
     Create-Snapshot:
-        if: github.ref != 'refs/heads/main'
+        if: github.ref != 'refs/heads/main' && github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'documentation')
         runs-on: ubuntu-latest
         outputs:
             asset_upload_url: ${{ steps.create_release.outputs.upload_url }}
@@ -42,7 +42,7 @@ jobs:
                 prerelease: true
                 
     Build-And-Publish-Windows-Release:
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         runs-on: windows-latest
         needs: Create-Release
         steps:
@@ -62,7 +62,7 @@ jobs:
             asset_content_type: application/zip
             
     Build-And-Publish-Windows-Snapshot:
-        if: github.ref != 'refs/heads/main'
+        if: github.ref != 'refs/heads/main' && github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'documentation')
         runs-on: windows-latest
         needs: Create-Snapshot
         steps:
