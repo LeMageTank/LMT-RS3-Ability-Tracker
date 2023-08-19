@@ -34,8 +34,8 @@
     "tracker-background-color": "black",
     "tracker-web-image-file": "data\\extension data\\action-tracker\\ability-tracker.png",
     "tracker-window-position": [
-        1,
-        1
+        0,
+        0
     ],
     "actiontracker-icons": 8,
     "actiontracker-icon-shape": [
@@ -55,7 +55,9 @@
         "dw_range",
         "2h_range",
         "dw_magic",
-        "2h_magic"
+        "2h_magic",
+        "dw_necro",
+        "2h_necro"
     ],
     "modifier-keys": [
         "",
@@ -174,13 +176,13 @@
             "default": "data\\app images\\setup icons\\Ranged_tab.png",
             "selected": "data\\app images\\setup icons\\Ranged_tab_selected.png"
         },
-        "defence": {
-            "default": "data\\app images\\setup icons\\Defence_tab.png",
-            "selected": "data\\app images\\setup icons\\Defence_tab_selected.png"
+        "defence-constitution": {
+            "default": "data\\app images\\setup icons\\Defence_Constitution_tab.png",
+            "selected": "data\\app images\\setup icons\\Defence_Constitution_tab_selected.png"
         },
-        "constitution": {
-            "default": "data\\app images\\setup icons\\Constitution_tab.png",
-            "selected": "data\\app images\\setup icons\\Constitution_tab_selected.png"
+        "necromancy": {
+            "default": "data\\app images\\setup icons\\Necromancy_tab.png",
+            "selected": "data\\app images\\setup icons\\Necromancy_tab_selected.png"
         },
         "item": {
             "default": "data\\app images\\setup icons\\Items_tab.png",

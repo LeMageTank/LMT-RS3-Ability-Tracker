@@ -372,7 +372,7 @@
 		"adrenaline-delta":-15,
 		"ability-type":"non-damage",
 		"hits":[],
-		"tag":"defence"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Anticipation",
@@ -382,7 +382,7 @@
 		"adrenaline-delta":8,
 		"ability-type":"non-damage",
 		"hits":[],
-		"tag":"defence"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Bash",
@@ -392,7 +392,7 @@
 		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[20.0,100.0]}],
-		"tag":"defence"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Revenge",
@@ -402,7 +402,7 @@
 		"adrenaline-delta":-15,
 		"ability-type":"non-damage",
 		"hits":[],
-		"tag":"defence"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Immortality",
@@ -412,7 +412,7 @@
 		"adrenaline-delta":-100,
 		"ability-type":"non-damage",
 		"hits":[],
-		"tag":"defence"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Freedom",
@@ -422,7 +422,7 @@
 		"adrenaline-delta":8,
 		"ability-type":"non-damage",
 		"hits":[],
-		"tag":"defence"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Reflect",
@@ -432,7 +432,7 @@
 		"adrenaline-delta":-15,
 		"ability-type":"non-damage",
 		"hits":[],
-		"tag":"defence"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Resonance",
@@ -442,7 +442,7 @@
 		"adrenaline-delta":8,
 		"ability-type":"non-damage",
 		"hits":[],
-		"tag":"defence"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Divert",
@@ -452,7 +452,7 @@
 		"adrenaline-delta":8,
 		"ability-type":"non-damage",
 		"hits":[],
-		"tag":"defence"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Debilitate",
@@ -462,7 +462,7 @@
 		"adrenaline-delta":-15,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[20.0,100.0]}],
-		"tag":"defence"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Preparation",
@@ -472,7 +472,7 @@
 		"adrenaline-delta":8,
 		"ability-type":"non-damage",
 		"hits":[],
-		"tag":"defence"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Barricade",
@@ -482,7 +482,7 @@
 		"adrenaline-delta":-100,
 		"ability-type":"non-damage",
 		"hits":[],
-		"tag":"defence"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Natural Instinct",
@@ -492,7 +492,7 @@
 		"adrenaline-delta":-100,
 		"ability-type":"non-damage",
 		"hits":[],
-		"tag":"defence"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Special Attack",
@@ -502,7 +502,7 @@
 		"adrenaline-delta":0,
 		"ability-type":"special",
 		"hits":[],
-		"tag":"constitution"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Regenerate",
@@ -512,7 +512,7 @@
 		"adrenaline-delta":0,
 		"ability-type":"non-damage",
 		"hits":[],
-		"tag":"constitution"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Sacrifice",
@@ -522,7 +522,7 @@
 		"adrenaline-delta":8,
 		"ability-type":"standard",
 		"hits":[{"tick":0, "damage":[20.0,100.0]}],
-		"tag":"constitution"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Essence of Finality",
@@ -532,7 +532,7 @@
 		"adrenaline-delta":0,
 		"ability-type":"special",
 		"hits":[],
-		"tag":"constitution"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Storm Shards",
@@ -542,7 +542,7 @@
 		"adrenaline-delta":8,
 		"ability-type":"non-damage",
 		"hits":[],
-		"tag":"constitution"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Shatter",
@@ -552,7 +552,7 @@
 		"adrenaline-delta":-15,
 		"ability-type":"non-damage",
 		"hits":[],
-		"tag":"constitution"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Reprisal",
@@ -562,7 +562,7 @@
 		"adrenaline-delta":-15,
 		"ability-type":"non-damage",
 		"hits":[],
-		"tag":"constitution"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Onslaught",
@@ -597,7 +597,7 @@
 			{"tick":0, "damage":[299.9,909.0]},
 			{"tick":0, "damage":[310.8,942.0]},
 			{"tick":0, "damage":[321.7,975.0]}],
-			"tag":"constitution"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Ice Asylum",
@@ -607,7 +607,7 @@
 		"adrenaline-delta":-100,
 		"ability-type":"non-damage",
 		"hits":[],
-		"tag":"constitution"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Eat Food",
@@ -617,7 +617,7 @@
 		"adrenaline-delta":0,
 		"ability-type":"non-damage",
 		"hits":[],
-		"tag":"constitution"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Snipe",
@@ -681,7 +681,7 @@
 			{"tick":5, "damage":[20.0,37.0]},
 			{"tick":7, "damage":[20.0,37.0]},
 			{"tick":9, "damage":[20.0,37.0]}],
-			"tag":"ranged"
+		"tag":"ranged"
 	},
 	{
 		"action":"Snap Shot",
@@ -707,7 +707,7 @@
 			{"tick":6, "damage":[62.0,62.0]},
 			{"tick":8, "damage":[62.0,62.0]},
 			{"tick":10, "damage":[62.0,62.0]}],
-			"tag":"ranged"
+		"tag":"ranged"
 	},
 	{
 		"action":"Tight Bindings",
@@ -774,7 +774,7 @@
 			{"tick":5, "damage":[18.75,94.0]},
 			{"tick":6, "damage":[18.75,94.0]},
 			{"tick":7, "damage":[18.75,94.0]}],
-			"tag":"ranged"
+		"tag":"ranged"
 	},
 	{
 		"action":"Greater Ricochet",
@@ -786,7 +786,7 @@
 		"hits":[{"tick":0, "damage":[20.0,100.0]},
 			{"tick":1, "damage":[10.0,50.0]},
 			{"tick":1, "damage":[10.0,50.0]}],
-			"tag":"ranged"
+		"tag":"ranged"
 	},
 	{
 		"action":"Ricochet",
@@ -840,7 +840,7 @@
 			{"tick":5, "damage":[33.0,100.0]},
 			{"tick":7, "damage":[33.0,100.0]},
 			{"tick":9, "damage":[33.0,100.0]}],
-			"tag":"ranged"
+		"tag":"ranged"
 	},
 	{
 		"action":"Shadow Tendrils",
@@ -896,7 +896,7 @@
 			{"tick":3, "damage":[37.5,188.0]},
 			{"tick":5, "damage":[37.5,188.0]},
 			{"tick":7, "damage":[37.5,188.0]}],
-			"tag":"magic"
+		"tag":"magic"
 	},
 	{
 		"action":"Wrack and Ruin",
@@ -962,7 +962,7 @@
 			{"tick":5, "damage":[20.0,37.0]},
 			{"tick":7, "damage":[20.0,37.0]},
 			{"tick":9, "damage":[20.0,37.0]}],
-			"tag":"magic"
+		"tag":"magic"
 	},
 	{
 		"action":"Omnipower",
@@ -1004,7 +1004,7 @@
 		"hits":[{"tick":0, "damage":[17.6,89.0]},
 			{"tick":1, "damage":[17.6,89.0]},
 			{"tick":2, "damage":[17.6,89.0]}],
-			"tag":"magic"
+		"tag":"magic"
 	},
 	{
 		"action":"Horror",
@@ -1132,7 +1132,7 @@
 		"adrenaline-delta":0,
 		"ability-type":"non-damage",
 		"hits":[],
-		"tag":"constitution"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Masterwork Spear of Annihilation",
@@ -1524,7 +1524,7 @@
 		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[],
-		"tag":"constitution"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Amulet of Souls",
@@ -1914,7 +1914,7 @@
 		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[],
-		"tag":"constitution"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Dominion Mine",
@@ -2044,7 +2044,7 @@
 		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[],
-		"tag":"constitution"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Guthix Rest Flask",
@@ -2164,7 +2164,7 @@
 		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[],
-		"tag":"constitution"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Kalphite Defender",
@@ -2204,7 +2204,7 @@
 		"adrenaline-delta":0,
 		"ability-type":null,
 		"hits":[],
-		"tag":"constitution"
+		"tag":"defence/constitution"
 	},
 	{
 		"action":"Luck of the Dwarves",
@@ -2506,5 +2506,215 @@
 		"ability-type":null,
 		"hits":[],
 		"tag":"prayer"
+	},
+	{
+		"action":"Necromancy",
+		"type":"basic",
+		"cooldown":1.8,
+		"incurs_gcd":true,
+		"adrenaline-delta":9,
+		"ability-type":"standard",
+		"hits":[{"tick":1, "damage":[30.0,120.0]}],
+		"tag":"necromancy"
+	},
+	{
+		"action":"Conjure Skeleton Warrior",
+		"type":"conjure",
+		"cooldown":1.8,
+		"incurs_gcd":true,
+		"adrenaline-delta":0,
+		"ability-type":"non-damage",
+		"hits":[],
+		"tag":"necromancy"
+	},
+	{
+		"action":"Finger of Death",
+		"type":"ability",
+		"cooldown":1.8,
+		"incurs_gcd":true,
+		"adrenaline-delta":0,
+		"ability-type":"standard",
+		"hits":[],
+		"tag":"necromancy"
+	},
+	{
+		"action":"Touch of Death",
+		"type":"basic",
+		"cooldown":14.4,
+		"incurs_gcd":true,
+		"adrenaline-delta":9,
+		"ability-type":"standard",
+		"hits":[],
+		"tag":"necromancy"
+	},
+	{
+		"action":"Command Skeleton Warrior",
+		"type":"command",
+		"cooldown":15,
+		"incurs_gcd":true,
+		"adrenaline-delta":0,
+		"ability-type":"non-damage",
+		"hits":[],
+		"tag":"necromancy"
+	},
+	{
+		"action":"Death Skulls",
+		"type":"ultimate",
+		"cooldown":60,
+		"incurs_gcd":true,
+		"adrenaline-delta":-100,
+		"ability-type":"standard",
+		"hits":[],
+		"tag":"necromancy"
+	},
+	{
+		"action":"Blood Siphon",
+		"type":"basic",
+		"cooldown":45,
+		"incurs_gcd":true,
+		"adrenaline-delta":0,
+		"ability-type":"standard",
+		"hits":[],
+		"tag":"necromancy"
+	},
+	{
+		"action":"Conjure Putrid Zombie",
+		"type":"conjure",
+		"cooldown":1.8,
+		"incurs_gcd":true,
+		"adrenaline-delta":0,
+		"ability-type":"non-damage",
+		"hits":[],
+		"tag":"necromancy"
+	},
+	{
+		"action":"Conjure Vengeful Ghost",
+		"type":"conjure",
+		"cooldown":1.8,
+		"incurs_gcd":true,
+		"adrenaline-delta":0,
+		"ability-type":"standard",
+		"hits":[],
+		"tag":"necromancy"
+	},
+	{
+		"action":"Bloat",
+		"type":"ability",
+		"cooldown":1.8,
+		"incurs_gcd":true,
+		"adrenaline-delta":-20,
+		"ability-type":"standard",
+		"hits":[],
+		"tag":"necromancy"
+	},
+	{
+		"action":"Soul Sap",
+		"type":"basic",
+		"cooldown":5.4,
+		"incurs_gcd":true,
+		"adrenaline-delta":9,
+		"ability-type":"standard",
+		"hits":[],
+		"tag":"necromancy"
+	},
+	{
+		"action":"Soul Strike",
+		"type":"ability",
+		"cooldown":1.8,
+		"incurs_gcd":true,
+		"adrenaline-delta":0,
+		"ability-type":"standard",
+		"hits":[],
+		"tag":"necromancy"
+	},
+	{
+		"action":"Command Putrid Zombie",
+		"type":"command",
+		"cooldown":30,
+		"incurs_gcd":true,
+		"adrenaline-delta":0,
+		"ability-type":"non-damage",
+		"hits":[],
+		"tag":"necromancy"
+	},
+	{
+		"action":"Command Vengeful Ghost",
+		"type":"command",
+		"cooldown":1.8,
+		"incurs_gcd":true,
+		"adrenaline-delta":-70,
+		"ability-type":"non-damage",
+		"hits":[],
+		"tag":"necromancy"
+	},
+	{
+		"action":"Spectral Scythe",
+		"type":"ability",
+		"cooldown":1.8,
+		"incurs_gcd":true,
+		"adrenaline-delta":-10,
+		"ability-type":"standard",
+		"hits":[],
+		"tag":"necromancy"
+	},
+	{
+		"action":"Volley of Souls",
+		"type":"ability",
+		"cooldown":1.8,
+		"incurs_gcd":true,
+		"adrenaline-delta":0,
+		"ability-type":"standard",
+		"hits":[],
+		"tag":"necromancy"
+	},
+	{
+		"action":"Living Death",
+		"type":"ultimate1",
+		"cooldown":90,
+		"incurs_gcd":true,
+		"adrenaline-delta":-100,
+		"ability-type":"non-damage",
+		"hits":[],
+		"tag":"necromancy"
+	},
+	{
+		"action":"Soulbound lantern",
+		"type":"weapon",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Skull lantern",
+		"type":"weapon",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Death guard",
+		"type":"weapon",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
+	},
+	{
+		"action":"Omni guard",
+		"type":"weapon",
+		"cooldown":0.0,
+		"incurs_gcd":false,
+		"adrenaline-delta":0,
+		"ability-type":null,
+		"hits":[],
+		"tag":"item"
 	}
 ]

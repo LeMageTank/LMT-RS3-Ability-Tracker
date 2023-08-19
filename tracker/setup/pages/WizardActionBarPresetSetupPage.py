@@ -55,21 +55,21 @@ class WizardActionBarPresetSetupPage(WizardPage):
         self._ranged_image_selected_tk = ImageTk.PhotoImage(self._ranged_image_selected)
         self._widget_frame_colors.append(self.ranged_tab)
 
-        self.defence_tab = tkinter.Frame(self._action_book, width=600, height=350)
-        self.defence_tab.pack(fill='both', expand=True)
-        self._defence_image = Image.open(self._configuration['setup-icons']['defence']['default'])
-        self._defence_image_selected = Image.open(self._configuration['setup-icons']['defence']['selected'])
-        self._defence_image_tk = ImageTk.PhotoImage(self._defence_image)
-        self._defence_image_selected_tk = ImageTk.PhotoImage(self._defence_image_selected)
-        self._widget_frame_colors.append(self.defence_tab)
+        self.defence_constitution_tab = tkinter.Frame(self._action_book, width=600, height=350)
+        self.defence_constitution_tab.pack(fill='both', expand=True)
+        self._defence_constitution_image = Image.open(self._configuration['setup-icons']['defence-constitution']['default'])
+        self._defence_constitution_image_selected = Image.open(self._configuration['setup-icons']['defence-constitution']['selected'])
+        self._defence_constitution_image_tk = ImageTk.PhotoImage(self._defence_constitution_image)
+        self._defence_constitution_image_selected_tk = ImageTk.PhotoImage(self._defence_constitution_image_selected)
+        self._widget_frame_colors.append(self.defence_constitution_tab)
 
-        self.constitution_tab = tkinter.Frame(self._action_book, width=600, height=350)
-        self.constitution_tab.pack(fill='both', expand=True)
-        self._constitution_image = Image.open(self._configuration['setup-icons']['constitution']['default'])
-        self._constitution_image_selected = Image.open(self._configuration['setup-icons']['constitution']['selected'])
-        self._constitution_image_tk = ImageTk.PhotoImage(self._constitution_image)
-        self._constitution_image_selected_tk = ImageTk.PhotoImage(self._constitution_image_selected)
-        self._widget_frame_colors.append(self.constitution_tab)
+        self.necromancy_tab = tkinter.Frame(self._action_book, width=600, height=350)
+        self.necromancy_tab.pack(fill='both', expand=True)
+        self._necromancy_image = Image.open(self._configuration['setup-icons']['necromancy']['default'])
+        self._necromancy_image_selected = Image.open(self._configuration['setup-icons']['necromancy']['selected'])
+        self._necromancy_image_tk = ImageTk.PhotoImage(self._necromancy_image)
+        self._necromancy_image_selected_tk = ImageTk.PhotoImage(self._necromancy_image_selected)
+        self._widget_frame_colors.append(self.necromancy_tab)
 
         self.item_tab = tkinter.Frame(self._action_book, width=600, height=350)
         self.item_tab.pack(fill='both', expand=True)
@@ -90,8 +90,8 @@ class WizardActionBarPresetSetupPage(WizardPage):
         self._action_book.add(self.melee_tab, image=self._melee_image_tk)
         self._action_book.add(self.magic_tab, image=self._magic_image_tk)
         self._action_book.add(self.ranged_tab, image=self._ranged_image_tk)
-        self._action_book.add(self.defence_tab, image=self._defence_image_tk)
-        self._action_book.add(self.constitution_tab, image=self._constitution_image_tk)
+        self._action_book.add(self.necromancy_tab, image=self._necromancy_image_tk)
+        self._action_book.add(self.defence_constitution_tab, image=self._defence_constitution_image_tk)
         self._action_book.add(self.item_tab, image=self._item_image_tk)
         self._action_book.add(self.prayer_tab, image=self._prayer_image_tk)
 
@@ -99,8 +99,8 @@ class WizardActionBarPresetSetupPage(WizardPage):
             self._melee_image_tk,
             self._magic_image_tk,
             self._ranged_image_tk,
-            self._defence_image_tk,
-            self._constitution_image_tk,
+            self._necromancy_image_tk,
+            self._defence_constitution_image_tk,
             self._item_image_tk,
             self._prayer_image_tk
         ]
@@ -109,8 +109,8 @@ class WizardActionBarPresetSetupPage(WizardPage):
             self._melee_image_selected_tk,
             self._magic_image_selected_tk,
             self._ranged_image_selected_tk,
-            self._defence_image_selected_tk,
-            self._constitution_image_selected_tk,
+            self._necromancy_image_selected_tk,
+            self._defence_constitution_image_selected_tk,
             self._item_image_selected_tk,
             self._prayer_image_selected_tk
         ]
@@ -119,8 +119,8 @@ class WizardActionBarPresetSetupPage(WizardPage):
             'ranged': {},
             'magic': {},
             'melee': {},
-            'defence': {},
-            'constitution': {},
+            'necromancy': {},
+            'defence/constitution': {},
             'item': {},
             'prayer':{}
         }
@@ -133,8 +133,8 @@ class WizardActionBarPresetSetupPage(WizardPage):
 
         self._image_widgets = []
         for tab_name, tab in [('melee', self.melee_tab), ('magic', self.magic_tab),
-            ('ranged', self.ranged_tab), ('defence', self.defence_tab),
-            ('constitution', self.constitution_tab), ('item', self.item_tab),
+            ('ranged', self.ranged_tab), ('necromancy', self.necromancy_tab),
+            ('defence/constitution', self.defence_constitution_tab), ('item', self.item_tab),
             ('prayer', self.prayer_tab)]:
             row = 0
             max_icons_per_row = 10
