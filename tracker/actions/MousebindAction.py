@@ -50,7 +50,10 @@ class MousebindAction:
 
     @classmethod
     def from_dict(self, mousebind_dict):
-        return MousebindAction(mousebind_dict['x1'], mousebind_dict['y1'], mousebind_dict['x2'], mousebind_dict['y2'])
+        if mousebind_dict is not None:
+            return MousebindAction(mousebind_dict['x1'], mousebind_dict['y1'], mousebind_dict['x2'], mousebind_dict['y2'])
+        else:
+            return MousebindAction(-1, -1, -1, -1);
 
     def __str__(self):
         return '({},{})'.format(self.x1, self.y1)
