@@ -30,12 +30,12 @@
     "wizard-error-color": "red",
     "wizard-error-color-dark": "red",
     "wizard-alpha-color": "#00D500",
-    "user-has-completed-setup": true,
+    "user-has-completed-setup": false,
     "tracker-background-color": "black",
     "tracker-web-image-file": "data\\extension data\\action-tracker\\ability-tracker.png",
     "tracker-window-position": [
-        2,
-        3
+        1,
+        1
     ],
     "actiontracker-icons": 8,
     "actiontracker-icon-shape": [
@@ -221,11 +221,11 @@
         }
     ],
     "action-tracker-window-position": [
-        16,
-        29
+        30,
+        30
     ],
     "apm-counter-window-position": [
-        25,
-        25
+        30,
+        50
     ]
 }
