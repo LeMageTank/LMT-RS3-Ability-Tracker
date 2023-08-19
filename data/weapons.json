@@ -43,6 +43,14 @@
 			"Fractured Staff of Armadyl",
 			"Staff of Sliske",
 			"Noxious Staff"
+		]},
+		{ "weapon_type": "2h_necro",
+		  "weapons": [
+		]},
+		{ "weapon_type": "dw_necro",
+		  "weapons": [
+			"Omni guard",
+			"Death guard"
 		]}
 
 	]
